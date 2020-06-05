@@ -1,7 +1,7 @@
 # Repositório do SQUAD3
 
 ## Projeto 
-App mobile para auxiliar na organização de tarefas do trabalho e  no cotidiano de quem está trabalhando home office. O objetivo é tornar o dia mais produtivo durante o horário de trabalho, reforçar o foco nas prioridades, e também facilitar a conciliação com os afazeres domésticos de forma não-invasiva, com aparência amigável e fácil uso. Propomos, também, sugerir formas de entretenimento capazes de preencher as pausas do trabalho e o tempo livre.
+App mobile feito com a intenção de auxiliar a organização de tarefas e a integração com o cotidiano durante o trabalho em home office. As funcionalidades visam tornar o dia mais produtivo, reforçar o foco nas prioridades e, também, facilitar a conciliação com os afazeres domésticos de forma não-invasiva, em um app de aparência amigável e de fácil uso. Propomos, também, sugerir formas de entretenimento capazes de preencher as pausas do trabalho e o tempo livre.
 
 Tecnologias usadas: 
 - Node
