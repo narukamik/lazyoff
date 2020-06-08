@@ -1,11 +1,11 @@
 import React from 'react';
-
-import { Container, Title } from './styles';
+import Container from "~/components/Container";
+import { Area, Title } from './styles';
 
 const SignIn = () => {
   return (
     <Container> 
-      <Title>Squad 3</Title>
+      <Area><Title>Squad 3</Title></Area>
     </Container>
   );
 };
