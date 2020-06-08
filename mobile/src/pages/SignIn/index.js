@@ -4,7 +4,7 @@ import { Container, Title } from './styles';
 
 const SignIn = () => {
   return (
-    <Container>
+    <Container> 
       <Title>Squad 3</Title>
     </Container>
   );
