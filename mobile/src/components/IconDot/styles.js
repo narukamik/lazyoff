@@ -14,7 +14,7 @@ export const Dot = styled.View`
   width: ${(props) => (props.isActive === true ? '8px' : '0px')};
   height: ${(props) => (props.isActive === true ? '8px' : '0px')};
   margin-top: ${(props) => (props.isActive === true ? '4px' : '0px')};
-  transition-duration: 0.8s;
+  /*transition-duration: 0.8s;*/
 `;
 export const Icon = styled(Feather)`
   text-shadow-offset: ${(props) =>
