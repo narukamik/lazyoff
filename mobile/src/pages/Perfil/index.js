@@ -44,6 +44,9 @@ const Cronograma = () => {
           />
         </InputRow>
         <InputRow>
+          <AntDesign name="lock"
+          size={24} color="black"
+          />
           <PasswordInput 
           placeholder={'Confirmar senha'}
           />
