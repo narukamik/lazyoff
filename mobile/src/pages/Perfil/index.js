@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '~/components/Container';
 import {Area, InputRow, Title, DefaultInput, PasswordInput} from './styles';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 
 const Cronograma = () => {
   return (
@@ -11,6 +11,10 @@ const Cronograma = () => {
           Crie uma conta para você.
         </Title>
         <InputRow>
+          <Ionicons
+          name="md-person"
+          size={24} color="black"
+          />
           <DefaultInput 
           placeholder = {'Nome'}
           />
@@ -23,7 +27,7 @@ const Cronograma = () => {
            placeholder={'Email'}
            />
         </InputRow>
-        <InputRow>
+        <InputRow>        
           <AntDesign name="mail" 
           size={24} color="black"
           />
