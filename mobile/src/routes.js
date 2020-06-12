@@ -18,7 +18,13 @@ const HomeStack = createStackNavigator();
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={Cronograma} />
+      <HomeStack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Home"
+        component={Cronograma}
+      />
     </HomeStack.Navigator>
   );
 }
@@ -28,7 +34,13 @@ const PerfilStack = createStackNavigator();
 function PerfilStackScreen() {
   return (
     <PerfilStack.Navigator>
-      <PerfilStack.Screen name="Perfil" component={Perfil} />
+      <PerfilStack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Perfil"
+        component={Perfil}
+      />
     </PerfilStack.Navigator>
   );
 }
