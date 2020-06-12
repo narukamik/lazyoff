@@ -2,14 +2,14 @@ import React from 'react';
 import Container from '~/components/Container';
 import { Area, Title } from './styles';
 
-const SignIn = () => {
+const Cronograma = () => {
   return (
     <Container>
       <Area>
-        <Title>Squad 3</Title>
+        <Title>Cronograma</Title>
       </Area>
     </Container>
   );
 };
 
-export default SignIn;
+export default Cronograma;
