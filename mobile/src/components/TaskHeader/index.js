@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Title } from './styles';
 
 const TaskHeader = () => {
-  return <Container />;
+  return (
+    <Container>
+      <Title>Título Task</Title>
+    </Container>
+  );
 };
 
 export default TaskHeader;

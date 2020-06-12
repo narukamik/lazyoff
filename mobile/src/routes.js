@@ -51,11 +51,16 @@ const ListaStack = createStackNavigator();
 function ListaStackScreen() {
   return (
     <ListaStack.Navigator>
-      <ListaStack.Screen name="Lista" component={Lista} />
+      <ListaStack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Lista"
+        component={Lista}
+      />
     </ListaStack.Navigator>
   );
 }
-      
 
 const Tab = createBottomTabNavigator();
 export default () => (
