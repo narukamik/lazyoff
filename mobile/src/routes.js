@@ -9,6 +9,7 @@ import IconDot from './components/IconDot';
 
 import Cronograma from './pages/Cronograma';
 import Perfil from './pages/Perfil';
+import Lista from './pages/Lista';
 
 // import Dashboard from './pages/Dashboard';
 // import Profile from './pages/Profile';
@@ -44,6 +45,18 @@ function PerfilStackScreen() {
     </PerfilStack.Navigator>
   );
 }
+
+const ListaStack = createStackNavigator();
+
+function ListaStackScreen() {
+  return (
+    <ListaStack.Navigator>
+      <ListaStack.Screen name="Lista" component={Lista} />
+    </ListaStack.Navigator>
+  );
+}
+      
+
 const Tab = createBottomTabNavigator();
 export default () => (
   <SafeAreaProvider>
@@ -90,8 +103,8 @@ export default () => (
           }}
         />
         <Tab.Screen
-          name="Tag"
-          component={PerfilStackScreen}
+          name="Lista"
+          component={ListaStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
