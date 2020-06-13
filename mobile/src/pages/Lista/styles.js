@@ -3,43 +3,34 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   bgDiv: {
     height: '100%',
-    backgroundColor: 'grey',
+    backgroundColor: '#8867DD',
   },
 
   bgTitle: {
     paddingHorizontal: 32,
-    paddingVertical: '20%',
+    paddingVertical: 64,
     color: 'white',
-    fontWeight: 'bold',
     fontSize: 24,
   },
 
   frontDiv: {
     marginTop: '50%',
     position: 'absolute',
-    backgroundColor: 'white',
+    backgroundColor: '#F7FAFC',
     height: '100%',
     width: '100%',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-  },
-
-  frontTitle: {
-    marginHorizontal: 32,
-    marginVertical: 24,
-    color: 'gray',
-    fontSize: 16,
   },
 
   inputDiv: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 16,
+    marginHorizontal: 32,
+    marginVertical: 24,
+    paddingRight: 22,
   },
 
   inputTitle: {
-    height: 40,
-    fontSize: 16,
+    fontSize: 18,
   },
 
   buttons: {
@@ -53,8 +44,8 @@ export default StyleSheet.create({
     margin: 5,
     height: 50,
     width: 100,
-    backgroundColor: 'black',
-    color: 'white',
+    backgroundColor: 'white',
+    color: '#8867DD',
     fontSize: 12,
   },
 });
