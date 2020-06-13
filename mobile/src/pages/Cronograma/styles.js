@@ -5,6 +5,8 @@ export const Area = styled.View`
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 0, 1);
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
 `;
 
 export const Title = styled.Text`

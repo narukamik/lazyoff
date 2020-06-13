@@ -20,9 +20,8 @@ const TaskHeader = () => {
       <Title>Sprint 1</Title>
       <AreaInfos>
         <Area>
-          <AreaText>
-            <Feather name="calendar" size={20} color="#FFF" /> Jul 15 a Jul 18
-          </AreaText>
+          <Feather name="calendar" size={20} color="#FFF" />
+          <AreaText> Jul 15 a Jul 18</AreaText>
         </Area>
         <Area>
           <Nivel />

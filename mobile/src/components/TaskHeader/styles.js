@@ -48,9 +48,10 @@ export const Nivel = styled.View`
 `;
 
 export const AreaText = styled.Text`
+  align-items: center;
+  justify-content: baseline;
   text-align: center;
   font-size: 12px;
   color: #fff;
   margin-left: 4px;
-  background-color: #6d5dcf;
 `;
