@@ -10,7 +10,7 @@ export const Area = styled.View`
 export const InputRow = styled.View`
   flex: 1;
   flex-direction: row;
-  justify-context: space-between;
+  justify-content: space-between;
 `
 
 export const Title = styled.Text`
@@ -18,13 +18,13 @@ export const Title = styled.Text`
 `
 
 export const DefaultInput = styled.TextInput`
-  height: 40;
-  font-size: 16;
+  height: 40px;
+  font-size: 16px;
 `
 
 export const PasswordInput = styled.TextInput`
-  height: 40;
-  font-size: 16;
+  height: 40px;
+  font-size: 16px;
 `
 
 

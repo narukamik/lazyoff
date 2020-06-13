@@ -15,13 +15,12 @@ const Lista = () => {
       <View style={styles.bgDiv}>
         <Text  style={styles.bgTitle}>Dê um nome a sua nova lista</Text>
         <View style={styles.frontDiv}>
-          <Text style={styles.frontTitle}>Nome da lista</Text>
           <View style={styles.inputDiv}>
             <TextInput
               style={styles.inputTitle}
               placeholder={'Digite o nome da sua lista...'}
             />
-            <Feather name="smile" size={24} color="gray" />
+            <Feather name="smile" size={24} color="#8867DD" />
           </View>
           <View style={styles.buttons}>
             <Picker
