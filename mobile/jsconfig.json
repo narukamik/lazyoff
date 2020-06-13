@@ -1,1 +1,10 @@
-{"compilerOptions": {  "baseUrl": "src",  "paths": {    "~/*": ["*"]  }} } 
+{
+  "compilerOptions": {  
+  "target": "es5",
+  "module": "commonjs",
+  "baseUrl": "src",  
+  "paths": {    "~/*": ["*"]  }},
+  "exclude": [
+    "node_modules"
+  ]
+} 

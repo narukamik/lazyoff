@@ -19,7 +19,13 @@ const HomeStack = createStackNavigator();
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={Cronograma} />
+      <HomeStack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Home"
+        component={Cronograma}
+      />
     </HomeStack.Navigator>
   );
 }
@@ -29,7 +35,13 @@ const PerfilStack = createStackNavigator();
 function PerfilStackScreen() {
   return (
     <PerfilStack.Navigator>
-      <PerfilStack.Screen name="Perfil" component={Perfil} />
+      <PerfilStack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Perfil"
+        component={Perfil}
+      />
     </PerfilStack.Navigator>
   );
 }
@@ -39,7 +51,13 @@ const ListaStack = createStackNavigator();
 function ListaStackScreen() {
   return (
     <ListaStack.Navigator>
-      <ListaStack.Screen name="Lista" component={Lista} />
+      <ListaStack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Lista"
+        component={Lista}
+      />
     </ListaStack.Navigator>
   );
 }
@@ -56,7 +74,8 @@ export default () => (
           inactiveTintColor: '#c0c3c4',
           showLabel: false,
           style: {
-            borderTopWidth: 0,
+            borderTopColor: 'transparent',
+            elevation: 0,
           },
         }}
         screenOptions={{
