@@ -66,7 +66,7 @@ const Tab = createBottomTabNavigator();
 export default () => (
   <SafeAreaProvider>
     <NavigationContainer>
-      <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
+      <StatusBar hidden barStyle="light-content" backgroundColor="#7159c1" />
       <Tab.Navigator
         tabBarIcon="history"
         tabBarOptions={{

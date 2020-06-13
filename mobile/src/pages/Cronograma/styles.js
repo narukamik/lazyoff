@@ -4,7 +4,7 @@ export const Area = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 0, 1);
 `;
 
 export const Title = styled.Text`
