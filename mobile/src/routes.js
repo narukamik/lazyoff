@@ -18,14 +18,12 @@ const HomeStack = createStackNavigator();
 
 function HomeStackScreen() {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen
-        options={{
-          headerShown: false,
-        }}
-        name="Home"
-        component={Cronograma}
-      />
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <HomeStack.Screen name="Home" component={Cronograma} />
     </HomeStack.Navigator>
   );
 }
@@ -50,14 +48,12 @@ const ListaStack = createStackNavigator();
 
 function ListaStackScreen() {
   return (
-    <ListaStack.Navigator>
-      <ListaStack.Screen
-        options={{
-          headerShown: false,
-        }}
-        name="Lista"
-        component={Lista}
-      />
+    <ListaStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <ListaStack.Screen name="Lista" component={Lista} />
     </ListaStack.Navigator>
   );
 }
@@ -76,10 +72,8 @@ export default () => (
           style: {
             borderTopColor: 'transparent',
             elevation: 0,
+            backgroundColor: 'none',
           },
-        }}
-        screenOptions={{
-          headerShown: false,
         }}
       >
         <Tab.Screen

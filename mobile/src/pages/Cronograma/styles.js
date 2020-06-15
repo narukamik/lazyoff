@@ -1,14 +1,14 @@
 import styled from 'styled-components/native';
 
 const top = 50;
-const bottom = 50;
+const bottom = 180;
 const left = 15;
 
 export const Area = styled.View`
   position: relative;
   flex: 1;
   align-items: center;
-  background-color: rgba(255, 255, 0, 1);
+  background-color: #fff;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   padding: ${top}px ${left}px 30px;
