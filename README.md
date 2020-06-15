@@ -23,7 +23,7 @@ Tecnologias usadas:
   - [GitHub](https://github.com/daniloj-root)
 - Julio
   - [GitHub](https://github.com/j-bittenbinder)
-- Luis
+- Luiz
   - [GitHub](https://github.com/luizera-36)
 - Ottavio
   - [Linkedin](https://www.linkedin.com/in/osg/)
