@@ -1,4 +1,5 @@
 import React from 'react';
+import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
 import CronHeader from '~/components/CronHeader';
 import {
@@ -6,6 +7,8 @@ import {
   VerticalLine,
   Box,
   CheckArea,
+  CheckEndArea,
+  TextEnd,
   Time,
   Task,
   Square,
@@ -21,7 +24,9 @@ const Cronograma = () => {
       <Area>
         <VerticalLine />
         <Box>
-          <CheckArea />
+          <CheckArea>
+            <Feather name="circle" size={20} color="#6d5dcf" />
+          </CheckArea>
           <Time>13:00</Time>
           <Task>
             <Square />
@@ -31,6 +36,10 @@ const Cronograma = () => {
             </TextInfos>
           </Task>
         </Box>
+        <CheckEndArea>
+          <Feather name="stop-circle" size={20} color="#eee" />
+          <TextEnd>18:00</TextEnd>
+        </CheckEndArea>
       </Area>
     </Container>
   );

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 const top = 50;
-const bottom = 180;
+const bottom = 20;
 const left = 15;
 
 export const Area = styled.View`
@@ -17,10 +17,9 @@ export const Area = styled.View`
 export const VerticalLine = styled.View`
   position: absolute;
   top: ${top}px;
-  left: ${left + 10}px;
   bottom: ${bottom}px;
+  left: ${left + 10}px;
   width: 1px;
-  height: 100%;
   background: #ccc;
 `;
 
@@ -40,7 +39,26 @@ export const CheckArea = styled.View`
   width: 20px;
   height: 20px;
   margin-bottom: 30px;
-  background-color: #f00;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CheckEndArea = styled.View`
+  position: absolute;
+  bottom: ${bottom}px;
+  left: ${left}px;
+  height: 20px;
+  background-color: #fff;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+export const TextEnd = styled.Text`
+  font-size: 12px;
+  margin-left: 6px;
+  color: #aaa;
+  width: 100%;
 `;
 
 export const Time = styled.Text`
@@ -57,6 +75,7 @@ export const Task = styled.View`
   background-color: #ccc;
   width: 100%;
 `;
+
 export const Square = styled.View`
   width: 20px;
   height: 20px;
@@ -74,7 +93,7 @@ export const Title = styled.Text`
 `;
 
 export const Categoria = styled.Text`
-  font-size: 12px;
+  font-size: 10px;
   color: #aaa;
   width: 100%;
 `;
