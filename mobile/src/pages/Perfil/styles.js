@@ -17,6 +17,8 @@ export const Title = styled.Text`
   font-size: 32px;
 `;
 
+export const Icon = styled(Feather)` `;
+
 export const DefaultInput = styled.TextInput`
   height: 40px;
   font-size: 16px;
