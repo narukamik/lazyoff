@@ -8,6 +8,7 @@ import {
   Box,
   CheckArea,
   CheckEndArea,
+  CheckAux,
   TextEnd,
   Time,
   Task,

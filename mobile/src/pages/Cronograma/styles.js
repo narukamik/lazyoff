@@ -48,12 +48,11 @@ export const CheckEndArea = styled.View`
   position: absolute;
   bottom: ${bottom}px;
   left: ${left}px;
-  padding-left: ${left}px;
   height: 20px;
   background-color: #fff;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  width: 100%;
 `;
 
 export const TextEnd = styled.Text`
