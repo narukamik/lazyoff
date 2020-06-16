@@ -10,6 +10,7 @@ import IconDot from './components/IconDot';
 import Cronograma from './pages/Cronograma';
 import Perfil from './pages/Perfil';
 import Lista from './pages/Lista';
+import Checklist from './pages/Checklist';
 
 // import Dashboard from './pages/Dashboard';
 // import Profile from './pages/Profile';
@@ -24,6 +25,7 @@ function HomeStackScreen() {
       }}
     >
       <HomeStack.Screen name="Home" component={Cronograma} />
+      <HomeStack.Screen name="Checklist" component={Checklist} />
     </HomeStack.Navigator>
   );
 }

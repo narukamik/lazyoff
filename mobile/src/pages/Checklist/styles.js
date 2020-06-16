@@ -1,5 +1,8 @@
 import styled from 'styled-components/native';
-import { Feather } from '@expo/vector-icons';
+
+const top = 50;
+const bottom = 20;
+const left = 15;
 
 export const Container = styled.View`
   width: 100%;
@@ -11,6 +14,7 @@ export const Container = styled.View`
 export const Button = styled.TouchableOpacity`
   
 `;
+
 
 export const SmallTitle = styled.Text`
   text-align: left;
@@ -31,5 +35,3 @@ export const Title = styled.Text`
   color: #fff;
   margin-bottom: 30px;
 `;
-
-export const Icon = styled(Feather)``;
