@@ -20,7 +20,7 @@ const Lista = () => {
               style={styles.inputTitle}
               placeholder="Digite o nome da sua lista..."
             />
-            <Feather name="smile" size={24} color="#8867DD" />
+            <Feather name="smile" size={24} color="#6d5dcf" />
           </View>
           <View style={styles.buttons}>
             <Picker

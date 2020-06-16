@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   bgDiv: {
     height: '100%',
-    backgroundColor: '#8867DD',
+    backgroundColor: '#6d5dcf',
   },
 
   bgTitle: {
@@ -14,7 +14,7 @@ export default StyleSheet.create({
   },
 
   frontDiv: {
-    marginTop: '50%',
+    marginTop: '45%',
     position: 'absolute',
     backgroundColor: '#F7FAFC',
     height: '100%',
@@ -24,13 +24,16 @@ export default StyleSheet.create({
   inputDiv: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     marginHorizontal: 32,
     marginVertical: 24,
-    paddingRight: 22,
+    paddingRight: 22
   },
 
   inputTitle: {
     fontSize: 18,
+    width: '100%',
+    paddingRight: 6
   },
 
   buttons: {
