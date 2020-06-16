@@ -1,4 +1,4 @@
-# Repositório do SQUAD3
+# LazyOff
 
 ## Projeto 
 App mobile feito com a intenção de auxiliar a organização de tarefas e a integração com o cotidiano durante o trabalho em home office. As funcionalidades visam tornar o dia mais produtivo, reforçar o foco nas prioridades e, também, facilitar a conciliação com os afazeres domésticos de forma não-invasiva, em um app de aparência amigável e de fácil uso. Propomos, também, sugerir formas de entretenimento capazes de preencher as pausas do trabalho e o tempo livre.
