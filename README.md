@@ -5,10 +5,12 @@ App mobile feito com a intenção de auxiliar a organização de tarefas e a int
 
 Tecnologias usadas: 
 - Node
-- React Native (Expo)
+- React Native 
+- Expo
 - MongoDB
+- RealmDB
 
-## links
+## Links
 - [Link do XD]()
 - [Trello](https://trello.com/b/dPVFZyUT/fcamara-squad-3)
 - [Mural](https://app.mural.co/invitation/mural/squad35212/1590104264193?sender=otavioguimaraesso3207&key=5f208d0e-0202-4329-8a49-4c4f6eef5e03)
