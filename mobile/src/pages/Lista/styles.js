@@ -1,54 +1,50 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  bgDiv: {
-    height: '100%',
-    backgroundColor: '#6d5dcf',
-  },
+export const Area = styled.View`
+  height: 100%;
+  background-color: #6d5dcf;
+`;
+ 
+export const AreaText = styled.Text`
+  padding: 64px 32px;
+  color: white;
+  font-size: 24px;
+`;
 
-  bgTitle: {
-    paddingHorizontal: 32,
-    paddingVertical: 64,
-    color: 'white',
-    fontSize: 24,
-  },
+export const Box = styled.View`
+  margin-top: 45%;
+  position: absolute;
+  backgroundColor: #F7FAFC;
+  height: 100%;
+  width: 100%;
+`;
 
-  frontDiv: {
-    marginTop: '45%',
-    position: 'absolute',
-    backgroundColor: '#F7FAFC',
-    height: '100%',
-    width: '100%',
-  },
+export const InputArea = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 32px;
+  padding-right: 22px;
+`;
 
-  inputDiv: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginHorizontal: 32,
-    marginVertical: 24,
-    paddingRight: 22
-  },
+export const Input = styled.TextInput`
+  font-size: 18px;
+  width: 100%;
+  padding-right: 6px;
+`;
 
-  inputTitle: {
-    fontSize: 18,
-    width: '100%',
-    paddingRight: 6
-  },
+export const PickerArea = styled.View`
+  margin-top: 20px;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+`;
 
-  buttons: {
-    marginTop: 20,
-    flexDirection: 'row',
-    width: '100%',
-    justifyContent: 'center',
-  },
-
-  buttonProp: {
-    margin: 5,
-    height: 50,
-    width: 100,
-    backgroundColor: 'white',
-    color: '#8867DD',
-    fontSize: 12,
-  },
-});
+export const Picker = styled.Picker`
+  margin: 5px;
+  height: 50px;
+  width: 100px;
+  background-color: white;
+  color: #8867DD;
+  font-size: 12px;
+`;
