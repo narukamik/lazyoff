@@ -69,7 +69,7 @@ export const Time = styled.Text`
   margin-bottom: 8px;
 `;
 
-export const Task = styled.View`
+export const Task = styled.TouchableOpacity`
   padding: 10px;
   flex-direction: row;
   border-radius: 3px;

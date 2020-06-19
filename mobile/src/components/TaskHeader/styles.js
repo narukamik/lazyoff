@@ -49,7 +49,7 @@ export const Nivel = styled.View`
 
 export const AreaText = styled.Text`
   align-items: center;
-  justify-content: baseline;
+  justify-content: center;
   text-align: center;
   font-size: 12px;
   color: #fff;

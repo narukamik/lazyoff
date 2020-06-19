@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
 import {
@@ -12,9 +13,16 @@ import {
 } from './styles';
 
 const TaskHeader = () => {
+  
+  const navigation = useNavigation();
+
+  function navigateToHome() {
+    navigation.navigate('Home');
+  }
+
   return (
     <Container>
-      <ButtonReturn>
+      <ButtonReturn onPress={() => navigateToHome()}>
         <Feather name="chevron-left" size={30} color="#FFF" />
       </ButtonReturn>
       <Title>Sprint 1</Title>

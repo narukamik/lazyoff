@@ -11,9 +11,24 @@ import Cronograma from './pages/Cronograma';
 import Perfil from './pages/Perfil';
 import Lista from './pages/Lista';
 import Checklist from './pages/Checklist';
+import Detalhes from './pages/Detalhes';
 
 // import Dashboard from './pages/Dashboard';
 // import Profile from './pages/Profile';
+
+const DetalhesStack = createStackNavigator();
+
+function DetalhesStackScreen() {
+  return (
+    <DetalhesStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <DetalhesStack.Screen name="Detalhes" component={Detalhes} />
+    </DetalhesStack.Navigator>
+  );
+}
 
 const HomeStack = createStackNavigator();
 
@@ -122,7 +137,7 @@ export default () => (
         />
         <Tab.Screen
           name="Search"
-          component={PerfilStackScreen}
+          component={DetalhesStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot

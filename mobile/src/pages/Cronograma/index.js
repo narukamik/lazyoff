@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
 import CronHeader from '~/components/CronHeader';
@@ -18,6 +19,13 @@ import {
 } from './styles';
 
 const Cronograma = () => {
+
+  const navigation = useNavigation();
+
+  function navigateToDetalhes() {
+    navigation.navigate('Detalhes');
+  }
+
   return (
     <Container>
       <CronHeader />
@@ -28,7 +36,7 @@ const Cronograma = () => {
             <Feather name="circle" size={20} color="#6d5dcf" />
           </CheckArea>
           <Time>13:00</Time>
-          <Task>
+          <Task onPress={() => navigateToDetalhes()}>
             <Square />
             <TextInfos>
               <Title>Compras do mês</Title>
