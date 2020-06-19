@@ -28,7 +28,7 @@ const Cronograma = () => {
 
   return (
     <Container>
-      <CronHeader />
+      <CronHeader navigation={navigation} icon="list"/>
       <Area>
         <VerticalLine />
         <Box>
