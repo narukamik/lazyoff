@@ -9,6 +9,8 @@ import IconDot from './components/IconDot';
 
 import Cronograma from './pages/Cronograma';
 import Perfil from './pages/Perfil';
+import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
 import Lista from './pages/Lista';
 import Checklist from './pages/Checklist';
 import Detalhes from './pages/Detalhes';
@@ -50,13 +52,12 @@ const PerfilStack = createStackNavigator();
 function PerfilStackScreen() {
   return (
     <PerfilStack.Navigator>
-      <PerfilStack.Screen
-        options={{
+      options={{
           headerShown: false,
         }}
-        name="Perfil"
-        component={Perfil}
-      />
+      <PerfilStack.Screen name="Perfil" component={Perfil}/>
+      <PerfilStack.Screen name="SignUp" component={SignUp}/>
+      <PerfilStack.Screen name="SignIn" component={SignIn}/>
     </PerfilStack.Navigator>
   );
 }
