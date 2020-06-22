@@ -51,13 +51,14 @@ const PerfilStack = createStackNavigator();
 
 function PerfilStackScreen() {
   return (
-    <PerfilStack.Navigator>
+    <PerfilStack.Navigator
       options={{
           headerShown: false,
         }}
-      <PerfilStack.Screen name="Perfil" component={Perfil}/>
-      <PerfilStack.Screen name="SignUp" component={SignUp}/>
-      <PerfilStack.Screen name="SignIn" component={SignIn}/>
+        >
+      <PerfilStack.Screen name="Perfil" component={Perfil} />
+      <PerfilStack.Screen name="SignUp" component={SignUp} />
+      <PerfilStack.Screen name="SignIn" component={SignIn} />
     </PerfilStack.Navigator>
   );
 }
