@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { Feather } from '@expo/vector-icons';
 
 export const Area = styled.View`
   flex: 1;
@@ -8,24 +7,26 @@ export const Area = styled.View`
   background-color: gray;
 `;
 
-export const InputRow = styled.View`
-  flex: 1;
-  flex-direction: row;
-  justify-content: space-between;
-`;
+const Background = styled.ImageBackground`
+    width: 100%;
+    height: 15%;
+`
 
-export const Title = styled.Text`
-  font-size: 32px;
-`;
+const SignIn = styled.TouchableOpacity`
+    position: absolute;
+    color: rgb(76, 53, 194);
+    width: 90%;
+`
 
-export const Icon = styled(Feather)` `;
+const PurpleText = styled.Text`
+    color: rgb(76, 53, 194);
+`
 
-export const DefaultInput = styled.TextInput`
-  height: 40px;
-  font-size: 16px;
-`;
+const WhiteText = styled.Text`
+    color : white;
+`
 
-export const PasswordInput = styled.TextInput`
-  height: 40px;
-  font-size: 16px;
-`;
+const SignUp = styled.TouchableOpacity`
+    width: 90%;
+    color: white;
+`

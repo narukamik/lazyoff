@@ -19,14 +19,14 @@ const Lista = () => {
   return (
     <Container>
       <Area>
-        <AreaText>Dê um nome a sua nova lista</AreaText>
+        <AreaText>Dê um nome à sua nova lista</AreaText>
         <Box>
           <InputArea>
             <Input placeholder="Digite o nome da sua lista..."/>
             <Feather name="smile" size={24} color="#6d5dcf" />
           </InputArea>
           <PickerArea>
-
+            
             <Picker selectedValue={dia} onValueChange={(itemValue, itemIndex) => setDia(itemValue)}>
               <Picker.Item label="Dia" value="dia" />
               <Picker.Item label="01" value="01" />
