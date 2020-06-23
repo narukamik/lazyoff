@@ -34,17 +34,16 @@ export const Input = styled.TextInput`
 `;
 
 export const PickerArea = styled.View`
-  margin-top: 20px;
   flex-direction: row;
   width: 100%;
   justify-content: center;
 `;
 
-export const Picker = styled.Picker`
+export const PickerSelect = styled.View`
   margin: 5px;
-  height: 50px;
+  height: 32px;
   width: 100px;
-  background-color: white;
+  background-color: transparent;
   color: #8867DD;
   font-size: 12px;
 `;
