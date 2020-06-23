@@ -1,79 +1,88 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import IconDot from './components/IconDot';
-
 import Cronograma from './pages/Cronograma';
 import Perfil from './pages/Perfil';
-import SignUp from './pages/SignUp';
-import SignIn from './pages/SignIn';
 import Lista from './pages/Lista';
 import Checklist from './pages/Checklist';
 import Detalhes from './pages/Detalhes';
-
 // import Dashboard from './pages/Dashboard';
 // import Profile from './pages/Profile';
-
-const DetalhesStack = createStackNavigator();
+const Stack = createStackNavigator();
 
 function DetalhesStackScreen() {
   return (
-    <DetalhesStack.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <DetalhesStack.Screen name="Detalhes" component={Detalhes} />
-    </DetalhesStack.Navigator>
+      <Stack.Screen name="Detalhes" component={Detalhes} />
+    </Stack.Navigator>
   );
 }
 
-const HomeStack = createStackNavigator();
-
-function HomeStackScreen() {
+function CronStackScreen() {
   return (
-    <HomeStack.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <HomeStack.Screen name="Home" component={Cronograma} />
-      <HomeStack.Screen name="Checklist" component={Checklist} />
-    </HomeStack.Navigator>
+      <Stack.Screen name="Cronograma" component={Cronograma} />
+    </Stack.Navigator>
   );
 }
 
-const PerfilStack = createStackNavigator();
+function ListStackScreen() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Checklist" component={Checklist} />
+    </Stack.Navigator>
+  );
+}
 
 function PerfilStackScreen() {
   return (
-    <PerfilStack.Navigator
-      options={{
+    <Stack.Navigator
+       options={{
           headerShown: false,
         }}
-        >
-      <PerfilStack.Screen name="Perfil" component={Perfil} />
-      <PerfilStack.Screen name="SignUp" component={SignUp} />
-      <PerfilStack.Screen name="SignIn" component={SignIn} />
-    </PerfilStack.Navigator>
+      >
+      <Stack.Screen
+        name="Perfil"
+        component={Perfil}
+      />
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+      />
+    </Stack.Navigator>
   );
 }
 
-const ListaStack = createStackNavigator();
-
 function ListaStackScreen() {
   return (
-    <ListaStack.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <ListaStack.Screen name="Lista" component={Lista} />
-    </ListaStack.Navigator>
+      <Stack.Screen name="Lista" component={Lista} />
+    </Stack.Navigator>
   );
 }
 
@@ -97,7 +106,7 @@ export default () => (
       >
         <Tab.Screen
           name="Home"
-          component={HomeStackScreen}
+          component={PerfilStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
@@ -111,7 +120,7 @@ export default () => (
         />
         <Tab.Screen
           name="Perfil"
-          component={PerfilStackScreen}
+          component={ListaStackScreen} // change to Categoria
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
@@ -125,7 +134,7 @@ export default () => (
         />
         <Tab.Screen
           name="Lista"
-          component={ListaStackScreen}
+          component={CronStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
@@ -139,12 +148,12 @@ export default () => (
         />
         <Tab.Screen
           name="Search"
-          component={DetalhesStackScreen}
+          component={ListStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
                 isActive={focused}
-                name="search"
+                name="list"
                 size={size}
                 color={color}
               />
