@@ -9,6 +9,8 @@ import IconDot from './components/IconDot';
 
 import Cronograma from './pages/Cronograma';
 import Perfil from './pages/Perfil';
+import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
 import Lista from './pages/Lista';
 import Checklist from './pages/Checklist';
 import Detalhes from './pages/Detalhes';
@@ -16,67 +18,62 @@ import Detalhes from './pages/Detalhes';
 // import Dashboard from './pages/Dashboard';
 // import Profile from './pages/Profile';
 
-const Stack = createStackNavigator();
+const DetalhesStack = createStackNavigator();
 
 function DetalhesStackScreen() {
   return (
-    <Stack.Navigator
+    <DetalhesStack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Detalhes" component={Detalhes} />
-    </Stack.Navigator>
+      <DetalhesStack.Screen name="Detalhes" component={Detalhes} />
+    </DetalhesStack.Navigator>
   );
 }
 
-function CronStackScreen() {
+const HomeStack = createStackNavigator();
+
+function HomeStackScreen() {
   return (
-    <Stack.Navigator
+    <HomeStack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Cronograma" component={Cronograma} />
-    </Stack.Navigator>
+      <HomeStack.Screen name="Home" component={Cronograma} />
+      <HomeStack.Screen name="Checklist" component={Checklist} />
+    </HomeStack.Navigator>
   );
 }
 
-function ListStackScreen() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="Checklist" component={Checklist} />
-    </Stack.Navigator>
-  );
-}
+const PerfilStack = createStackNavigator();
 
 function PerfilStackScreen() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        options={{
+    <PerfilStack.Navigator
+      options={{
           headerShown: false,
         }}
-        name="Perfil"
-        component={Perfil}
-      />
-    </Stack.Navigator>
+        >
+      <PerfilStack.Screen name="Perfil" component={Perfil} />
+      <PerfilStack.Screen name="SignUp" component={SignUp} />
+      <PerfilStack.Screen name="SignIn" component={SignIn} />
+    </PerfilStack.Navigator>
   );
 }
 
+const ListaStack = createStackNavigator();
+
 function ListaStackScreen() {
   return (
-    <Stack.Navigator
+    <ListaStack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Lista" component={Lista} />
-    </Stack.Navigator>
+      <ListaStack.Screen name="Lista" component={Lista} />
+    </ListaStack.Navigator>
   );
 }
 
@@ -100,7 +97,7 @@ export default () => (
       >
         <Tab.Screen
           name="Home"
-          component={PerfilStackScreen}
+          component={HomeStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
@@ -114,7 +111,7 @@ export default () => (
         />
         <Tab.Screen
           name="Perfil"
-          component={ListaStackScreen} // change to Categoria
+          component={PerfilStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
@@ -128,7 +125,7 @@ export default () => (
         />
         <Tab.Screen
           name="Lista"
-          component={CronStackScreen}
+          component={ListaStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
@@ -142,12 +139,12 @@ export default () => (
         />
         <Tab.Screen
           name="Search"
-          component={ListStackScreen}
+          component={DetalhesStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
                 isActive={focused}
-                name="list"
+                name="search"
                 size={size}
                 color={color}
               />
