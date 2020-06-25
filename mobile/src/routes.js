@@ -4,14 +4,16 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import IconDot from './components/IconDot';
 import Cronograma from './pages/Cronograma';
 import Perfil from './pages/Perfil';
 import Lista from './pages/Lista';
 import Checklist from './pages/Checklist';
 import Detalhes from './pages/Detalhes';
-// import Dashboard from './pages/Dashboard';
-// import Profile from './pages/Profile';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+
 const Stack = createStackNavigator();
 
 function DetalhesStackScreen() {
@@ -53,22 +55,13 @@ function ListStackScreen() {
 function PerfilStackScreen() {
   return (
     <Stack.Navigator
-       options={{
-          headerShown: false,
-        }}
-      >
-      <Stack.Screen
-        name="Perfil"
-        component={Perfil}
-      />
-      <Stack.Screen
-        name="SignIn"
-        component={SignIn}
-      />
-      <Stack.Screen
-        name="SignUp"
-        component={SignUp}
-      />
+      options={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Perfil" component={Perfil} />
+      <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="SignUp" component={SignUp} />
     </Stack.Navigator>
   );
 }
@@ -104,6 +97,20 @@ export default () => (
         }}
       >
         <Tab.Screen
+          name="Lista"
+          component={CronStackScreen}
+          options={{
+            tabBarIcon: ({ focused, color, size }) => (
+              <IconDot
+                isActive={focused}
+                name="clock"
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
           name="Home"
           component={PerfilStackScreen}
           options={{
@@ -125,20 +132,6 @@ export default () => (
               <IconDot
                 isActive={focused}
                 name="tag"
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Lista"
-          component={CronStackScreen}
-          options={{
-            tabBarIcon: ({ focused, color, size }) => (
-              <IconDot
-                isActive={focused}
-                name="clock"
                 size={size}
                 color={color}
               />

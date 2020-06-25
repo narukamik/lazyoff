@@ -1,34 +1,35 @@
 import React from 'react';
 import Container from '~/components/Container';
-import { 
+import {
   Area,
   InputRow,
   Icon,
   Title,
   DefaultInput,
-  PasswordInput
+  PasswordInput,
 } from './styles';
 
 const SignIn = () => {
-    return (
-      <Container>
-        <Area>
-          <Title>LAZYOFF</Title>
-          <InputRow>
-            <DefaultInput label="Email"/>
-            <Icon name="at-sign" size={20} color="purple"/>
-          </InputRow>
-          <InputRow>
-            <PasswordInput
-            secureTextEntry={true}
-            password={true}
+  return (
+    <Container>
+      <Area>
+        <Title>LAZYOFF</Title>
+        <InputRow>
+          <DefaultInput label="Email" />
+          <Icon name="at-sign" size={20} color="purple" />
+        </InputRow>
+        <InputRow>
+          <PasswordInput
+            secureTextEntry
+            password
             label="Password"
-            placeholder="•••••••••"/>
-            <Icon name="lock" size={20} color="purple" />
-          </InputRow>
-        </Area>
-      </Container>
-    );
-  };
-  
-  export default SignIn;
+            placeholder="•••••••••"
+          />
+          <Icon name="lock" size={20} color="purple" />
+        </InputRow>
+      </Area>
+    </Container>
+  );
+};
+
+export default SignIn;
