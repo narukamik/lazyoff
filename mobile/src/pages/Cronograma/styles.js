@@ -1,4 +1,6 @@
 import styled from 'styled-components/native';
+import { LinearGradient } from 'expo-linear-gradient';
+import colors from '~/config/ColorConfig';
 
 const top = 50;
 const bottom = 20;
@@ -69,7 +71,15 @@ export const Time = styled.Text`
   margin-bottom: 8px;
 `;
 
-export const Task = styled.TouchableOpacity`
+export const TaskTouch = styled.TouchableOpacity`
+  width: 100%;
+`;
+
+export const Task = styled(LinearGradient).attrs({
+  colors: [colors.bgLinearButton.dark, colors.bgLinearButton.light],
+  start: [0, 1],
+  end: [1, 0],
+})`
   padding: 10px;
   flex-direction: row;
   border-radius: 3px;
@@ -80,7 +90,7 @@ export const Task = styled.TouchableOpacity`
 export const Square = styled.View`
   width: 20px;
   height: 20px;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   border-radius: 2px;
 `;
 
@@ -91,6 +101,7 @@ export const TextInfos = styled.View`
 export const Title = styled.Text`
   font-size: 14px;
   width: 100%;
+  color: #fff;
 `;
 
 export const Categoria = styled.Text`

@@ -1,7 +1,13 @@
-import styled from 'styled-components/native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React from 'react';
 
-export default styled(SafeAreaView)`
-  flex: 1;
-  background-color: #6d5dcf;
-`;
+import { ContainerC, ContainerA } from './styles';
+
+const Container = ({ children }) => {
+  return (
+    <ContainerC>
+      <ContainerA>{children}</ContainerA>
+    </ContainerC>
+  );
+};
+
+export default Container;

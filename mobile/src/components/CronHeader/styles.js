@@ -1,16 +1,19 @@
 import styled from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import colors from '~/config/ColorConfig';
 
-export const Container = styled.View`
+export const Container = styled(LinearGradient).attrs({
+  colors: [colors.bgLinearHeader.light, colors.bgLinearHeader.dark],
+  start: [0, 1],
+  end: [1, 0],
+})`
   width: 100%;
-  background-color: #6d5dcf;
   margin-bottom: auto;
   padding: 40px 10px 0;
 `;
 
-export const Button = styled.TouchableOpacity`
-  
-`;
+export const Button = styled.TouchableOpacity``;
 
 export const SmallTitle = styled.Text`
   text-align: left;
@@ -21,7 +24,7 @@ export const AreaTitle = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #6d5dcf;
+  /* background-color: #6d5dcf; */
   margin-bottom: auto;
 `;
 

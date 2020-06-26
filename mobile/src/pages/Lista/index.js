@@ -38,7 +38,7 @@ const Lista = () => {
   return (
     <Container>
       <Area>
-        <AreaText>Dê um nome à sua nova lista</AreaText>
+        <AreaText>Dê um nome a sua nova lista</AreaText>
         <Box>
           <InputArea>
             <Input placeholder="Digite o nome da sua lista..."/>

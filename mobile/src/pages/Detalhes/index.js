@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { Feather } from '@expo/vector-icons';
+import { CheckBox } from 'react-native';
 import Container from '~/components/Container';
 import TaskHeader from '~/components/TaskHeader';
-import { Feather } from '@expo/vector-icons';
-import { CheckBox } from "react-native";
 import {
   Box,
   CheckArea,
@@ -10,11 +10,10 @@ import {
   CheckItem,
   Notes,
   NotesText,
-  NotesButton
-} from './styles'
+  NotesButton,
+} from './styles';
 
 const Detalhes = () => {
-
   const [isSelected, setSelection] = useState(false);
 
   return (

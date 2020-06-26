@@ -16,10 +16,10 @@ import {
   TextInfos,
   Title,
   Categoria,
+  TaskTouch
 } from './styles';
 
 const Cronograma = () => {
-
   const navigation = useNavigation();
 
   function navigateToDetalhes() {
@@ -28,7 +28,7 @@ const Cronograma = () => {
 
   return (
     <Container>
-      <CronHeader navigation={navigation} icon="list"/>
+      <CronHeader navigation={navigation} icon="list" />
       <Area>
         <VerticalLine />
         <Box>
@@ -36,13 +36,15 @@ const Cronograma = () => {
             <Feather name="circle" size={20} color="#6d5dcf" />
           </CheckArea>
           <Time>13:00</Time>
-          <Task onPress={() => navigateToDetalhes()}>
-            <Square />
-            <TextInfos>
-              <Title>Compras do mês</Title>
-              <Categoria>Casa</Categoria>
-            </TextInfos>
-          </Task>
+          <TaskTouch onPress={() => navigateToDetalhes()}>
+            <Task>
+              <Square />
+              <TextInfos>
+                <Title>Compras do mês</Title>
+                <Categoria>Casa</Categoria>
+              </TextInfos>
+            </Task>
+          </TaskTouch>
         </Box>
         <CheckEndArea>
           <Feather name="stop-circle" size={20} color="#eee" />

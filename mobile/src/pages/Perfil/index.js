@@ -1,41 +1,24 @@
 import React from 'react';
 import Container from '~/components/Container';
-import {
- Area,
- PurpleText,
- WhiteText,
- SignIn,
- SignUp
-} from './styles'
-import { useNavigation } from '@react-navigation/native';
+import { Area, PurpleText, WhiteText, SignIn, SignUp } from './styles';
 
-const Perfil = () => {
-    const navigation = useNavigation();
+const Perfil = ({ navigation }) => {
+  function handleNavigation(routeName) {
+    navigation.navigate(routeName);
+  }
 
-    function navigateToSignUp() {
-        navigation.navigate('SignUp');
-    }
-
-    function navigateToSignIn() {
-        navigation.navigate('SignIn');
-    }
-
-    return (
-        <Container>
-            <Area>
-                <SignIn onPress={() => navigateToSignIn()}>
-                    <PurpleText>
-                        SignIn
-                    </PurpleText>
-                </SignIn>
-                <SignUp onPress={() => navigateToSignUn()}>
-                    <WhiteText>
-                        SignUp
-                    </WhiteText>
-                </SignUp>
-            </Area>
-        </Container>
-    );
+  return (
+    <Container>
+      <Area>
+        <SignIn onPress={() => handleNavigation('SignIn')}>
+          <PurpleText>SignIn</PurpleText>
+        </SignIn>
+        <SignUp onPress={() => handleNavigation('SignUp')}>
+          <WhiteText>SignUp</WhiteText>
+        </SignUp>
+      </Area>
+    </Container>
+  );
 };
 
 export default Perfil;
