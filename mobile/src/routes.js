@@ -14,21 +14,21 @@ import SignIn from './pages/SignIn';
 import Lista from './pages/Lista';
 import Checklist from './pages/Checklist';
 import Detalhes from './pages/Detalhes';
+import Profile from './pages/Profile';
 
 // import Dashboard from './pages/Dashboard';
-// import Profile from './pages/Profile';
 
-const DetalhesStack = createStackNavigator();
+const ProfileStack = createStackNavigator();
 
-function DetalhesStackScreen() {
+function ProfileStackScreen() {
   return (
-    <DetalhesStack.Navigator
+    <ProfileStack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <DetalhesStack.Screen name="Detalhes" component={Detalhes} />
-    </DetalhesStack.Navigator>
+      <ProfileStack.Screen name="Profile" component={Profile} />
+    </ProfileStack.Navigator>
   );
 }
 
@@ -43,6 +43,7 @@ function HomeStackScreen() {
     >
       <HomeStack.Screen name="Home" component={Cronograma} />
       <HomeStack.Screen name="Checklist" component={Checklist} />
+      <HomeStack.Screen name="Detalhes" component={Detalhes} />
     </HomeStack.Navigator>
   );
 }
@@ -139,7 +140,7 @@ export default () => (
         />
         <Tab.Screen
           name="Search"
-          component={DetalhesStackScreen}
+          component={ProfileStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
