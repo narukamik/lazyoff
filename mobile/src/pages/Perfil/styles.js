@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import colors from '~/config/ColorConfig';
 
 export const Area = styled.View`
   flex: 1;
@@ -14,13 +15,13 @@ export const Background = styled.ImageBackground`
 
 export const SignIn = styled.TouchableOpacity`
   position: absolute;
-  color: rgb(76, 53, 194);
+  color: ${colors.primary};
   height: 15px;
   width: 90%;
 `;
 
 export const PurpleText = styled.Text`
-  color: rgb(76, 53, 194);
+  color: ${colors.primary};
 `;
 
 export const WhiteText = styled.Text`

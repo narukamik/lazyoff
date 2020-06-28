@@ -1,4 +1,5 @@
 import React from 'react';
+import { PanResponder } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
