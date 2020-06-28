@@ -17,7 +17,7 @@ const TaskHeader = () => {
   const navigation = useNavigation();
 
   function navigateToHome() {
-    navigation.navigate('Home');
+    navigation.navigate('Cronograma');
   }
 
   return (

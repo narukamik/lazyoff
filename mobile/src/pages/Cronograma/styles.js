@@ -71,6 +71,10 @@ export const Time = styled.Text`
   margin-bottom: 8px;
 `;
 
+export const TaskTouch = styled.TouchableOpacity`
+  width: 100%;
+`;
+
 export const Task = styled(LinearGradient).attrs({
   colors: [colors.bgLinearButton.dark, colors.bgLinearButton.light],
   start: [0, 1],
