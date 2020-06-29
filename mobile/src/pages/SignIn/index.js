@@ -1,12 +1,13 @@
 import React from 'react';
 import Container from '~/components/Container';
-import { Fumi } from 'react-native-textinput-effects';
 import { Feather } from '@expo/vector-icons';
 
 import {
   Area,
   Divider,
   Submit,
+  Input,
+  WhiteText,
   Title,
 } from './styles';
 
@@ -15,27 +16,27 @@ const SignIn = () => {
     <Container>
       <Area>
         <Title>LAZYOFF</Title>
-        <Fumi
+        <Input
         label={'Email'}
         iconClass={Feather}
         iconName={'at-sign'}
-        iconColor={'#6C5DCE'}
-        iconSize={15}
-        iconWidth={30}
+        labelStyle={{ color: '#91627b' }}
+        inputStyle={{ color: '#91627b' }}
+        labelContainerStyle={{ padding: 5 }}
+        iconContainerStyle={{ padding: 5 }}
         />
-        <Divider/>
-        <Fumi
+        <Input
         label={'Senha'}
         iconClass={Feather}
         iconName={'lock'}
-        iconColor={'#6C5DCE'}
-        iconSize={15}
-        iconWidth={15}
-        inputPadding={10}
+        labelStyle={{ color: '#91627b' }}
+        inputStyle={{ color: '#91627b' }}
+        labelContainerStyle={{ padding: 5 }}
+        iconContainerStyle={{ padding: 5 }}
         />
         <Divider/>
           <Submit>
-            <Text>Sign Up</Text>
+            <WhiteText>Continuar</WhiteText>
           </Submit>
       </Area>
     </Container>

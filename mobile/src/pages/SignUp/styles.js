@@ -1,11 +1,13 @@
 import styled from 'styled-components/native';
-import { Feather } from '@expo/vector-icons';
+import { Kohana } from 'react-native-textinput-effects';
+import colors from '~/config/ColorConfig';
 
 export const Area = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: gray;
+  background-color: white;
+  
 `;
 
 export const Title = styled.Text`
@@ -18,21 +20,40 @@ export const InputRow = styled.View`
   border-bottom-width: 1;
   border-color: #000;
 `;
-export const Icon = styled(Feather)``;
 
 export const DefaultInput = styled.TextInput`
   height: 40px;
   font-size: 16px;
   border-radius: 5px;
   border-width: 2px;
-  border-color: rgb(76, 53, 194);
+  border: solid 1px ${colors.primary};
 `;
 
 export const PasswordInput = styled.TextInput`
-  flex: 1;
   height: 40px;
   font-size: 16px;
   border-radius: 5px;
   border-width: 2px;
-  border-color: rgb(76, 53, 194);
+  border: solid 1px ${colors.primary};
+`;
+
+export const Submit = styled.TouchableOpacity`
+  border-radius: 3px;
+  padding-vertical: 2.5%;
+  padding-horizontal: 35%;
+  background-color: ${colors.primary};
+`;
+
+export const WhiteText = styled.Text`
+  color: white;
+`;
+
+export const Divider = styled.View`
+  height:3%;
+  display:block
+`;
+
+
+export const Input = styled(Kohana)`
+  border: solid 1px ${colors.primary};
 `;

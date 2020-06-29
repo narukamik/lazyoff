@@ -38,7 +38,7 @@ export const SignIn = styled.TouchableOpacity`
   border-radius: 3px;
   padding-vertical: 2.5%;
   padding-horizontal: 35%;
-  background-color: #6C5DCE;
+  background-color: ${colors.primary};
 `;
 
 export const WhiteText = styled.Text`
