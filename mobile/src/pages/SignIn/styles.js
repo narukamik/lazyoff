@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import colors from '~/config/ColorConfig';
 import { Feather } from '@expo/vector-icons';
 
 export const Area = styled.View`
@@ -25,7 +26,7 @@ export const DefaultInput = styled.TextInput`
   font-size: 16px;
   border-radius: 5px;
   border-width: 2px;
-  border: solid 1px #6C5DCE;
+  border: solid 1px ${colors.primary};
 `;
 
 export const PasswordInput = styled.TextInput`
@@ -33,12 +34,12 @@ export const PasswordInput = styled.TextInput`
   font-size: 16px;
   border-radius: 5px;
   border-width: 2px;
-  border: solid 1px #6C5DCE;
+  border: solid 1px ${colors.primary};
 `;
 
 export const Submit = styled.TouchableOpacity`
   border-radius: 3px;
   padding-vertical: 2.5%;
   padding-horizontal: 35%;
-  background-color: #6C5DCE;
+  background-color: ${colors.primary};
 `

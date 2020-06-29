@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import colors from '~/config/ColorConfig';
 
 export const Area = styled.View`
   width: 100%;

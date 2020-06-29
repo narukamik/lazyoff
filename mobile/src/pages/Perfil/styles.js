@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import colors from '~/config/ColorConfig';
 
 export const Area = styled.View`
   flex: 1;
@@ -21,11 +22,11 @@ export const SignUp = styled.TouchableOpacity`
   border-radius: 3px;
   padding-vertical: 2.5%;
   padding-horizontal: 35%;
-  border: solid 1px #6C5DCE;
+  border: solid 1px ${colors.primary};
 `;
 
 export const PurpleText = styled.Text`
-  color: #6C5DCE;
+  color: ${colors.primary} ;
 `;
 
 export const Divider = styled.View`
