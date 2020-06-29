@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Animated, View } from 'react-native';
 import colors from '~/config/ColorConfig';
 
 const top = 50;
@@ -71,7 +72,7 @@ export const Time = styled.Text`
   margin-bottom: 8px;
 `;
 
-export const TaskTouch = styled.TouchableOpacity`
+export const TaskTouch = styled(Animated.View)`
   width: 100%;
 `;
 
