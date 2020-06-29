@@ -2,9 +2,10 @@ import styled from 'styled-components/native';
 
 export const Area = styled.View`
   flex: 1;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: gray;
+  background-color: white;
 `;
 
 export const Background = styled.ImageBackground`
@@ -12,23 +13,33 @@ export const Background = styled.ImageBackground`
   height: 15%;
 `;
 
-export const SignIn = styled.TouchableOpacity`
-  position: absolute;
-  color: rgb(76, 53, 194);
-  height: 15px;
-  width: 90%;
-`;
+export const InputDiv = styled.View`
 
-export const PurpleText = styled.Text`
-  color: rgb(76, 53, 194);
-`;
-
-export const WhiteText = styled.Text`
-  color: white;
 `;
 
 export const SignUp = styled.TouchableOpacity`
-  height: 15px;
-  width: 90%;
+  border-radius: 3px;
+  padding-vertical: 2.5%;
+  padding-horizontal: 35%;
+  border: solid 1px #6C5DCE;
+`;
+
+export const PurpleText = styled.Text`
+  color: #6C5DCE;
+`;
+
+export const Divider = styled.View`
+  height:3%;
+  display:block
+`
+
+export const SignIn = styled.TouchableOpacity`
+  border-radius: 3px;
+  padding-vertical: 2.5%;
+  padding-horizontal: 35%;
+  background-color: #6C5DCE;
+`;
+
+export const WhiteText = styled.Text`
   color: white;
 `;

@@ -5,7 +5,7 @@ export const Area = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: gray;
+  background-color: white;
 `;
 
 export const Title = styled.Text`
@@ -25,14 +25,20 @@ export const DefaultInput = styled.TextInput`
   font-size: 16px;
   border-radius: 5px;
   border-width: 2px;
-  border-color: rgb(76, 53, 194);
+  border: solid 1px #6C5DCE;
 `;
 
 export const PasswordInput = styled.TextInput`
-  flex: 1;
   height: 40px;
   font-size: 16px;
   border-radius: 5px;
   border-width: 2px;
-  border-color: rgb(76, 53, 194);
+  border: solid 1px #6C5DCE;
 `;
+
+export const Submit = styled.TouchableOpacity`
+  border-radius: 3px;
+  padding-vertical: 2.5%;
+  padding-horizontal: 35%;
+  background-color: #6C5DCE;
+`
