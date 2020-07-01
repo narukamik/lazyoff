@@ -7,7 +7,6 @@ export const Area = styled.View`
   align-items: center;
   justify-content: center;
   background-color: white;
-  
 `;
 
 export const Title = styled.Text`
@@ -39,8 +38,7 @@ export const PasswordInput = styled.TextInput`
 
 export const Submit = styled.TouchableOpacity`
   border-radius: 3px;
-  padding-vertical: 2.5%;
-  padding-horizontal: 35%;
+  padding: 2.5% 35%;
   background-color: ${colors.primary};
 `;
 
@@ -49,11 +47,10 @@ export const WhiteText = styled.Text`
 `;
 
 export const Divider = styled.View`
-  height:3%;
-  display:block
+  height: 3%;
+  display: block;
 `;
-
 
 export const Input = styled(Kohana)`
   border: solid 1px ${colors.primary};
-`
+`;

@@ -14,28 +14,25 @@ export const Background = styled.ImageBackground`
   height: 15%;
 `;
 
-export const InputDiv = styled.View`
-
-`;
+export const InputDiv = styled.View``;
 
 export const SignUp = styled.TouchableOpacity`
   border-radius: 3px;
-  padding-vertical: 2.5%;
-  padding-horizontal: 35%;
+  padding: 2.5% 35%;
   border: solid 1px ${colors.primary};
 `;
 
 export const PurpleText = styled.Text`
-  color: ${colors.primary} ;
+  color: ${colors.primary};
 `;
 
 export const Divider = styled.View`
-  height:3%;
-`
+  height: 3%;
+`;
 
 export const SignIn = styled.TouchableOpacity`
   border-radius: 3px;
-  padding-horizontal: 35%;
+  padding: 2.5% 35%;
   background-color: ${colors.primary};
 `;
 
