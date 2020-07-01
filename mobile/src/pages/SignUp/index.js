@@ -33,6 +33,9 @@ const SignUp = () => {
             marginLeft: 15,
             color: `${colors.primary}`
           }}
+          rightIconContainerStyle={{
+            paddingRight: 15
+          }}
         />
         <Input
           label="Email"
@@ -55,6 +58,9 @@ const SignUp = () => {
           inputStyle={{
             marginLeft: 15,
             color: `${colors.primary}`
+          }}
+          rightIconContainerStyle={{
+            paddingRight: 15
           }}
         />
         <Input
@@ -79,6 +85,9 @@ const SignUp = () => {
           inputStyle={{
             marginLeft: 15,
             color: `${colors.primary}`
+          }}
+          rightIconContainerStyle={{
+            paddingRight: 15
           }}
         />
         <Input

@@ -10,7 +10,9 @@ export const Area = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 32px;
+  font-size: 25px;
+  color: ${colors.primary};
+  margin-bottom: 15%
 `;
 
 export const InputRow = styled.View`
