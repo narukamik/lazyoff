@@ -33,6 +33,8 @@ export const Coins = styled.View`
 export const Coin = styled.Image`
   width: 30px;
   height: 30px;
+  margin-right: -15px;
+  z-index: 2;
 `;
 
 export const TextCoins = styled.Text`
@@ -64,7 +66,6 @@ export const Level = styled.View`
   padding: 0 5px;
   height: 25px;
   justify-content: center;
-  
 `;
 
 export const Value = styled.View`
@@ -73,7 +74,7 @@ export const Value = styled.View`
 `;
 
 export const TextValue = styled.Text`
-  color: #7E6DDB;
+  color: #7e6ddb;
   font-weight: bold;
   font-size: 20px;
   text-align: right;
