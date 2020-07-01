@@ -7,8 +7,7 @@ Tecnologias usadas:
 - Node
 - React Native 
 - Expo
-- MongoDB
-- RealmDB
+- Expo Async Storage
 
 ## Links
 - [Link do XD](https://xd.adobe.com/view/d1dd9dcf-13c8-471f-817b-76fee2c5fc17-848e/grid)
