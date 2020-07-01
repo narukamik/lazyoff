@@ -31,12 +31,10 @@ export const PurpleText = styled.Text`
 
 export const Divider = styled.View`
   height:3%;
-  display:block
 `
 
 export const SignIn = styled.TouchableOpacity`
   border-radius: 3px;
-  padding-vertical: 2.5%;
   padding-horizontal: 35%;
   background-color: ${colors.primary};
 `;

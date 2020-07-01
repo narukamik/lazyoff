@@ -41,6 +41,7 @@ function CronStackScreen() {
         headerShown: false,
       }}
     >
+      <CronStack.Screen name="Checklist" component={Checklist} />
       <CronStack.Screen name="Cronograma" component={Cronograma} />
       <CronStack.Screen name="Detalhes" component={Detalhes} />
     </CronStack.Navigator>
