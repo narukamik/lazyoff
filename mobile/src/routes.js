@@ -57,11 +57,7 @@ function ListStackScreen() {
 
 function PerfilStackScreen() {
   return (
-<<<<<<< HEAD
-    <PerfilStack.Navigator
-=======
     <Stack.Navigator
->>>>>>> 591e94ba05fe1a193e931274cd6c0ee6b804c8b8
       screenOptions={{
         headerShown: false,
       }}

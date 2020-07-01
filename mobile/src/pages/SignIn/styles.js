@@ -53,8 +53,4 @@ export const Divider = styled.View`
 
 export const Input = styled(Kohana)`
   border: solid 1px ${colors.primary};
-<<<<<<< HEAD
 `;
-=======
-`;
->>>>>>> 591e94ba05fe1a193e931274cd6c0ee6b804c8b8
