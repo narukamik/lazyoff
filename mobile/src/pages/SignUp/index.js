@@ -19,7 +19,7 @@ const SignUp = () => {
           labelStyle={{
             marginLeft: 20,
             marginBottom: 8,
-            color: `${colors.primary}`,
+            color: 'grey',
           }}
           inputContainerStyle={{
             marginHorizontal: 20,
@@ -45,7 +45,7 @@ const SignUp = () => {
           labelStyle={{
             marginLeft: 20,
             marginBottom: 8,
-            color: `${colors.primary}`,
+            color: 'grey',
           }}
           inputContainerStyle={{
             marginHorizontal: 20,
@@ -72,7 +72,7 @@ const SignUp = () => {
           labelStyle={{
             marginLeft: 20,
             marginBottom: 8,
-            color: `${colors.primary}`,
+            color: 'grey',
           }}
           inputContainerStyle={{
             marginHorizontal: 20,
@@ -99,7 +99,7 @@ const SignUp = () => {
           labelStyle={{
             marginLeft: 20,
             marginBottom: 8,
-            color: `${colors.primary}`,
+            color: 'grey',
           }}
           inputContainerStyle={{
             marginHorizontal: 20,
