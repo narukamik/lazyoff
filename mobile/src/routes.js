@@ -13,67 +13,59 @@ import Checklist from './pages/Checklist';
 import Detalhes from './pages/Detalhes';
 import Profile from './pages/Profile';
 
-// import Dashboard from './pages/Dashboard';
-
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
-const ProfileStack = createStackNavigator();
+const Stack = createStackNavigator();
 
 function ProfileStackScreen() {
   return (
-    <ProfileStack.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <ProfileStack.Screen name="Profile" component={Profile} />
-    </ProfileStack.Navigator>
+      <Stack.Screen name="Profile" component={Profile} />
+    </Stack.Navigator>
   );
 }
-
-const CronStack = createStackNavigator();
 
 function CronStackScreen() {
   return (
-    <CronStack.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <CronStack.Screen name="Cronograma" component={Cronograma} />
-      <CronStack.Screen name="Detalhes" component={Detalhes} />
-    </CronStack.Navigator>
+      <Stack.Screen name="Cronograma" component={Cronograma} />
+      <Stack.Screen name="Detalhes" component={Detalhes} />
+    </Stack.Navigator>
   );
 }
-
-const ListStack = createStackNavigator();
 
 function ListStackScreen() {
   return (
-    <ListStack.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <ListStack.Screen name="Checklist" component={Checklist} />
-    </ListStack.Navigator>
+      <Stack.Screen name="Checklist" component={Checklist} />
+    </Stack.Navigator>
   );
 }
 
-const PerfilStack = createStackNavigator();
-
 function PerfilStackScreen() {
   return (
-    <PerfilStack.Navigator
-      options={{
+    <Stack.Navigator
+      screenOptions={{
         headerShown: false,
       }}
     >
-      <PerfilStack.Screen name="Perfil" component={Perfil} />
-      <PerfilStack.Screen name="SignIn" component={SignIn} />
-      <PerfilStack.Screen name="SignUp" component={SignUp} />
-    </PerfilStack.Navigator>
+      <Stack.Screen name="Perfil" component={Perfil} />
+      <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+    </Stack.Navigator>
   );
 }
 
