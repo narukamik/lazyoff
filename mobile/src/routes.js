@@ -66,7 +66,7 @@ const PerfilStack = createStackNavigator();
 function PerfilStackScreen() {
   return (
     <PerfilStack.Navigator
-      options={{
+      screenOptions={{
         headerShown: false,
       }}
     >
