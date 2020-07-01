@@ -44,7 +44,6 @@ const Lista = () => {
             <Input placeholder="Digite o nome da sua lista..."/>
             <Feather name="smile" size={24} color="#6d5dcf" />
           </InputArea>
-
           <PickerArea>
             <PickerSelect>
             <RNPickerSelect

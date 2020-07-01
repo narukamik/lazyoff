@@ -37,7 +37,7 @@ export const PasswordInput = styled.TextInput`
 `;
 
 export const Submit = styled.TouchableOpacity`
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 2.5% 35%;
   background-color: ${colors.primary};
 `;
