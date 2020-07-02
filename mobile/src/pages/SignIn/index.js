@@ -25,7 +25,7 @@ const SignIn = () => {
           labelStyle={{
             marginLeft: 20,
             marginBottom: 8,
-            color: `${colors.primary}`,
+            color: 'grey',
           }}
           inputContainerStyle={{
             marginHorizontal: 20,
@@ -53,7 +53,7 @@ const SignIn = () => {
           labelStyle={{
             marginLeft: 20,
             marginBottom: 8,
-            color: `${colors.primary}`,
+            color: 'grey',
           }}
           inputContainerStyle={{
             marginHorizontal: 20,
