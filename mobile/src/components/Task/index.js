@@ -29,6 +29,7 @@ const Task = ({ navigation, task, ...rest }) => {
   const [show, setShow] = useState(false);
 
   let offset = 0;
+  let fadeAnimAux = true;
 
   const fadeAnim = new Animated.Value(130);
 
@@ -40,16 +41,17 @@ const Task = ({ navigation, task, ...rest }) => {
       toValue: 180,
       duration: 500,
     }).start();
+    fadeAnimAux = false;
   };
 
   const fadeOut = () => {
     // Will change fadeAnim value to 0 in 5 seconds
     Animated.timing(fadeAnim, {
-      toValue: 180,
+      toValue: 130,
       duration: 500,
     }).start();
+    fadeAnimAux = true;
   };
-
   const translateX = new Animated.Value(0);
   const animetedEvent = new Animated.event(
     [{ nativeEvent: { translationX: translateX } }],
@@ -65,6 +67,7 @@ const Task = ({ navigation, task, ...rest }) => {
       if (translationX <= -30) {
         opened = true;
       } else {
+        fadeOut();
         // translateX.setValue(offset);
         // translateX.setOffset(0);
         // offset = 0;
@@ -131,7 +134,11 @@ const Task = ({ navigation, task, ...rest }) => {
           <AreaPlusButton>
             <PlusButton
               onPress={() => {
-                fadeIn();
+                if (fadeAnimAux) {
+                  fadeIn();
+                } else {
+                  fadeOut();
+                }
               }}
             >
               <Feather name="more-horizontal" size={20} color="#67656F" />
