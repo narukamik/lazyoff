@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Animated } from 'react-native';
-import colors from '~/config/ColorConfig';
+// import { Animated } from 'react-native';
+// import colors from '~/config/ColorConfig';
 
 const top = 50;
 const bottom = 20;
@@ -14,7 +13,15 @@ export const Area = styled.View`
   background-color: #fff;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  padding: ${top}px ${left}px 30px;
+  padding: ${top}px 0px 30px;
+`;
+
+export const ScrollArea = styled.FlatList.attrs({
+  showsVerticalScrollIndicator: false,
+})`
+  position: relative;
+  flex: 1;
+  width: 100%;
 `;
 
 export const VerticalLine = styled.View`

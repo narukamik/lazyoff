@@ -3,13 +3,17 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Animated } from 'react-native';
 import colors from '~/config/ColorConfig';
 
-export const Box = styled.View`
+export const Box = styled(Animated.View)`
   position: relative;
   width: 100%;
   padding-left: 40px;
-  margin-bottom: 30px;
+  padding-right: 20px;
   align-items: flex-start;
   justify-content: flex-start;
+  /* height: 130px; */
+  /* background-color: #32b3a4; */
+  z-index: 3;
+  /* border: 1px solid #ff0; */
 `;
 
 export const Container = styled(Animated.View)`
@@ -21,7 +25,7 @@ export const Container = styled(Animated.View)`
 export const CheckArea = styled.View`
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 15px;
   width: 20px;
   height: 20px;
   margin-bottom: 30px;
@@ -126,10 +130,32 @@ export const ButtonText = styled.Text`
 
 export const DarkBg = styled(Animated.View)`
   position: absolute;
-  top: 0;
+  top: 62px;
   right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.39);
+  background-color: #0e0b1a;
   z-index: 2;
+  width: 179px;
+  height: 76px;
+  border-radius: 4px;
+  z-index: 6;
+`;
+
+export const ButtonEdit = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 15px;
+  border-bottom-color: rgba(255, 255, 255, 0.29);
+  border-bottom-width: 1px;
+`;
+
+export const EditText = styled.Text`
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 4px;
+  color: #fff;
+`;
+export const ButtonDelete = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 15px;
 `;

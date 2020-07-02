@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
-import { Animated } from 'react-native';
-import { PanGestureHandler } from 'react-native-gesture-handler';
+import { Animated, Alert } from 'react-native';
+import { PanGestureHandler, State } from 'react-native-gesture-handler';
 
 import {
   Box,
@@ -20,23 +20,87 @@ import {
   PlusButton,
   ButtonText,
   DarkBg,
+  ButtonEdit,
+  EditText,
+  ButtonDelete,
 } from './styles';
 
-const Task = () => {
+const Task = ({ navigation, task, ...rest }) => {
+  const [show, setShow] = useState(false);
+
+  let offset = 0;
+
+  const fadeAnim = new Animated.Value(130);
+
+  useEffect(() => console.log(fadeAnim), [fadeAnim]);
+
+  const fadeIn = () => {
+    // Will change fadeAnim value to 180 in 0.5 seconds
+    Animated.timing(fadeAnim, {
+      toValue: 180,
+      duration: 500,
+    }).start();
+  };
+
+  const fadeOut = () => {
+    // Will change fadeAnim value to 0 in 5 seconds
+    Animated.timing(fadeAnim, {
+      toValue: 180,
+      duration: 500,
+    }).start();
+  };
+
   const translateX = new Animated.Value(0);
   const animetedEvent = new Animated.event(
     [{ nativeEvent: { translationX: translateX } }],
     { useNativeDriver: true }
   );
+
   function onHandlerStateChange(event) {
-    console.log(event);
+    // console.log(event);
+    if (event.nativeEvent.oldState === State.ACTIVE) {
+      let opened = false;
+      const { translationX } = event.nativeEvent;
+      offset += translationX;
+      if (translationX <= -30) {
+        opened = true;
+      } else {
+        // translateX.setValue(offset);
+        // translateX.setOffset(0);
+        // offset = 0;
+      }
+
+      Animated.timing(translateX, {
+        toValue: opened ? -120 : 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        offset = opened ? -120 : 0;
+        translateX.setOffset(offset);
+        translateX.setValue(0);
+        setShow(false);
+      });
+    }
+  }
+
+  function handleCompletTask() {
+    // Alert.confirm('Completar task', 'aqui');
+  }
+
+  function handleMoreOptions(event) {
+    Alert.alert('aqui', 'aqui');
   }
   return (
-    <Box>
+    <Box
+      {...rest}
+      style={{
+        height: fadeAnim,
+      }}
+    >
       <CheckArea>
         <Feather name="circle" size={20} color="#6d5dcf" />
       </CheckArea>
-      <Time>13:00</Time>
+      <Time>{task.time}</Time>
       {/* <TaskTouch onPress={() => navigateToDetalhes()}> */}
       <PanGestureHandler
         onGestureEvent={animetedEvent}
@@ -59,23 +123,53 @@ const Task = () => {
             <TaskArea>
               <Square />
               <TextInfos>
-                <Title>Compras do mês</Title>
-                <Categoria>Casa</Categoria>
+                <Title>{task.task}</Title>
+                <Categoria>{task.categoria}</Categoria>
               </TextInfos>
             </TaskArea>
           </TaskTouch>
           <AreaPlusButton>
-            <PlusButton>
+            <PlusButton
+              onPress={() => {
+                fadeIn();
+              }}
+            >
               <Feather name="more-horizontal" size={20} color="#67656F" />
               <ButtonText>Mais</ButtonText>
             </PlusButton>
           </AreaPlusButton>
           <AreaCompletButton>
-            <CompletButton>
+            <CompletButton onPress={() => handleCompletTask()}>
               <Feather name="check-circle" size={15} color="#FFF" />
             </CompletButton>
           </AreaCompletButton>
-          {/* <DarkBg /> */}
+
+          <DarkBg
+            style={{
+              height: fadeAnim.interpolate({
+                inputRange: [130, 180],
+                outputRange: [0, 76],
+                extrapolate: 'clamp',
+              }),
+            }}
+          >
+            <ButtonEdit
+              onPress={() => {
+                navigation.navigate('Detalhes', { id: task.id });
+              }}
+            >
+              <EditText>Mais</EditText>
+              <Feather name="edit-2" size={20} color="#FFF" />
+            </ButtonEdit>
+            <ButtonDelete
+              onPress={() => {
+                Alert.alert('Apagar', 'Entrou em apagar');
+              }}
+            >
+              <EditText>Apagar</EditText>
+              <Feather name="trash-2" size={20} color="#FFF" />
+            </ButtonDelete>
+          </DarkBg>
         </Container>
       </PanGestureHandler>
     </Box>
