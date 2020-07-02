@@ -7,11 +7,10 @@ Tecnologias usadas:
 - Node
 - React Native 
 - Expo
-- MongoDB
-- RealmDB
+- Expo Async Storage
 
 ## Links
-- [Link do XD](https://xd.adobe.com/view/d1dd9dcf-13c8-471f-817b-76fee2c5fc17-848e/grid)
+- [Link do XD](https://xd.adobe.com/view/d1dd9dcf-13c8-471f-817b-76fee2c5fc17-848e/)
 - [Trello](https://trello.com/b/dPVFZyUT/fcamara-squad-3)
 - [Mural](https://app.mural.co/invitation/mural/squad35212/1590104264193?sender=otavioguimaraesso3207&key=5f208d0e-0202-4329-8a49-4c4f6eef5e03)
 - [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSePo28TocgJwv9oh-C0wnde9jcytXPOuLxQ66Z0GhebAJ6l-Q/viewform?usp=sf_link)

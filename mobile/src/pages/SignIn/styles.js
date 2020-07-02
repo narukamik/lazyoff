@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { Kohana } from 'react-native-textinput-effects';
+import Input from 'react-native-elements';
 import colors from '~/config/ColorConfig';
 
 export const Area = styled.View`
@@ -10,7 +10,9 @@ export const Area = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 32px;
+  font-size: 25px;
+  color: ${colors.primary};
+  margin-bottom: 15%
 `;
 
 export const InputRow = styled.View`
@@ -37,7 +39,7 @@ export const PasswordInput = styled.TextInput`
 `;
 
 export const Submit = styled.TouchableOpacity`
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 2.5% 35%;
   background-color: ${colors.primary};
 `;
@@ -51,6 +53,3 @@ export const Divider = styled.View`
   display: block;
 `;
 
-export const Input = styled(Kohana)`
-  border: solid 1px ${colors.primary};
-`;

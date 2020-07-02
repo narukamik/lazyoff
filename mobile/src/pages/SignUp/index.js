@@ -1,8 +1,10 @@
 import React from 'react';
+import colors from '~/config/ColorConfig';
+import { Input } from 'react-native-elements';
 import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
 
-import { Area, Divider, Submit, Input, WhiteText, Title } from './styles';
+import { Area, Divider, Submit, WhiteText, Title } from './styles';
 
 const SignUp = () => {
   return (
@@ -11,39 +13,109 @@ const SignUp = () => {
         <Title>LAZYOFF</Title>
         <Input
           label="Nome"
-          iconClass={Feather}
-          iconName="at-sign"
-          labelStyle={{ color: '#91627b' }}
-          inputStyle={{ color: '#91627b' }}
-          labelContainerStyle={{ padding: 5 }}
-          iconContainerStyle={{ padding: 5 }}
+          rightIcon={
+            <Feather name="user" size={24} color={`${colors.primary}`} />
+          }
+          labelStyle={{
+            marginLeft: 20,
+            marginBottom: 8,
+            color: 'grey',
+          }}
+          inputContainerStyle={{
+            marginHorizontal: 20,
+            backgroundColor: 'white',
+            borderColor: `${colors.primary}`,
+            borderRadius: 5,
+            borderWidth: 2.5,
+            borderBottomWidth: 2.5,
+          }}
+          inputStyle={{
+            marginLeft: 15,
+            color: `${colors.primary}`
+          }}
+          rightIconContainerStyle={{
+            paddingRight: 15
+          }}
         />
         <Input
           label="Email"
-          iconClass={Feather}
-          iconName="at-sign"
-          labelStyle={{ color: '#91627b' }}
-          inputStyle={{ color: '#91627b' }}
-          labelContainerStyle={{ padding: 5 }}
-          iconContainerStyle={{ padding: 5 }}
+          rightIcon={
+            <Feather name="at-sign" size={24} color={`${colors.primary}`} />
+          }
+          labelStyle={{
+            marginLeft: 20,
+            marginBottom: 8,
+            color: 'grey',
+          }}
+          inputContainerStyle={{
+            marginHorizontal: 20,
+            backgroundColor: 'white',
+            borderColor: `${colors.primary}`,
+            borderRadius: 5,
+            borderWidth: 2.5,
+            borderBottomWidth: 2.5,
+          }}
+          inputStyle={{
+            marginLeft: 15,
+            color: `${colors.primary}`
+          }}
+          rightIconContainerStyle={{
+            paddingRight: 15
+          }}
         />
         <Input
           label="Senha"
-          iconClass={Feather}
-          iconName="lock"
-          labelStyle={{ color: '#91627b' }}
-          inputStyle={{ color: '#91627b' }}
-          labelContainerStyle={{ padding: 5 }}
-          iconContainerStyle={{ padding: 5 }}
+          secureTextEntry={true}
+          rightIcon={
+            <Feather name="lock" size={24} color={`${colors.primary}`} />
+          }
+          labelStyle={{
+            marginLeft: 20,
+            marginBottom: 8,
+            color: 'grey',
+          }}
+          inputContainerStyle={{
+            marginHorizontal: 20,
+            backgroundColor: 'white',
+            borderColor: `${colors.primary}`,
+            borderRadius: 5,
+            borderWidth: 2.5,
+            borderBottomWidth: 2.5,
+          }}
+          inputStyle={{
+            marginLeft: 15,
+            color: `${colors.primary}`
+          }}
+          rightIconContainerStyle={{
+            paddingRight: 15
+          }}
         />
         <Input
           label="Confirmar senha"
-          iconClass={Feather}
-          iconName="lock"
-          labelStyle={{ color: '#91627b' }}
-          inputStyle={{ color: '#91627b' }}
-          labelContainerStyle={{ padding: 5 }}
-          iconContainerStyle={{ padding: 5 }}
+          secureTextEntry={true}
+          rightIcon={
+            <Feather name="lock" size={24} color={`${colors.primary}`} />
+          }
+          labelStyle={{
+            marginLeft: 20,
+            marginBottom: 8,
+            color: 'grey',
+          }}
+          inputContainerStyle={{
+            marginHorizontal: 20,
+            backgroundColor: 'white',
+            borderColor: `${colors.primary}`,
+            borderRadius: 5,
+            borderWidth: 2.5,
+            borderBottomWidth: 2.5,
+          }}
+          inputStyle={{
+            marginLeft: 15,
+            color: `${colors.primary}`
+          }}
+          rightIconContainerStyle={{
+            paddingRight: 15
+          }}
         />
         <Divider />
         <Submit>

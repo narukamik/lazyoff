@@ -17,7 +17,7 @@ export const Background = styled.ImageBackground`
 export const InputDiv = styled.View``;
 
 export const SignUp = styled.TouchableOpacity`
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 2.5% 35%;
   border: solid 1px ${colors.primary};
 `;
@@ -31,7 +31,7 @@ export const Divider = styled.View`
 `;
 
 export const SignIn = styled.TouchableOpacity`
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 2.5% 35%;
   background-color: ${colors.primary};
 `;
