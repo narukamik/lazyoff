@@ -3,7 +3,7 @@ import Container from '~/components/Container';
 import CronHeader from '~/components/CronHeader';
 import { Area } from './styles';
 
-const Cronograma = ({ navigation }) => {
+const Categoria = ({ navigation }) => {
   function navigateToDetalhes() {
     navigation.navigate('Detalhes');
   }
@@ -16,4 +16,4 @@ const Cronograma = ({ navigation }) => {
   );
 };
 
-export default Cronograma;
+export default Categoria;

@@ -11,19 +11,20 @@ import {
   TextEnd,
 } from './styles';
 
-import tasks from '~/assets/infos';
+import infos from '~/assets/infos';
 
-const Cronograma = ({ navigation }) => {
+const Lista = ({ navigation }) => {
   function navigateToDetalhes() {
     navigation.navigate('Detalhes');
   }
+
   return (
     <Container>
       <CronHeader navigation={navigation} icon="list" />
       <Area>
         <VerticalLine />
         <ScrollArea
-          data={tasks}
+          data={infos.tasks}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => (
             <Task navigation={navigation} task={item} />
@@ -38,4 +39,4 @@ const Cronograma = ({ navigation }) => {
   );
 };
 
-export default Cronograma;
+export default Lista;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
-import { CheckBox } from 'react-native';
+import { CheckBox, Button } from 'react-native';
 import Container from '~/components/Container';
 import TaskHeader from '~/components/TaskHeader';
 import {
@@ -37,5 +37,13 @@ const Detalhes = () => {
     </Container>
   );
 };
-
+Detalhes.navigationOptions = ({ navigation }) => ({
+  headerRight: () => (
+    <Button
+      onPress={() => alert('This is a button!')}
+      title="Info"
+      color="#fff"
+    />
+  ),
+});
 export default Detalhes;

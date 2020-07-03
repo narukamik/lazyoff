@@ -13,11 +13,10 @@ import {
 } from './styles';
 
 const TaskHeader = () => {
-  
   const navigation = useNavigation();
 
   function navigateToHome() {
-    navigation.navigate('Cronograma');
+    navigation.goBack();
   }
 
   return (

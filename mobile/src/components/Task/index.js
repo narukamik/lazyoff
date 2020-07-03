@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { Animated, Alert } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
+import colors from '~/config/ColorConfig';
 
 import {
   Box,
@@ -26,15 +27,15 @@ import {
 } from './styles';
 
 const Task = ({ navigation, task, ...rest }) => {
-  const [show, setShow] = useState(false);
+  const [color, setColor] = useState(colors.bgLinearButton);
 
+  // init animation functions
   let offset = 0;
   let fadeAnimAux = true;
 
   const fadeAnim = new Animated.Value(130);
 
-  useEffect(() => console.log(fadeAnim), [fadeAnim]);
-
+  // funções de mostrar(fadeIn) e esconder(fadeOut) o menu de opções
   const fadeIn = () => {
     // Will change fadeAnim value to 180 in 0.5 seconds
     Animated.timing(fadeAnim, {
@@ -58,8 +59,8 @@ const Task = ({ navigation, task, ...rest }) => {
     { useNativeDriver: true }
   );
 
+  // Animação da task de arrastar
   function onHandlerStateChange(event) {
-    // console.log(event);
     if (event.nativeEvent.oldState === State.ACTIVE) {
       let opened = false;
       const { translationX } = event.nativeEvent;
@@ -68,9 +69,9 @@ const Task = ({ navigation, task, ...rest }) => {
         opened = true;
       } else {
         fadeOut();
-        // translateX.setValue(offset);
-        // translateX.setOffset(0);
-        // offset = 0;
+        translateX.setValue(offset);
+        translateX.setOffset(0);
+        offset = 0;
       }
 
       Animated.timing(translateX, {
@@ -81,18 +82,16 @@ const Task = ({ navigation, task, ...rest }) => {
         offset = opened ? -120 : 0;
         translateX.setOffset(offset);
         translateX.setValue(0);
-        setShow(false);
       });
     }
   }
+  // end animations functions
 
+  // função de completar a task
   function handleCompletTask() {
-    // Alert.confirm('Completar task', 'aqui');
+    Alert.alert('Completar task', 'aqui');
   }
 
-  function handleMoreOptions(event) {
-    Alert.alert('aqui', 'aqui');
-  }
   return (
     <Box
       {...rest}
@@ -104,7 +103,7 @@ const Task = ({ navigation, task, ...rest }) => {
         <Feather name="circle" size={20} color="#6d5dcf" />
       </CheckArea>
       <Time>{task.time}</Time>
-      {/* <TaskTouch onPress={() => navigateToDetalhes()}> */}
+      {/* <TaskTouch> */}
       <PanGestureHandler
         onGestureEvent={animetedEvent}
         onHandlerStateChange={onHandlerStateChange}
@@ -122,8 +121,9 @@ const Task = ({ navigation, task, ...rest }) => {
                 },
               ],
             }}
+            onPress={() => navigation.navigate('Detalhes', { id: task.id })}
           >
-            <TaskArea>
+            <TaskArea colors={color}>
               <Square />
               <TextInfos>
                 <Title>{task.task}</Title>
@@ -162,7 +162,7 @@ const Task = ({ navigation, task, ...rest }) => {
           >
             <ButtonEdit
               onPress={() => {
-                navigation.navigate('Detalhes', { id: task.id });
+                navigation.navigate('Criar', { id: task.id });
               }}
             >
               <EditText>Mais</EditText>

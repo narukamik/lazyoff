@@ -12,7 +12,7 @@ import {
   PickerSelect,
 } from './styles';
 
-const Lista = () => {
+const Criar = () => {
   const pickerStyle = {
     inputAndroid: {
       paddingHorizontal: 5,
@@ -99,4 +99,4 @@ const Lista = () => {
   );
 };
 
-export default Lista;
+export default Criar;

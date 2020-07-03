@@ -10,10 +10,7 @@ export const Box = styled(Animated.View)`
   padding-right: 20px;
   align-items: flex-start;
   justify-content: flex-start;
-  /* height: 130px; */
-  /* background-color: #32b3a4; */
   z-index: 3;
-  /* border: 1px solid #ff0; */
 `;
 
 export const Container = styled(Animated.View)`
@@ -41,12 +38,11 @@ export const Time = styled.Text`
   margin-bottom: 8px;
 `;
 
-export const TaskTouch = styled(Animated.View)`
+export const TaskTouch = styled.TouchableOpacity`
   width: 100%;
 `;
 
 export const TaskArea = styled(LinearGradient).attrs({
-  colors: [colors.bgLinearButton.dark, colors.bgLinearButton.light],
   start: [0, 1],
   end: [1, 0],
 })`
