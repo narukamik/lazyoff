@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Slider from '~/components/Carousel';
+import SliderOff from '~/components/CarouselOff';
 
 import {
   Container,
@@ -16,26 +17,13 @@ import {
   TextLevel,
   TextCoins,
   Trophy,
-  Title
+  Title,
+  Scroll,
+  SliderArea,
+  SliderOffArea
 } from './styles';
 
-const data = [
-  {
-    photo: 'http://lorempixel.com/400/200/sports/1/Dummy-Text/',
-    title: 'Netflix',
-    value: 1500
-  },
-  {
-    photo: 'http://lorempixel.com/400/200/nature/1/Dummy-Text/',
-    title: 'Amazon Prime Video',
-    value: 750
-  },
-  {
-    photo: 'http://lorempixel.com/400/200/food/2/Dummy-Text/',
-    title: 'McDonalds',
-    value: 5000
-  }
-]
+import infos from '~/assets/infos';
 
 const Profile = () => {
   return (
@@ -71,7 +59,14 @@ const Profile = () => {
         </HeaderStatus>
       </Area>
       <Title>Ofertas</Title>
-      <Slider data={data} />
+      <Scroll>
+        <SliderArea>
+          <Slider data={infos.slide} />
+        </SliderArea>
+        <SliderOffArea>
+          <SliderOff data={infos.discount} />
+        </SliderOffArea>
+      </Scroll>
     </Container>
   );
 };

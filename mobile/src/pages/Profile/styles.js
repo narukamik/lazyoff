@@ -101,3 +101,17 @@ export const Title = styled.Text`
   color: black;
   opacity: 0.78;
 `;
+
+export const Scroll = styled.ScrollView`
+  
+`;
+
+export const SliderArea = styled.View`
+  width: 100%;
+  margin: 16px 0;
+`;
+
+export const SliderOffArea = styled.View`
+  width: 100%;
+  margin: 16px 0 32px;
+`;
