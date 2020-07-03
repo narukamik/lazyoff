@@ -1,7 +1,9 @@
 import React from 'react';
 
-import Container from '~/components/Container';
+import Slider from '~/components/Carousel';
+
 import {
+  Container,
   Area,
   HeaderStatus,
   Status,
@@ -14,7 +16,26 @@ import {
   TextLevel,
   TextCoins,
   Trophy,
+  Title
 } from './styles';
+
+const data = [
+  {
+    photo: 'http://lorempixel.com/400/200/sports/1/Dummy-Text/',
+    title: 'Netflix',
+    value: 1500
+  },
+  {
+    photo: 'http://lorempixel.com/400/200/nature/1/Dummy-Text/',
+    title: 'Amazon Prime Video',
+    value: 750
+  },
+  {
+    photo: 'http://lorempixel.com/400/200/food/2/Dummy-Text/',
+    title: 'McDonalds',
+    value: 5000
+  }
+]
 
 const Profile = () => {
   return (
@@ -24,8 +45,7 @@ const Profile = () => {
           <Status>
             <Photo
               source={{
-                uri:
-                  'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg',
+                uri: 'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg',
               }}
             />
             <Level>
@@ -44,13 +64,14 @@ const Profile = () => {
             </Value>
             <Trophy
               source={{
-                uri:
-                  'https://images.vexels.com/media/users/3/153916/isolated/lists/c10e8d00b250c7051474d6b4c08ee3a6-icone-de-traco-colorido-trofeu-esportes.png',
+                uri: 'https://images.vexels.com/media/users/3/153916/isolated/lists/c10e8d00b250c7051474d6b4c08ee3a6-icone-de-traco-colorido-trofeu-esportes.png',
               }}
             />
           </Status>
         </HeaderStatus>
       </Area>
+      <Title>Ofertas</Title>
+      <Slider data={data} />
     </Container>
   );
 };

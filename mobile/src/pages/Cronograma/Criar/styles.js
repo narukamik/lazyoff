@@ -6,9 +6,10 @@ export const Area = styled.View`
 `;
  
 export const AreaText = styled.Text`
-  padding: 64px 32px;
+  padding: 64px 32px 128px;
   color: white;
   font-size: 24px;
+  margin-right: 64px;
 `;
 
 export const Box = styled.View`

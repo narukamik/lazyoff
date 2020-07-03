@@ -6,44 +6,47 @@ export const Box = styled.View`
   background-color: #F7FAFC;
   height: 100%;
   width: 100%;  
-  align-items: center;
+`;
+
+export const PickerArea = styled.View`
+  flex-direction: row;
+  width: 100%;
   justify-content: center;
 `;
 
-export const CheckArea = styled.View`
+export const PickerSelect = styled.View`
+  margin: 5px;
+  height: 32px;
+  width: 100px;
+  background-color: transparent;
+  color: #8867DD;
+  font-size: 12px;
+`;
+
+export const InputArea = styled.View`
+  top: 32px;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 32px;
+`;
+
+export const Input = styled.TextInput`
+  font-size: 18px;
   width: 100%;
-  height: 100%;
-  padding: 32px;
+  padding-right: 6px;
 `;
 
-export const CheckText = styled.Text`
-  font-size: 15px;
+export const BtnAdd = styled.TouchableOpacity`
+  flex: 1;
+  border-radius: 8px;
 `;
 
-export const CheckItem = styled.View`
-  flex-direction: row;
-  align-items: center;
-  margin: 4px 0;
-`;
-
-export const Notes = styled.View`
-  flex-direction: row;
-  align-items: center;
+export const TextAdd = styled.Text`
+  width: 100%;
+  color: white;
   background-color: #6d5dcf;
-  width: 100%;
-  height: 50px;
-  padding: 16px;
-`;
-
-export const NotesText = styled.Text`
-  font-size: 14px;
-  color: #fff;
-  padding-left: 16px;
-  padding-right: 54px;
-  font-weight: bold;
-  width: 100%;
-`;
-
-export const NotesButton = styled.TouchableOpacity`
-  left: -48px;
+  font-size: 21px;
+  border-radius: 8px;
+  height: 32px;
+  text-align: center;
 `;
