@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('database.db');
@@ -118,3 +119,5 @@ export class TaskService {
     );
   }
 }
+=======
+>>>>>>> db46140b2024aca178725a8f536be97e70dc9b7a

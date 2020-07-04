@@ -1,6 +1,6 @@
 import React from 'react';
-import Routes from '~/routes';
 import * as SQLite from 'expo-sqlite';
+import Routes from '~/routes';
 
 export default function Index() {
   const db = SQLite.openDatabase('database.db');
@@ -9,7 +9,7 @@ export default function Index() {
     console.log('Foreign keys turned on')
   );
 
-  var sql = [
+  const sql = [
     `DROP TABLE IF EXISTS user;`,
     `DROP TABLE IF EXISTS task;`,
     `DROP TABLE IF EXISTS subtask;`,
@@ -66,13 +66,13 @@ export default function Index() {
 
   db.transaction(
     (tx) => {
-      for (var i = 0; i < sql.length; i++) {
-        console.log('execute sql : ' + sql[i]);
+      for (let i = 0; i < sql.length; i++) {
+        console.log(`execute sql : ${sql[i]}`);
         tx.executeSql(sql[i]);
       }
     },
     (error) => {
-      console.log('error call back : ' + JSON.stringify(error));
+      console.log(`error call back : ${JSON.stringify(error)}`);
       console.log(error);
     },
     () => {

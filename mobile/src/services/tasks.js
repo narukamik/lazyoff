@@ -17,7 +17,7 @@ export class TaskService {
               params.categoria_id,
             ],
             (_, { insertId, rows }) => {
-              console.log('id insert: ' + insertId);
+              console.log(`id insert: ${insertId}`);
               resolve(insertId);
             }
           ),
@@ -59,7 +59,11 @@ export class TaskService {
   }
 
   static getAll() {
+<<<<<<< HEAD
+    const sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name
+=======
   let sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name
+>>>>>>> 3388827a12204e7d31595f7e3b51bb5208afb9c9
   FROM task as t
   INNER JOIN category as c
   ON t.category_id = category.id`;
@@ -67,7 +71,7 @@ export class TaskService {
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
-          console.log('get all tasks : ' + sql);
+          console.log(`get all tasks : ${sql}`);
           return (
             tx.executeSql(sql, [], (_, { rows }) => {
               resolve(rows);
