@@ -7,17 +7,16 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `insert into task (name, startDateTime, endDateTime, status, categoria_id) 
+            `insert into task (name, startDateTime, endDateTime, active) 
                 values (?)`,
             [
               param.name,
               param.startDateTime,
               param.endDateTime,
-              param.status,
-              params.categoria_id,
+              param.active,
             ],
             (_, { insertId, rows }) => {
-              console.log(`id insert: ${insertId}`);
+              console.log('id insert: ' + insertId);
               resolve(insertId);
             }
           ),
@@ -37,10 +36,8 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `select t.name, t.status, t.startDateTime, t.endDateTime, c.name
-                           from task as t
-                           inner join category as c
-                           on t.category_id = category.id
+            `select t.name, t.active, t.startDateTime, t.endDateTime
+                           from subtask as t
                            where id= ?`,
             [id],
             (_, { rows }) => {
@@ -59,19 +56,14 @@ export class TaskService {
   }
 
   static getAll() {
-<<<<<<< HEAD
-    const sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name
-=======
-  let sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name
->>>>>>> 3388827a12204e7d31595f7e3b51bb5208afb9c9
-  FROM task as t
-  INNER JOIN category as c
-  ON t.category_id = category.id`;
+    let sql = `SELECT t.nome, t.active, t.startDateTime, t.endDateTime
+  FROM subtask as t
+  INNER JOIN category as c`;
 
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
-          console.log(`get all tasks : ${sql}`);
+          console.log('get all tasks : ' + sql);
           return (
             tx.executeSql(sql, [], (_, { rows }) => {
               resolve(rows);
@@ -89,13 +81,11 @@ export class TaskService {
   }
 
   static updateById(params) {
-    this.getById(); // gets by id, compare, then update
-
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `update task set ? = ? where id = ?;`,
+            `update subtask set ? = ? where id = ?;`,
             [param.param, param.value, param.id],
             () => {}
           ),
@@ -114,7 +104,7 @@ export class TaskService {
     db.transaction(
       (tx) => {
         tx.executeSql(
-          `delete from ${table} where id = ?;`,
+          `delete from subtask where id = ?;`,
           [id],
           (_, { rows }) => {}
         ),
