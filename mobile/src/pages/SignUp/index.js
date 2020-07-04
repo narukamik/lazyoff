@@ -1,10 +1,8 @@
 import React from 'react';
-import colors from '~/config/ColorConfig';
-import { Input } from 'react-native-elements';
 import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
 
-import { Area, Divider, Submit, WhiteText, Title } from './styles';
+import { Area, Divider, Submit, Input, WhiteText, Title } from './styles';
 
 const SignUp = () => {
   return (
@@ -13,6 +11,7 @@ const SignUp = () => {
         <Title>LAZYOFF</Title>
         <Input
           label="Nome"
+<<<<<<< HEAD
           rightIcon={
             <Feather name="user" size={24} color={`${colors.primary}`} />
           }
@@ -116,6 +115,41 @@ const SignUp = () => {
           rightIconContainerStyle={{
             paddingRight: 15
           }}
+=======
+          iconClass={Feather}
+          iconName="at-sign"
+          labelStyle={{ color: '#91627b' }}
+          inputStyle={{ color: '#91627b' }}
+          labelContainerStyle={{ padding: 5 }}
+          iconContainerStyle={{ padding: 5 }}
+        />
+        <Input
+          label="Email"
+          iconClass={Feather}
+          iconName="at-sign"
+          labelStyle={{ color: '#91627b' }}
+          inputStyle={{ color: '#91627b' }}
+          labelContainerStyle={{ padding: 5 }}
+          iconContainerStyle={{ padding: 5 }}
+        />
+        <Input
+          label="Senha"
+          iconClass={Feather}
+          iconName="lock"
+          labelStyle={{ color: '#91627b' }}
+          inputStyle={{ color: '#91627b' }}
+          labelContainerStyle={{ padding: 5 }}
+          iconContainerStyle={{ padding: 5 }}
+        />
+        <Input
+          label="Confirmar senha"
+          iconClass={Feather}
+          iconName="lock"
+          labelStyle={{ color: '#91627b' }}
+          inputStyle={{ color: '#91627b' }}
+          labelContainerStyle={{ padding: 5 }}
+          iconContainerStyle={{ padding: 5 }}
+>>>>>>> parent of 061cdc7... update signup screen and fix signin screen
         />
         <Divider />
         <Submit>
