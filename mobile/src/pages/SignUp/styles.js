@@ -52,6 +52,3 @@ export const Divider = styled.View`
   display: block;
 `;
 
-export const Input = styled(Kohana)`
-  border: solid 1px ${colors.primary};
-`;
