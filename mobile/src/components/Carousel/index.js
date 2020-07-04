@@ -59,7 +59,7 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 12,
     backgroundColor: 'white',
-    borderColor: 'grey',
+    borderColor: 'silver',
     borderWidth: 1
   },
   imageTiny: {
@@ -78,7 +78,7 @@ const style = StyleSheet.create({
     textAlign: 'center',
     fontSize: 12,
     paddingBottom: 8,
-    color: 'silver'
+    color: 'grey'
   },
   textCoins: {
     textAlign: 'center',

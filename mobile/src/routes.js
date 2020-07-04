@@ -15,6 +15,7 @@ import Lista from './pages/Cronograma/Lista';
 import Detalhes from './pages/Cronograma/Detalhes';
 import Criar from './pages/Cronograma/Criar';
 
+import Store from './pages/Store';
 import Profile from './pages/Profile';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -28,6 +29,7 @@ function ProfileStackScreen() {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="Store" component={Store} />
       <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
