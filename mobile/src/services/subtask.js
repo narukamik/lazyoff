@@ -36,9 +36,9 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `select t.name, t.active, t.startDateTime, t.endDateTime
-                           from subtask as t
-                           where id= ?`,
+            `SELECT t.name, t.status, t.startDateTime, t.endDateTime
+                           FROM subtask as t
+                           WHERE id= ?`,
             [id],
             (_, { rows }) => {
               resolve(rows);
