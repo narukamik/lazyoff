@@ -1,77 +1,79 @@
 import React from 'react';
 
-import Slider from '~/components/Carousel';
+import { Feather } from '@expo/vector-icons';
 
 import {
   Container,
   Area,
-  HeaderStatus,
   Status,
-  Coins,
-  Coin,
-  Value,
-  TextValue,
   Photo,
-  Level,
-  TextLevel,
-  TextCoins,
-  Trophy,
-  Title
+  Name,
+  Email,
+  Hours, 
+  Section,
+  Hour,
+  Subtitle,
+  Options,
+  Select,
+  BtnAction,
+  IconEdit,
+  IconCloud,
+  EmailArea,
+  Border,
+  ButtonReturn
 } from './styles';
 
-const data = [
-  {
-    photo: 'http://lorempixel.com/400/200/sports/1/Dummy-Text/',
-    title: 'Netflix',
-    value: 1500
-  },
-  {
-    photo: 'http://lorempixel.com/400/200/nature/1/Dummy-Text/',
-    title: 'Amazon Prime Video',
-    value: 750
-  },
-  {
-    photo: 'http://lorempixel.com/400/200/food/2/Dummy-Text/',
-    title: 'McDonalds',
-    value: 5000
-  }
-]
-
-const Profile = () => {
+const Profile = ({ navigation }) => {
   return (
     <Container>
       <Area>
-        <HeaderStatus>
-          <Status>
-            <Photo
-              source={{
-                uri: 'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg',
-              }}
-            />
-            <Level>
-              <TextLevel>NÍVEL 100</TextLevel>
-            </Level>
-          </Status>
-          <Status>
-            <Coin source={require('../../assets/profile/coin.png')} />
-            <Coins>
-              <TextCoins>3000</TextCoins>
-            </Coins>
-          </Status>
-          <Status>
-            <Value>
-              <TextValue>200</TextValue>
-            </Value>
-            <Trophy
-              source={{
-                uri: 'https://images.vexels.com/media/users/3/153916/isolated/lists/c10e8d00b250c7051474d6b4c08ee3a6-icone-de-traco-colorido-trofeu-esportes.png',
-              }}
-            />
-          </Status>
-        </HeaderStatus>
+        <ButtonReturn onPress={() => navigation.goBack()}>
+          <Feather name="chevron-left" size={30} color="#6d5dcf" />
+        </ButtonReturn>
+        <Status>
+          <Border>
+            <Photo source={{ uri: 'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg' }} />
+          </Border>
+          <Name>Jhon Doe</Name>
+          <EmailArea>
+            <Email>jhondoe@email.com</Email>
+            <IconCloud>
+              <Feather name="upload-cloud" size={18} color="#6d5dcf" />
+            </IconCloud>
+          </EmailArea>
+        </Status>
       </Area>
-      <Title>Ofertas</Title>
-      <Slider data={data} />
+      <Hours>
+        <Section>
+          <Hour>9:00</Hour>
+          <Subtitle>Início</Subtitle>
+        </Section>
+        <Section>
+          <Hour>1h</Hour>
+          <Subtitle>Pausa</Subtitle>
+        </Section>
+        <Section>
+          <Hour>18:00</Hour>
+          <Subtitle>Fim</Subtitle>
+        </Section>
+        <IconEdit>
+          <Feather name="edit" size={18} color="#6d5dcf" />
+        </IconEdit>
+      </Hours>
+      <Options>
+        <BtnAction>
+          <Select>Carteira</Select>
+        </BtnAction>
+        <BtnAction>
+          <Select>Resgates</Select>
+        </BtnAction>
+        <BtnAction>
+          <Select>Ajuda</Select>
+        </BtnAction>
+        <BtnAction>
+          <Select>Política de privacidade</Select>
+        </BtnAction>
+      </Options>
     </Container>
   );
 };
