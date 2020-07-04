@@ -50,5 +50,6 @@ export const WhiteText = styled.Text`
 
 export const Divider = styled.View`
   height: 3%;
+  display: block;
 `;
 
