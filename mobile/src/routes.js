@@ -14,6 +14,7 @@ import Checklist from './pages/Checklist';
 import Lista from './pages/Cronograma/Lista';
 import Detalhes from './pages/Cronograma/Detalhes';
 import Criar from './pages/Cronograma/Criar';
+import Apagar from './pages/Cronograma/Apagar';
 
 import Profile from './pages/Profile';
 import SignIn from './pages/SignIn';
@@ -43,6 +44,7 @@ function CronStackScreen() {
       <Stack.Screen name="Lista" component={Lista} />
       <Stack.Screen name="Detalhes" component={Detalhes} />
       <Stack.Screen name="Criar" component={Criar} />
+      <Stack.Screen name="Apagar" component={Apagar} />
     </Stack.Navigator>
   );
 }
@@ -73,17 +75,15 @@ function PerfilStackScreen() {
   );
 }
 
-const ListaStack = createStackNavigator();
-
 function ListaStackScreen() {
   return (
-    <ListaStack.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <ListaStack.Screen name="Lista" component={Lista} />
-    </ListaStack.Navigator>
+      <Stack.Screen name="Lista" component={Lista} />
+    </Stack.Navigator>
   );
 }
 
@@ -107,7 +107,7 @@ export default () => (
       >
         <Tab.Screen
           name="Home"
-          component={PerfilStackScreen}
+          component={ProfileStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
@@ -149,7 +149,7 @@ export default () => (
         />
         <Tab.Screen
           name="Search"
-          component={ProfileStackScreen}
+          component={ListStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot

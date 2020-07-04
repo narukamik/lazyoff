@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { Alert } from 'react-native';
+// TODO ALTERAR PARA TELA DE POMODORO
 import { Feather } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
 
@@ -91,9 +92,9 @@ const Detalhes = () => {
   );
 };
 Detalhes.navigationOptions = ({ navigation }) => ({
-  headerRight: () => (
+  headerLeft: () => (
     <Button
-      onPress={() => alert('This is a button!')}
+      onPress={() => Alert.alert('This is a button!')}
       title="Info"
       color="#fff"
     />

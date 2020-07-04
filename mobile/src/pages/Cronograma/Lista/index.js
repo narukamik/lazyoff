@@ -20,7 +20,7 @@ const Lista = ({ navigation }) => {
 
   return (
     <Container>
-      <CronHeader navigation={navigation} icon="list" />
+      <CronHeader navigation={navigation} icon="search" />
       <Area>
         <VerticalLine />
         <ScrollArea

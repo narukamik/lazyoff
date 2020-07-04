@@ -126,12 +126,20 @@ const Task = ({ navigation, task, ...rest }) => {
             <TaskArea colors={color}>
               <Square />
               <TextInfos>
-                <Title>{task.task}</Title>
+                <Title>{task.titulo}</Title>
                 <Categoria>{task.categoria}</Categoria>
               </TextInfos>
             </TaskArea>
           </TaskTouch>
-          <AreaPlusButton>
+          <AreaPlusButton
+            style={{
+              opacity: translateX.interpolate({
+                inputRange: [-120, 0],
+                outputRange: [1, 0],
+                extrapolate: 'clamp',
+              }),
+            }}
+          >
             <PlusButton
               onPress={() => {
                 if (fadeAnimAux) {
@@ -145,7 +153,15 @@ const Task = ({ navigation, task, ...rest }) => {
               <ButtonText>Mais</ButtonText>
             </PlusButton>
           </AreaPlusButton>
-          <AreaCompletButton>
+          <AreaCompletButton
+            style={{
+              opacity: translateX.interpolate({
+                inputRange: [-120, 0],
+                outputRange: [1, 0],
+                extrapolate: 'clamp',
+              }),
+            }}
+          >
             <CompletButton onPress={() => handleCompletTask()}>
               <Feather name="check-circle" size={15} color="#FFF" />
             </CompletButton>
@@ -170,7 +186,7 @@ const Task = ({ navigation, task, ...rest }) => {
             </ButtonEdit>
             <ButtonDelete
               onPress={() => {
-                Alert.alert('Apagar', 'Entrou em apagar');
+                navigation.navigate('Apagar', { id: task.id });
               }}
             >
               <EditText>Apagar</EditText>

@@ -10,9 +10,10 @@ import {
   Input,
   PickerArea,
   PickerSelect,
+  ButtonReturn,
 } from './styles';
 
-const Criar = () => {
+const Criar = ({ navigation }) => {
   const pickerStyle = {
     inputAndroid: {
       paddingHorizontal: 5,
@@ -37,6 +38,9 @@ const Criar = () => {
   return (
     <Container>
       <Area>
+        <ButtonReturn onPress={() => navigation.goBack()}>
+          <Feather name="chevron-left" size={30} color="#FFF" />
+        </ButtonReturn>
         <AreaText>Dê um nome a sua nova lista</AreaText>
         <Box>
           <InputArea>

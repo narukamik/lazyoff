@@ -4,7 +4,13 @@ export const Area = styled.View`
   height: 100%;
   background-color: #6d5dcf;
 `;
- 
+
+export const ButtonReturn = styled.TouchableOpacity`
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  z-index: 3;
+`;
 export const AreaText = styled.Text`
   padding: 64px 32px 128px;
   color: white;
@@ -15,7 +21,7 @@ export const AreaText = styled.Text`
 export const Box = styled.View`
   margin-top: 45%;
   position: absolute;
-  backgroundColor: #F7FAFC;
+  background-color: #f7fafc;
   height: 100%;
   width: 100%;
 `;
@@ -45,6 +51,6 @@ export const PickerSelect = styled.View`
   height: 32px;
   width: 100px;
   background-color: transparent;
-  color: #8867DD;
+  color: #8867dd;
   font-size: 12px;
 `;

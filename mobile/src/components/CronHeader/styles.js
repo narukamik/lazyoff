@@ -10,29 +10,28 @@ export const Container = styled(LinearGradient).attrs({
 })`
   width: 100%;
   margin-bottom: auto;
-  padding: 40px 10px 0;
+  padding: 40px 10px 30px;
 `;
 
 export const Button = styled.TouchableOpacity``;
 
-export const SmallTitle = styled.Text`
-  text-align: left;
-  font-size: 18px;
-  color: #fff;
-`;
 export const AreaTitle = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: #6d5dcf; */
   margin-bottom: auto;
 `;
 
 export const Title = styled.Text`
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 30px;
+`;
+
+export const SmallTitle = styled.Text`
+  text-align: left;
+  font-size: 16px;
+  color: #fff;
 `;
 
 export const Icon = styled(Feather)``;

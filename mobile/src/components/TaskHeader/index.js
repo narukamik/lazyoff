@@ -15,13 +15,9 @@ import {
 const TaskHeader = () => {
   const navigation = useNavigation();
 
-  function navigateToHome() {
-    navigation.goBack();
-  }
-
   return (
     <Container>
-      <ButtonReturn onPress={() => navigateToHome()}>
+      <ButtonReturn onPress={() => navigation.goBack()}>
         <Feather name="chevron-left" size={30} color="#FFF" />
       </ButtonReturn>
       <Title>Sprint 1</Title>

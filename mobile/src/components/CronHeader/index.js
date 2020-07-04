@@ -12,8 +12,14 @@ import {
 const CronHeader = ({ navigation, icon }) => {
   return (
     <Container>
+      <Title>Cronograma</Title>
       <AreaTitle>
-        <Title>14 de junho</Title>
+        <SmallTitle>Segunda, 14 de junho</SmallTitle>
+        <Button
+          onPress={() => navigation.jumpTo('Home', { screen: 'Checklist' })}
+        >
+          <Icon name={icon} size={20} color="#FFF" />
+        </Button>
       </AreaTitle>
     </Container>
   );
