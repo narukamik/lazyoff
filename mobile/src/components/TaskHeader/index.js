@@ -12,11 +12,11 @@ import {
   Nivel,
 } from './styles';
 
-const TaskHeader = () => {
+const TaskHeader = ({ backgroundColor }) => {
   const navigation = useNavigation();
 
   return (
-    <Container>
+    <Container style={{ backgroundColor }}>
       <ButtonReturn onPress={() => navigation.goBack()}>
         <Feather name="chevron-left" size={30} color="#FFF" />
       </ButtonReturn>

@@ -1,6 +1,4 @@
 import styled from 'styled-components/native';
-// import { Animated } from 'react-native';
-// import colors from '~/config/ColorConfig';
 
 const top = 50;
 const bottom = 20;

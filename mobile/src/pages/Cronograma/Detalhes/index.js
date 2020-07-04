@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Alert } from 'react-native';
 // TODO ALTERAR PARA TELA DE POMODORO
 import { Feather } from '@expo/vector-icons';
@@ -40,7 +40,7 @@ const Detalhes = () => {
 
   return (
     <Container>
-      <TaskHeader />
+      <TaskHeader backgroundColor="#FFF" />
       <Box>
         <InputArea>
           <Input placeholder="Digite seu item ou tarefa" />

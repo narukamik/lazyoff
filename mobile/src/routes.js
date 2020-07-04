@@ -35,6 +35,9 @@ function ProfileStackScreen() {
     >
       <Stack.Screen name="Store" component={Store} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Perfil" component={Perfil} />
+      <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="SignUp" component={SignUp} />
     </Stack.Navigator>
   );
 }
@@ -75,20 +78,6 @@ function ListStackScreen() {
       }}
     >
       <Stack.Screen name="Checklist" component={Checklist} />
-    </Stack.Navigator>
-  );
-}
-
-function PerfilStackScreen() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="Perfil" component={Perfil} />
-      <Stack.Screen name="SignIn" component={SignIn} />
-      <Stack.Screen name="SignUp" component={SignUp} />
     </Stack.Navigator>
   );
 }
