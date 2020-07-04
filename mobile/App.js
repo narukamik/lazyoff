@@ -12,6 +12,7 @@ export default function Index() {
   var sql = [
     `DROP TABLE IF EXISTS user;`,
     `DROP TABLE IF EXISTS task;`,
+    `DROP TABLE IF EXISTS subtask;`,
     `DROP TABLE IF EXISTS category;`,
     `DROP TABLE IF EXISTS checklist;`,
     `DROP TABLE IF EXISTS checkbox;`,
@@ -32,7 +33,6 @@ export default function Index() {
     `create table if not exists task (
             id integer primary key autoincrement,
             nome text,
-            status boolean,
             startDateTime text,
             endDateTime text,
             category_id int,
@@ -41,10 +41,19 @@ export default function Index() {
             foreign key (father_task_id) references task (id)
             );`,
 
+    `create table if not exists subtask (
+      id integer primary key autoincrement,
+      father_id int,
+      nome text,
+      startDateTime text,
+      endDateTime text,
+      foreign key (father_id) references task (id)
+    );`,
+
     `create table if not exists checklist (
-            id integer primary key autoincrement,
-            nome text
-            );`,
+        id integer primary key autoincrement,
+        nome text
+    );`,
 
     `create table if not exists checkbox (
       id integer primary key autoincrement,
