@@ -9,7 +9,7 @@ import {
   Photo,
   Name,
   Email,
-  Hours, 
+  Hours,
   Section,
   Hour,
   Subtitle,
@@ -18,9 +18,10 @@ import {
   BtnAction,
   IconEdit,
   IconCloud,
+  EmailTouch,
   EmailArea,
   Border,
-  ButtonReturn
+  ButtonReturn,
 } from './styles';
 
 const Profile = ({ navigation }) => {
@@ -32,15 +33,22 @@ const Profile = ({ navigation }) => {
         </ButtonReturn>
         <Status>
           <Border>
-            <Photo source={{ uri: 'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg' }} />
+            <Photo
+              source={{
+                uri:
+                  'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg',
+              }}
+            />
           </Border>
           <Name>John Doe</Name>
-          <EmailArea>
-            <Email>johndoe@email.com</Email>
-            <IconCloud>
-              <Feather name="upload-cloud" size={18} color="#6d5dcf" />
-            </IconCloud>
-          </EmailArea>
+          <EmailTouch onPress={() => navigation.navigate('Perfil')}>
+            <EmailArea>
+              <Email>johndoe@email.com</Email>
+              <IconCloud>
+                <Feather name="upload-cloud" size={18} color="#6d5dcf" />
+              </IconCloud>
+            </EmailArea>
+          </EmailTouch>
         </Status>
       </Area>
       <Hours>

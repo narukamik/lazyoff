@@ -3,14 +3,13 @@ import colors from '~/config/ColorConfig';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #F7FAFC;
-`
+  background-color: #f7fafc;
+`;
 
 export const Area = styled.View`
   width: 100%;
-  background-color: #F7FAFC;
+  background-color: #f7fafc;
 `;
-
 
 export const Status = styled.View`
   justify-content: center;
@@ -41,14 +40,15 @@ export const Name = styled.Text`
   font-size: 24px;
 `;
 
+export const EmailTouch = styled.TouchableWithoutFeedback``;
+
 export const EmailArea = styled.View`
   flex-direction: row;
   justify-content: center;
+  border: 1px solid #ff0;
 `;
 
-
-export const Email = styled.Text`
-`;
+export const Email = styled.Text``;
 
 export const IconEdit = styled.View`
   position: absolute;
@@ -89,8 +89,7 @@ export const Select = styled.Text`
   margin: 8px 0;
 `;
 
-export const BtnAction = styled.TouchableOpacity`
-`;
+export const BtnAction = styled.TouchableOpacity``;
 
 export const ButtonReturn = styled.TouchableOpacity`
   position: absolute;

@@ -103,7 +103,6 @@ const Task = ({ navigation, task, ...rest }) => {
         <Feather name="circle" size={20} color="#6d5dcf" />
       </CheckArea>
       <Time>{task.time}</Time>
-      {/* <TaskTouch> */}
       <PanGestureHandler
         onGestureEvent={animetedEvent}
         onHandlerStateChange={onHandlerStateChange}

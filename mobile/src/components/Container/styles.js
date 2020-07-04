@@ -10,7 +10,7 @@ export const ContainerC = styled(SafeAreaView)`
 
 export const ContainerA = styled(LinearGradient).attrs({
   colors: [colors.bgLinearHeader.light, colors.bgLinearHeader.dark],
-  start: [0, 1],
+  start: [0, 0],
   end: [1, 0],
 })`
   flex: 1;

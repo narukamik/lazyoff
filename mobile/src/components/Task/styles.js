@@ -11,6 +11,7 @@ export const Box = styled(Animated.View)`
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 3;
+  /* border: 1px solid #f00; */
 `;
 
 export const Container = styled(Animated.View)`
