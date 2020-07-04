@@ -16,6 +16,9 @@ import Detalhes from './pages/Cronograma/Detalhes';
 import Criar from './pages/Cronograma/Criar';
 import Apagar from './pages/Cronograma/Apagar';
 
+import ListaCategoria from './pages/Categoria/Lista';
+import CriarCategoria from './pages/Categoria/Criar';
+
 import Store from './pages/Store';
 import Profile from './pages/Profile';
 import SignIn from './pages/SignIn';
@@ -32,6 +35,19 @@ function ProfileStackScreen() {
     >
       <Stack.Screen name="Store" component={Store} />
       <Stack.Screen name="Profile" component={Profile} />
+    </Stack.Navigator>
+  );
+}
+
+function CategoriaStackScreen() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Lista" component={ListaCategoria} />
+      <Stack.Screen name="Criar" component={CriarCategoria} />
     </Stack.Navigator>
   );
 }
@@ -122,8 +138,8 @@ export default () => (
           }}
         />
         <Tab.Screen
-          name="Perfil"
-          component={ListaStackScreen} // change to Categoria
+          name="Categoria"
+          component={CategoriaStackScreen} // change to Categoria
           options={{
             tabBarIcon: ({ focused, color, size }) => (
               <IconDot
