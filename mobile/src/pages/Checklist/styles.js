@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import colors from '~/config/ColorConfig';
 
 const top = 50;
 const left = 15;
@@ -68,7 +69,7 @@ export const Title = styled.Text`
   font-size: 22px;
   font-weight: bold;
   letter-spacing: 0px;
-  color: #0E0B1A;
+  color: white
   opacity: 1;
   margin-left: 30px;
   margin-top: 20%;

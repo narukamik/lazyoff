@@ -34,9 +34,9 @@ const Profile = ({ navigation }) => {
           <Border>
             <Photo source={{ uri: 'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg' }} />
           </Border>
-          <Name>Jhon Doe</Name>
+          <Name>John Doe</Name>
           <EmailArea>
-            <Email>jhondoe@email.com</Email>
+            <Email>johndoe@email.com</Email>
             <IconCloud>
               <Feather name="upload-cloud" size={18} color="#6d5dcf" />
             </IconCloud>

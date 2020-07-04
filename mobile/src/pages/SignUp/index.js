@@ -1,8 +1,8 @@
 import React from 'react';
-import colors from '~/config/ColorConfig';
-import { Input } from 'react-native-elements';
 import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
+import { Input } from 'react-native-elements';
+import colors from '~/config/ColorConfig';
 
 import { Area, Divider, Submit, WhiteText, Title } from './styles';
 

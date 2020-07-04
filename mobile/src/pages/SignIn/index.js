@@ -7,7 +7,6 @@ import {
   Area,
   Divider,
   Submit,
-  InputWithBorder,
   WhiteText,
   Title,
 } from './styles';
@@ -24,8 +23,8 @@ const SignIn = () => {
           }
           labelStyle={{
             marginLeft: 20,
-            marginBottom: 8,
-            color: `${colors.primary}`,
+            marginBottom: 10,
+            color: 'grey',
           }}
           inputContainerStyle={{
             marginHorizontal: 20,
@@ -37,12 +36,8 @@ const SignIn = () => {
           }}
           inputStyle={{
             marginLeft: 15,
-            color: `${colors.primary}`
+            color: 'grey'
           }}
-          rightIconContainerStyle={{
-            paddingRight: 15
-          }}
-          
         />
         <Input
           label="Senha"
@@ -52,8 +47,8 @@ const SignIn = () => {
           }
           labelStyle={{
             marginLeft: 20,
-            marginBottom: 8,
-            color: `${colors.primary}`,
+            marginBottom: 5,
+            color: `grey`,
           }}
           inputContainerStyle={{
             marginHorizontal: 20,
@@ -62,13 +57,11 @@ const SignIn = () => {
             borderRadius: 5,
             borderWidth: 2.5,
             borderBottomWidth: 2.5,
+            padding: [0, 0, 0, 0],
           }}
           inputStyle={{
             marginLeft: 15,
             color: `${colors.primary}`
-          }}
-          rightIconContainerStyle={{
-            paddingRight: 15
           }}
         />
         <Divider />
