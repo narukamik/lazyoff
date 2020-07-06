@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
-import RNPickerSelect from 'react-native-picker-select';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import Container from '~/components/Container';
 import {
   Area,
@@ -11,28 +11,37 @@ import {
   PickerArea,
   PickerSelect,
   ButtonReturn,
+  TextTimePicker,
+  TouchDateTime
 } from './styles';
 
 const Criar = ({ navigation }) => {
-  const pickerStyle = {
-    inputAndroid: {
-      paddingHorizontal: 5,
-      backgroundColor: 'white',
-      height: 32,
-      borderColor: '#6d5dcf',
-      borderWidth: 1,
-      borderRadius: 8,
-      width: '100%',
-    },
-    iconContainer: {
-      top: 4,
-      right: 2,
-    },
-    placeholder: {
-      color: '#6d5dcf',
-      fontSize: 14,
-      paddingRight: 24,
-    },
+
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+  const [display, setDisplay] = useState('default');
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === 'ios');
+    setDate(currentDate);
+    console.log(selectedDate);
+  };
+
+  const showMode = currentMode => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+    setDisplay('default');
+  };
+
+  const showTimepicker = () => {
+    showMode('time');
+    setDisplay('spinner');
   };
 
   return (
@@ -48,55 +57,37 @@ const Criar = ({ navigation }) => {
             <Feather name="smile" size={24} color="#6d5dcf" />
           </InputArea>
           <PickerArea>
-            <PickerSelect>
-              <RNPickerSelect
-                placeholder={{ label: 'Dia', value: null }}
-                useNativeAndroidPickerStyle={false}
-                style={pickerStyle}
-                Icon={() => {
-                  return <Feather name="calendar" size={23} color="#6d5dcf" />;
-                }}
-                onValueChange={(value) => console.log(value)}
-                items={[
-                  { label: '12', value: '12' },
-                  { label: '13', value: '13' },
-                  { label: '14', value: '14' },
-                ]}
-              />
-            </PickerSelect>
-            <PickerSelect>
-              <RNPickerSelect
-                placeholder={{ label: 'Categoria', value: null }}
-                useNativeAndroidPickerStyle={false}
-                style={pickerStyle}
-                Icon={() => {
-                  return <Feather name="tag" size={23} color="#6d5dcf" />;
-                }}
-                onValueChange={(value) => console.log(value)}
-                items={[
-                  { label: 'Trabalho', value: 'trabalho' },
-                  { label: 'Faculdade', value: 'faculdade' },
-                  { label: 'Casa', value: 'casa' },
-                ]}
-              />
-            </PickerSelect>
-            <PickerSelect>
-              <RNPickerSelect
-                placeholder={{ label: 'Hora', value: null }}
-                useNativeAndroidPickerStyle={false}
-                style={pickerStyle}
-                Icon={() => {
-                  return <Feather name="clock" size={23} color="#6d5dcf" />;
-                }}
-                onValueChange={(value) => console.log(value)}
-                items={[
-                  { label: '18:00', value: '18h' },
-                  { label: '19:00', value: '19h' },
-                  { label: '20:00', value: '20h' },
-                ]}
-              />
-            </PickerSelect>
+            <TouchDateTime onPress={showDatepicker}>
+              <PickerSelect>
+                <Feather name="calendar" size={20} color="#6d5dcf" />
+                <TextTimePicker>Dia</TextTimePicker>
+              </PickerSelect>
+            </TouchDateTime>
+
+            <TouchDateTime >
+              <PickerSelect>
+                <Feather name="tag" size={20} color="#6d5dcf" />
+                <TextTimePicker>Categoria</TextTimePicker>
+              </PickerSelect>
+            </TouchDateTime>
+
+            <TouchDateTime onPress={showTimepicker}>
+              <PickerSelect>
+                <Feather name="clock" size={20} color="#6d5dcf" />
+                <TextTimePicker>Hora</TextTimePicker>
+              </PickerSelect>
+            </TouchDateTime>
           </PickerArea>
+          {show && (
+            <DateTimePicker
+              testID="dateTimePicker"
+              value={date}
+              mode={mode}
+              display={display}
+              is24Hour={true}
+              onChange={onChange}
+            />
+          )}
         </Box>
       </Area>
     </Container>

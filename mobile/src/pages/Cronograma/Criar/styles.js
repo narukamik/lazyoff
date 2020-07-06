@@ -53,4 +53,19 @@ export const PickerSelect = styled.View`
   background-color: transparent;
   color: #8867dd;
   font-size: 12px;
+  border-color: #6d5dcf;
+  border-width: 1px;
+  border-radius: 8px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const TextTimePicker = styled.Text`
+  font-size: 16px;
+  color: #6d5dcf;
+  margin-left: 5px;
+`;
+
+export const TouchDateTime = styled.TouchableWithoutFeedback`
 `;
