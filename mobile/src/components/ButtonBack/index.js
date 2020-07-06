@@ -4,10 +4,10 @@ import colors from '~/config/ColorConfig';
 
 import { ButtonReturn } from './styles';
 
-const ButtonBack = ({ navigation }) => {
+const ButtonBack = ({ navigation, color = colors.primary }) => {
   return (
     <ButtonReturn onPress={() => navigation.goBack()}>
-      <Feather name="chevron-left" size={30} color={colors.primary} />
+      <Feather name="chevron-left" size={30} color={color} />
     </ButtonReturn>
   );
 };
