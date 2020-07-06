@@ -9,12 +9,12 @@ import {
   Icon,
 } from './styles';
 
-const CronHeader = ({ navigation, icon }) => {
+const CronHeader = ({ page, titulo, navigation, icon }) => {
   return (
     <Container>
-      <Title>Cronograma</Title>
+      {page && <Title>{page}</Title>}
       <AreaTitle>
-        <SmallTitle>Segunda, 14 de junho</SmallTitle>
+        {titulo && <SmallTitle>{titulo}</SmallTitle>}
         {/* <Button
           onPress={() => navigation.jumpTo('Home', { screen: 'Checklist' })}
         >

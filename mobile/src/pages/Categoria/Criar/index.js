@@ -32,10 +32,6 @@ import {
 const Criar = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
-  function navigateToCategoria() {
-    navigation.goBack();
-  }
-
   return (
     <Container>
       <HeaderTop>
@@ -53,8 +49,6 @@ const Criar = ({ navigation }) => {
       </HeaderTop>
 
       <Area>
-        {/* borderWidth: 1, borderColor: "#ff0", */}
-
         <InputArea style={{ width: '100%' }}>
           <Input
             style={{ marginLeft: -3, width: '90%' }}

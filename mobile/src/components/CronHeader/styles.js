@@ -10,7 +10,7 @@ export const Container = styled(LinearGradient).attrs({
 })`
   width: 100%;
   margin-bottom: auto;
-  padding: 40px 10px 30px;
+  padding: 60px 10px 60px;
 `;
 
 export const Button = styled.TouchableOpacity``;

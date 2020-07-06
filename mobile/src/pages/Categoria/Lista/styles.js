@@ -1,101 +1,75 @@
 import styled from 'styled-components/native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { Animated } from 'react-native';
 import colors from '~/config/ColorConfig';
-
-const top = 50;
-const left = 15;
-
-export const Separar = styled.View`]
-  padding-bottom: 20px;
-`;
-
-export const Bolinha= styled.View`]
-  width: 20px;
-  height: 20px;
-  border-radius: 50px;
-  margin-right: 340px;
-`;
-
-export const Checar = styled.View`]
-`;
-
-export const Text = styled.Text`
-  width: 80%;
-  padding: 10px 0px 0px;
-  font-size: 16px;
-  color: #6D5DCF;
-  margin-right: 30px;
-  margin-top: -30px;
-`;
-
-
-export const Header = styled.View`
-  padding: 150px 0 0;
-  background-color: #fff;
-`;
 
 export const Area = styled.View`
   position: relative;
   flex: 1;
   align-items: center;
-  background-color: #F7FAFC;
-  padding: ${30}px ${40}px 30px;
-`;
-
-export const Box = styled.View`
-  margin-top: 45%;
-  position: absolute;
-  background-color: #F7FAFC;
-  height: 100%;
-  width: 100%;  
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-`;
-
-export const CheckArea = styled.View`
-  margin-top: -30px;
-  width: 100%;
-  height: 15%;
-`;
-
-export const CheckText = styled.Text`
-  font-size: 16px;
-`;
-
-export const CheckItem = styled.View`
-  flex-direction: row;
-  align-items: center;
-  margin: 4px 0;
-`;
-
-export const Div = styled.View`
-  margin-top: 32px;
-  margin-right: 55%;
-`;
-
-export const HeaderTop = styled.View`
-  top: 0px;
-  left: -1px;
-  width: 100%;
-  height: 174px;
-`;
-
-export const Title = styled.Text`
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 0px;
-  color: #fff;
-  opacity: 1;
-  margin-left: 30px;
-  margin-top: 20%;
+  background-color: #f7fafc;
+  padding: 20px 15px;
 `;
 
 export const ScrollArea = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
 })`
   position: relative;
-  flex: 1;
   width: 100%;
 `;
 
+export const ButtonArea = styled(Animated.View)`
+  position: relative;
+  margin-bottom: 15px;
+  width: 100%;
+`;
+export const Button = styled.TouchableOpacity`
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+`;
+
+export const Bolinha = styled.View`
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+`;
+
+export const CheckText = styled.Text`
+  width: 80%;
+  font-size: 16px;
+  color: ${(props) => (props.color ? props.color : colors.primary)};
+  margin-left: 8px;
+`;
+
+export const DarkBg = styled(Animated.View)`
+  position: absolute;
+  top: 32px;
+  left: 30px;
+  background-color: #0e0b1a;
+  z-index: 2;
+  width: 179px;
+  height: 76px;
+  opacity: 0.93;
+  border-radius: 4px;
+  z-index: 6;
+`;
+
+export const ButtonEdit = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 15px;
+  border-bottom-color: #0e0b1a;
+`;
+
+export const EditText = styled.Text`
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 4px;
+  color: #fff;
+`;
+export const ButtonDelete = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 15px;
+`;

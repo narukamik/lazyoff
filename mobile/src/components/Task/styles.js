@@ -11,7 +11,6 @@ export const Box = styled(Animated.View)`
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 3;
-  /* border: 1px solid #f00; */
 `;
 
 export const Container = styled(Animated.View)`
@@ -134,6 +133,7 @@ export const DarkBg = styled(Animated.View)`
   width: 179px;
   height: 76px;
   border-radius: 4px;
+  opacity: 0.39;
   z-index: 6;
 `;
 
@@ -141,7 +141,7 @@ export const ButtonEdit = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: space-between;
   padding: 8px 15px;
-  border-bottom-color: rgba(255, 255, 255, 0.29);
+  border-bottom-color: #0e0b1a;
   border-bottom-width: 1px;
 `;
 
@@ -150,7 +150,9 @@ export const EditText = styled.Text`
   line-height: 16px;
   margin-top: 4px;
   color: #fff;
+  font-weight: 100;
 `;
+
 export const ButtonDelete = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: space-between;

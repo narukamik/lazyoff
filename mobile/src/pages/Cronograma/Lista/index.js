@@ -20,7 +20,12 @@ const Lista = ({ navigation }) => {
 
   return (
     <Container>
-      <CronHeader navigation={navigation} icon="search" />
+      <CronHeader
+        page="Cronograma"
+        titulo="Segunda, 14 de junho"
+        navigation={navigation}
+        icon="search"
+      />
       <Area>
         <VerticalLine />
         <ScrollArea

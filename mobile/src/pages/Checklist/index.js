@@ -11,15 +11,14 @@ import {
   HeaderTop,
   Div,
 } from './styles';
+import CronHeader from '~/components/CronHeader';
 
 const Checklist = () => {
   const [isSelected, setSelection] = useState(false);
 
   return (
     <Container>
-      <HeaderTop>
-        <Title>Segunda, 14 de junho</Title>
-      </HeaderTop>
+      <CronHeader titulo="Segunda, 14 de junho" />
       <Area>
         <CheckArea>
           <CheckItem>

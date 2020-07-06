@@ -1,83 +1,127 @@
-import React, { useState } from 'react';
-import {
-  View,
-  Button,
-  CheckBox,
-  Modal,
-  Alert,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import React from 'react';
+import { Animated } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
 import {
   Area,
-  CheckArea,
-  CheckText,
-  CheckItem,
-  Text,
-  Title,
-  HeaderTop,
-  Div,
-  Bolinha,
-  Separar,
-  Checar,
   ScrollArea,
+  Bolinha,
+  CheckText,
+  ButtonArea,
+  Button,
+  DarkBg,
+  ButtonEdit,
+  EditText,
+  ButtonDelete,
 } from './styles';
-// import { Categoria } from '~/components/Task/styles';
+import CronHeader from '~/components/CronHeader';
+import infos from '~/assets/infos';
 
+const { categoria } = infos;
 const Lista = ({ navigation }) => {
-  function navigateToCategoria() {
-    navigation.goBack();
-  }
-  return (
-    <Container>
-      <HeaderTop>
-        <Title>Categorias</Title>
-      </HeaderTop>
-      <Area>
-        <Bolinha style={{ backgroundColor: '#6278C1' }} />
-        <Text>Faculdade (15)</Text>
-        <Separar />
-        <Bolinha style={{ backgroundColor: '#E67373' }} />
-        <Text>Trabalho (04)</Text>
-        <Separar />
-        <Bolinha style={{ backgroundColor: '#61C3D0' }} />
-        <Text>Casa</Text>
-        <Separar />
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Criar')}
-          style={{ width: '110%' }}
-        >
-          <Feather
-            style={{ marginLeft: 2, opacity: 0.6 }}
-            name="plus-circle"
-            size={20}
-            color="black"
-          />
+  function renderItem(item) {
+    const { titulo, color, qtd, type } = item;
+    let fadeAnimAux = true;
 
-          <Text
+    const fadeAnim = new Animated.Value(20);
+
+    // funções de mostrar(fadeIn) e esconder(fadeOut) o menu de opções
+    const fadeIn = () => {
+      // Will change fadeAnim value to 180 in 0.5 seconds
+      Animated.timing(fadeAnim, {
+        toValue: 120,
+        duration: 500,
+      }).start();
+      fadeAnimAux = false;
+    };
+
+    const fadeOut = () => {
+      // Will change fadeAnim value to 0 in 5 seconds
+      Animated.timing(fadeAnim, {
+        toValue: 20,
+        duration: 500,
+      }).start();
+      fadeAnimAux = true;
+    };
+
+    if (type && type === 'button') {
+      return (
+        <Button key={titulo} onPress={() => navigation.navigate('Criar')}>
+          <Feather name="plus-circle" size={20} color="#454252" />
+          <CheckText color="#454252">Nova categoria</CheckText>
+        </Button>
+      );
+    }
+
+    return (
+      <ButtonArea
+        style={{
+          height: fadeAnim,
+        }}
+      >
+        <Button
+          key={titulo}
+          onPress={() => {
+            if (fadeAnimAux) {
+              fadeIn();
+            } else {
+              fadeOut();
+            }
+          }}
+        >
+          <Bolinha backgroundColor={color} />
+          <CheckText>
+            {titulo} {qtd > 0 && `(${qtd})`}
+          </CheckText>
+        </Button>
+
+        <DarkBg
+          style={{
+            height: fadeAnim.interpolate({
+              inputRange: [20, 120],
+              outputRange: [0, 76],
+              extrapolate: 'clamp',
+            }),
+          }}
+        >
+          <ButtonEdit
+            onPress={() => {
+              navigation.navigate('Criar', { id: titulo });
+            }}
             style={{
-              marginLeft: 30,
-              marginRight: 30,
-              marginTop: -32,
-              color: '#000000',
-              opacity: 0.6,
+              borderBottomWidth: fadeAnim.interpolate({
+                inputRange: [20, 120],
+                outputRange: [0, 1],
+                extrapolate: 'clamp',
+              }),
             }}
           >
-            Nova categoria
-          </Text>
-        </TouchableOpacity>
-      </Area>
-      {/* <Modal 
-    transparent={true}
-    visible={true}>
-        <View style={{backgroundColor: "#000000aa", flex:1}}>
-          <View style={{backgroundColor: "#ffff", margin:50, padding:40, borderRadius: 10, flex:1}}>
+            <EditText>Editar</EditText>
+            <Feather name="edit-2" size={20} color="#FFF" />
+          </ButtonEdit>
+          <ButtonDelete
+            onPress={() => {
+              navigation.navigate('Apagar', { id: task.id });
+            }}
+          >
+            <EditText>Apagar</EditText>
+            <Feather name="trash-2" size={20} color="#FFF" />
+          </ButtonDelete>
+        </DarkBg>
+      </ButtonArea>
+    );
+  }
 
-          </View>
-        </View>
-    </Modal> */}
+  return (
+    <Container>
+      <CronHeader page="Categorias" />
+      <Area>
+        <ScrollArea
+          data={categoria}
+          keyExtractor={(item) => String(item.titulo)}
+          renderItem={({ item }) => renderItem(item)}
+        />
+      </Area>
     </Container>
   );
 };
