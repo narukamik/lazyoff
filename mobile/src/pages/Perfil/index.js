@@ -1,7 +1,10 @@
 import React from 'react';
+import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
+import colors from '~/config/ColorConfig';
 import {
   Area,
+  ButtonReturn,
   Background,
   InputDiv,
   Divider,
@@ -20,6 +23,9 @@ const Perfil = ({ navigation }) => {
 
   return (
     <Container>
+      <ButtonReturn onPress={() => navigation.goBack()}>
+        <Feather name="chevron-left" size={30} color={colors.primary} />
+      </ButtonReturn>
       <Area>
         <Background source={logo} />
         <SignIn onPress={() => handleNavigation('SignIn')}>

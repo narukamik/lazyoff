@@ -9,6 +9,13 @@ export const Area = styled.View`
   background-color: white;
 `;
 
+export const ButtonReturn = styled.TouchableOpacity`
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  z-index: 3;
+`;
+
 export const Background = styled.ImageBackground`
   width: 100%;
   height: 15%;

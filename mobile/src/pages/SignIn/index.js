@@ -1,19 +1,15 @@
 import React from 'react';
-import Container from '~/components/Container';
-import colors from '~/config/ColorConfig';
 import { Input } from 'react-native-elements';
 import { Feather } from '@expo/vector-icons';
-import {
-  Area,
-  Divider,
-  Submit,
-  WhiteText,
-  Title,
-} from './styles';
+import Container from '~/components/Container';
+import colors from '~/config/ColorConfig';
+import { Area, Divider, Submit, WhiteText, Title } from './styles';
+import ButtonBack from '~/components/ButtonBack';
 
-const SignIn = () => {
+const SignIn = ({ navigation }) => {
   return (
     <Container>
+      <ButtonBack navigation={navigation} />
       <Area>
         <Title>LAZYOFF</Title>
         <Input
@@ -36,12 +32,12 @@ const SignIn = () => {
           }}
           inputStyle={{
             marginLeft: 15,
-            color: 'grey'
+            color: 'grey',
           }}
         />
         <Input
           label="Senha"
-          secureTextEntry={true}
+          secureTextEntry
           rightIcon={
             <Feather name="lock" size={24} color={`${colors.primary}`} />
           }
@@ -57,11 +53,10 @@ const SignIn = () => {
             borderRadius: 5,
             borderWidth: 2.5,
             borderBottomWidth: 2.5,
-            padding: [0, 0, 0, 0],
           }}
           inputStyle={{
             marginLeft: 15,
-            color: `${colors.primary}`
+            color: `${colors.primary}`,
           }}
         />
         <Divider />

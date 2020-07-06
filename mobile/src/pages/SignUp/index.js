@@ -1,14 +1,16 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
-import Container from '~/components/Container';
 import { Input } from 'react-native-elements';
+import Container from '~/components/Container';
 import colors from '~/config/ColorConfig';
+import ButtonBack from '~/components/ButtonBack';
 
 import { Area, Divider, Submit, WhiteText, Title } from './styles';
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
   return (
     <Container>
+      <ButtonBack navigation={navigation} />
       <Area>
         <Title>LAZYOFF</Title>
         <Input
@@ -31,10 +33,10 @@ const SignUp = () => {
           }}
           inputStyle={{
             marginLeft: 15,
-            color: `${colors.primary}`
+            color: `${colors.primary}`,
           }}
           rightIconContainerStyle={{
-            paddingRight: 15
+            paddingRight: 15,
           }}
         />
         <Input
@@ -57,15 +59,15 @@ const SignUp = () => {
           }}
           inputStyle={{
             marginLeft: 15,
-            color: `${colors.primary}`
+            color: `${colors.primary}`,
           }}
           rightIconContainerStyle={{
-            paddingRight: 15
+            paddingRight: 15,
           }}
         />
         <Input
           label="Senha"
-          secureTextEntry={true}
+          secureTextEntry
           rightIcon={
             <Feather name="lock" size={24} color={`${colors.primary}`} />
           }
@@ -84,15 +86,15 @@ const SignUp = () => {
           }}
           inputStyle={{
             marginLeft: 15,
-            color: `${colors.primary}`
+            color: `${colors.primary}`,
           }}
           rightIconContainerStyle={{
-            paddingRight: 15
+            paddingRight: 15,
           }}
         />
         <Input
           label="Confirmar senha"
-          secureTextEntry={true}
+          secureTextEntry
           rightIcon={
             <Feather name="lock" size={24} color={`${colors.primary}`} />
           }
@@ -111,10 +113,10 @@ const SignUp = () => {
           }}
           inputStyle={{
             marginLeft: 15,
-            color: `${colors.primary}`
+            color: `${colors.primary}`,
           }}
           rightIconContainerStyle={{
-            paddingRight: 15
+            paddingRight: 15,
           }}
         />
         <Divider />

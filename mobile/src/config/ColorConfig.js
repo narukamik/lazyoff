@@ -3,8 +3,5 @@ export default {
   white: '#FFF',
   gray: '#f7fafc',
   bgLinearButton: ['#7C6EDB', '#E67373'],
-  bgLinearHeader: {
-    dark: '#976de5',
-    light: '#6D5DCF',
-  },
+  bgLinearHeader: ['#6D5DCF', '#976de5'],
 };

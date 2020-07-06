@@ -3,12 +3,12 @@ import colors from '~/config/ColorConfig';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #F7FAFC;
-`
+  background-color: #f7fafc;
+`;
 
 export const Area = styled.View`
   width: 100%;
-  background-color: #F7FAFC;
+  background-color: #f7fafc;
 `;
 
 export const HeaderStatus = styled.View`
@@ -58,9 +58,11 @@ export const Photo = styled.Image`
   margin-right: -10px;
 `;
 
-export const TouchPhoto = styled.TouchableOpacity`
+export const AreaPhoto = styled.View`
   z-index: 2;
 `;
+
+export const TouchPhoto = styled.TouchableWithoutFeedback``;
 
 export const TextLevel = styled.Text`
   color: white;
@@ -105,9 +107,7 @@ export const Title = styled.Text`
   opacity: 0.78;
 `;
 
-export const Scroll = styled.ScrollView`
-  
-`;
+export const Scroll = styled.ScrollView``;
 
 export const SliderArea = styled.View`
   width: 100%;

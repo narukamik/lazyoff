@@ -11,7 +11,7 @@ export const Area = styled.View`
 export const Title = styled.Text`
   font-size: 25px;
   color: ${colors.primary};
-  margin-bottom: 15%
+  margin-bottom: 15%;
 `;
 
 export const InputRow = styled.View`
@@ -49,6 +49,4 @@ export const WhiteText = styled.Text`
 
 export const Divider = styled.View`
   height: 3%;
-  display: block;
 `;
-

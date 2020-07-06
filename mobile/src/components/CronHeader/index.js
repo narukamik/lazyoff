@@ -15,11 +15,11 @@ const CronHeader = ({ navigation, icon }) => {
       <Title>Cronograma</Title>
       <AreaTitle>
         <SmallTitle>Segunda, 14 de junho</SmallTitle>
-        <Button
+        {/* <Button
           onPress={() => navigation.jumpTo('Home', { screen: 'Checklist' })}
         >
           <Icon name={icon} size={20} color="#FFF" />
-        </Button>
+        </Button> */}
       </AreaTitle>
     </Container>
   );

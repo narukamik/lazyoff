@@ -45,7 +45,6 @@ export const EmailTouch = styled.TouchableWithoutFeedback``;
 export const EmailArea = styled.View`
   flex-direction: row;
   justify-content: center;
-  border: 1px solid #ff0;
 `;
 
 export const Email = styled.Text``;

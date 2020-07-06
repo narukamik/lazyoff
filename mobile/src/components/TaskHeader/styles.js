@@ -17,7 +17,7 @@ export const Title = styled.Text`
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   margin-bottom: 30px;
 `;
 
@@ -44,6 +44,7 @@ export const Nivel = styled.View`
   height: 10px;
   border-radius: 25px;
   background-color: #e67373;
+  margin-right: 4px;
 `;
 
 export const AreaText = styled.Text`
@@ -51,6 +52,5 @@ export const AreaText = styled.Text`
   justify-content: center;
   text-align: center;
   font-size: 12px;
-  color: #fff;
-  margin-left: 4px;
+  color: #b6b9ba;
 `;

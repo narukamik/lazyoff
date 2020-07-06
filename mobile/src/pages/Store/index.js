@@ -21,7 +21,8 @@ import {
   Scroll,
   SliderArea,
   SliderOffArea,
-  TouchPhoto
+  AreaPhoto,
+  TouchPhoto,
 } from './styles';
 
 import infos from '~/assets/infos';
@@ -32,13 +33,16 @@ const Store = ({ navigation }) => {
       <Area>
         <HeaderStatus>
           <Status>
-            <TouchPhoto onPress={() => navigation.navigate('Profile')}>
-              <Photo
-                source={{
-                  uri: 'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg',
-                }}
-              />
-            </TouchPhoto>
+            <AreaPhoto>
+              <TouchPhoto onPress={() => navigation.navigate('Profile')}>
+                <Photo
+                  source={{
+                    uri:
+                      'https://cdn.syntese.com.br/wp-content/uploads/2019/01/thumb_AleB.jpg',
+                  }}
+                />
+              </TouchPhoto>
+            </AreaPhoto>
             <Level>
               <TextLevel>NÍVEL 100</TextLevel>
             </Level>
@@ -55,7 +59,8 @@ const Store = ({ navigation }) => {
             </Value>
             <Trophy
               source={{
-                uri: 'https://images.vexels.com/media/users/3/153916/isolated/lists/c10e8d00b250c7051474d6b4c08ee3a6-icone-de-traco-colorido-trofeu-esportes.png',
+                uri:
+                  'https://images.vexels.com/media/users/3/153916/isolated/lists/c10e8d00b250c7051474d6b4c08ee3a6-icone-de-traco-colorido-trofeu-esportes.png',
               }}
             />
           </Status>

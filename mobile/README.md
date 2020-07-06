@@ -6,4 +6,4 @@ Primeiro passo: instalação do node(https://nodejs.org/en/download/), caso já 
 
 Segundo passo: instalar o expo-cli com o comando "npm install --global expo-cli";
 
-Terceiro passo: Dê "npm i" ou "npm install"
+Terceiro passo: Dê "npm i" ou "npm install" na pasta mobile

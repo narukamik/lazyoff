@@ -1,103 +1,29 @@
 import React from 'react';
-import { Alert } from 'react-native';
+import { Text } from 'react-native';
 // TODO ALTERAR PARA TELA DE POMODORO
-import { Feather } from '@expo/vector-icons';
-import RNPickerSelect from 'react-native-picker-select';
+import colors from '~/config/ColorConfig';
 
+import infos from '~/assets/infos';
 import Container from '~/components/Container';
 import TaskHeader from '~/components/TaskHeader';
-import {
-  Box,
-  InputArea,
-  Input,
-  PickerArea,
-  PickerSelect,
-  BtnAdd,
-  TextAdd,
-} from './styles';
+import CheckItem from '~/components/CheckItem';
+import { Area, TaskArea, TaskList } from './styles';
 
 const Detalhes = () => {
-  const pickerStyle = {
-    inputAndroid: {
-      paddingHorizontal: 5,
-      backgroundColor: 'white',
-      height: 32,
-      borderColor: '#6d5dcf',
-      borderWidth: 1,
-      borderRadius: 8,
-      width: '100%',
-    },
-    iconContainer: {
-      top: 4,
-      right: 2,
-    },
-    placeholder: {
-      color: '#6d5dcf',
-      fontSize: 14,
-      paddingRight: 24,
-    },
-  };
-
   return (
     <Container>
       <TaskHeader backgroundColor="#FFF" />
-      <Box>
-        <InputArea>
-          <Input placeholder="Digite seu item ou tarefa" />
-        </InputArea>
-      </Box>
-
-      <PickerArea>
-        <PickerSelect>
-          <RNPickerSelect
-            placeholder={{ label: 'Dia', value: null }}
-            useNativeAndroidPickerStyle={false}
-            style={pickerStyle}
-            Icon={() => {
-              return <Feather name="calendar" size={23} color="#6d5dcf" />;
-            }}
-            onValueChange={(value) => console.log(value)}
-            items={[
-              { label: '12', value: '12' },
-              { label: '13', value: '13' },
-              { label: '14', value: '14' },
-            ]}
+      <Area>
+        <TaskArea>
+          <TaskList
+            data={infos.tasks}
+            keyExtractor={(item) => String(item.id)}
+            renderItem={({ item }) => <CheckItem item={item} />}
           />
-        </PickerSelect>
-
-        <PickerSelect>
-          <RNPickerSelect
-            placeholder={{ label: 'Hora', value: null }}
-            useNativeAndroidPickerStyle={false}
-            style={pickerStyle}
-            Icon={() => {
-              return <Feather name="clock" size={23} color="#6d5dcf" />;
-            }}
-            onValueChange={(value) => console.log(value)}
-            items={[
-              { label: '18:00', value: '18h' },
-              { label: '19:00', value: '19h' },
-              { label: '20:00', value: '20h' },
-            ]}
-          />
-        </PickerSelect>
-
-        <PickerSelect>
-          <BtnAdd>
-            <TextAdd>+</TextAdd>
-          </BtnAdd>
-        </PickerSelect>
-      </PickerArea>
+        </TaskArea>
+      </Area>
     </Container>
   );
 };
-Detalhes.navigationOptions = ({ navigation }) => ({
-  headerLeft: () => (
-    <Button
-      onPress={() => Alert.alert('This is a button!')}
-      title="Info"
-      color="#fff"
-    />
-  ),
-});
+
 export default Detalhes;

@@ -2,7 +2,6 @@ import styled from 'styled-components/native';
 import Input from 'react-native-elements';
 import colors from '~/config/ColorConfig';
 
-
 export const Area = styled.View`
   flex: 1;
   align-items: center;
@@ -13,8 +12,8 @@ export const Area = styled.View`
 export const Title = styled.Text`
   font-size: 25px;
   color: ${colors.primary};
-  margin-bottom: 15%,
-  font-family: 'Futura'
+  margin-bottom: 15%;
+  /* font-family: 'Futura'  */
 `;
 
 export const InputRow = styled.View`
@@ -52,7 +51,4 @@ export const WhiteText = styled.Text`
 
 export const Divider = styled.View`
   height: 3%;
-  display: block;
 `;
-
-
