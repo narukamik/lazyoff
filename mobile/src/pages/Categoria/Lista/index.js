@@ -84,6 +84,7 @@ const Lista = ({ navigation }) => {
             }),
           }}
         >
+          
           <ButtonEdit
             onPress={() => {
               navigation.navigate('Criar', { id: titulo });
@@ -99,6 +100,7 @@ const Lista = ({ navigation }) => {
             <EditText>Editar</EditText>
             <Feather name="edit-2" size={20} color="#FFF" />
           </ButtonEdit>
+
           <ButtonDelete
             onPress={() => {
               navigation.navigate('Apagar', { id: task.id });
@@ -107,6 +109,7 @@ const Lista = ({ navigation }) => {
             <EditText>Apagar</EditText>
             <Feather name="trash-2" size={20} color="#FFF" />
           </ButtonDelete>
+
         </DarkBg>
       </ButtonArea>
     );
