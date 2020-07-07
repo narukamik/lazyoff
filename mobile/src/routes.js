@@ -18,6 +18,7 @@ import Apagar from './pages/Cronograma/Apagar';
 
 import ListaCategoria from './pages/Categoria/Lista';
 import CriarCategoria from './pages/Categoria/Criar';
+import ApagarCategoria from './pages/Categoria/Apagar';
 
 import Store from './pages/Store';
 import Profile from './pages/Profile';
@@ -50,6 +51,7 @@ function CategoriaStackScreen() {
       }}
     >
       <Stack.Screen name="Lista" component={ListaCategoria} />
+      <Stack.Screen name="Apagar" component={ApagarCategoria} />
       <Stack.Screen name="Criar" component={CriarCategoria} />
     </Stack.Navigator>
   );

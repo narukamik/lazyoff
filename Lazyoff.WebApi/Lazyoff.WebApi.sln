@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lazyoff.WebApi", "Lazyoff.WebApi\Lazyoff.WebApi.csproj", "{0838F51C-755D-4B3D-B7FE-E6C7C6C469E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lazyoff.Models", "Lazyoff.DTO\Lazyoff.Models.csproj", "{95CEF86D-DEF5-49BE-A663-BEF7AF50EE92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0838F51C-755D-4B3D-B7FE-E6C7C6C469E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0838F51C-755D-4B3D-B7FE-E6C7C6C469E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0838F51C-755D-4B3D-B7FE-E6C7C6C469E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0838F51C-755D-4B3D-B7FE-E6C7C6C469E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95CEF86D-DEF5-49BE-A663-BEF7AF50EE92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CEF86D-DEF5-49BE-A663-BEF7AF50EE92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CEF86D-DEF5-49BE-A663-BEF7AF50EE92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CEF86D-DEF5-49BE-A663-BEF7AF50EE92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06131E85-7635-4641-8356-910D3EF0F7CA}
+	EndGlobalSection
+EndGlobal
