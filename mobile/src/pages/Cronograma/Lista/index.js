@@ -6,6 +6,10 @@ import Container from '~/components/Container';
 import CronHeader from '~/components/CronHeader';
 import Task from '~/components/Task';
 import {
+  ActionArea,
+  ActionButtonArea,
+  ButtonNovo,
+  TextNovo,
   Area,
   VerticalLine,
   ScrollArea,
@@ -17,8 +21,7 @@ import infos from '~/assets/infos';
 
 const Lista = ({ navigation }) => {
   // init animation functions
-  const offset = 0;
-  const fadeAnimAux = true;
+  let offset = 0;
 
   const translateY = new Animated.Value(0);
   const animetedEvent = new Animated.event(
@@ -27,27 +30,28 @@ const Lista = ({ navigation }) => {
   );
 
   function onHandlerStateChange(event) {
-    // if (event.nativeEvent.oldState === State.ACTIVE) {
-    //   let opened = false;
-    //   const { translationY } = event.nativeEvent;
-    //   offset += translationY;
-    //   if (translationY <= -30) {
-    //     opened = true;
-    //   } else {
-    //     translateY.setValue(offset);
-    //     translateY.setOffset(0);
-    //     offset = 0;
-    //   }
-    //   Animated.timing(translateY, {
-    //     toValue: opened ? -120 : 0,
-    //     duration: 200,
-    //     useNativeDriver: true,
-    //   }).start(() => {
-    //     offset = opened ? -120 : 0;
-    //     translateY.setOffset(offset);
-    //     translateY.setValue(0);
-    //   });
-    // }
+    if (event.nativeEvent.oldState === State.ACTIVE) {
+      let opened = false;
+      const { translationY } = event.nativeEvent;
+      offset += translationY;
+      if (translationY >= 20) {
+        opened = true;
+      } else {
+        translateY.setValue(offset);
+        translateY.setOffset(0);
+        offset = 0;
+      }
+
+      Animated.timing(translateY, {
+        toValue: opened ? 50 : 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        offset = opened ? 50 : 0;
+        translateY.setOffset(offset);
+        translateY.setValue(0);
+      });
+    }
   }
 
   return (
@@ -62,20 +66,61 @@ const Lista = ({ navigation }) => {
         onGestureEvent={animetedEvent}
         onHandlerStateChange={onHandlerStateChange}
       >
-        <Area>
-          <VerticalLine />
-          <ScrollArea
-            data={infos.tasks}
-            keyExtractor={(item) => String(item.id)}
-            renderItem={({ item }) => (
-              <Task navigation={navigation} task={item} />
-            )}
-          />
-          <CheckEndArea>
-            <Feather name="stop-circle" size={20} color="#eee" />
-            <TextEnd>18:00</TextEnd>
-          </CheckEndArea>
-        </Area>
+        <ActionArea>
+          <ActionButtonArea
+            style={{
+              transform: [
+                {
+                  translateY: translateY.interpolate({
+                    inputRange: [0, 50],
+                    outputRange: [40, 0],
+                    extrapolate: 'clamp',
+                  }),
+                },
+              ],
+            }}
+          >
+            <ButtonNovo onPress={() => navigation.navigate('Criar')}>
+              <TextNovo>Adicionar Task</TextNovo>
+            </ButtonNovo>
+          </ActionButtonArea>
+          <Area
+            style={{
+              transform: [
+                {
+                  translateY: translateY.interpolate({
+                    inputRange: [0, 50],
+                    outputRange: [0, 40],
+                    extrapolate: 'clamp',
+                  }),
+                },
+              ],
+              borderTopLeftRadius: translateY.interpolate({
+                inputRange: [0, 50],
+                outputRange: [20, 0],
+                extrapolate: 'clamp',
+              }),
+              borderTopRightRadius: translateY.interpolate({
+                inputRange: [0, 50],
+                outputRange: [20, 0],
+                extrapolate: 'clamp',
+              }),
+            }}
+          >
+            <VerticalLine />
+            <ScrollArea
+              data={infos.tasks}
+              keyExtractor={(item) => String(item.id)}
+              renderItem={({ item }) => (
+                <Task navigation={navigation} task={item} />
+              )}
+            />
+            <CheckEndArea>
+              <Feather name="stop-circle" size={20} color="#eee" />
+              <TextEnd>18:00</TextEnd>
+            </CheckEndArea>
+          </Area>
+        </ActionArea>
       </PanGestureHandler>
     </Container>
   );
