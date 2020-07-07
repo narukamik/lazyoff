@@ -133,7 +133,7 @@ export const DarkBg = styled(Animated.View)`
   width: 179px;
   height: 76px;
   border-radius: 4px;
-  opacity: 0.39;
+  opacity: 0.73;
   z-index: 6;
 `;
 

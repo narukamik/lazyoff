@@ -53,6 +53,7 @@ const Task = ({ navigation, task, ...rest }) => {
     }).start();
     fadeAnimAux = true;
   };
+
   const translateX = new Animated.Value(0);
   const animetedEvent = new Animated.event(
     [{ nativeEvent: { translationX: translateX } }],
@@ -171,6 +172,11 @@ const Task = ({ navigation, task, ...rest }) => {
               height: fadeAnim.interpolate({
                 inputRange: [130, 180],
                 outputRange: [0, 76],
+                extrapolate: 'clamp',
+              }),
+              opacity: fadeAnim.interpolate({
+                inputRange: [130, 180],
+                outputRange: [0, 0.73],
                 extrapolate: 'clamp',
               }),
             }}
