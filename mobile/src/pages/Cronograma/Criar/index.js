@@ -50,7 +50,7 @@ const Criar = ({ navigation }) => {
         <ButtonReturn onPress={() => navigation.goBack()}>
           <Feather name="chevron-left" size={30} color="#FFF" />
         </ButtonReturn>
-        <AreaText>Dê um nome a sua nova lista</AreaText>
+        <AreaText>Dê um nome à sua nova lista</AreaText>
         <Box>
           <InputArea>
             <Input placeholder="Digite o nome da sua lista..." />
