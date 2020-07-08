@@ -187,11 +187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\Lazyoff.Models.csproj",
-      "projectName": "Lazyoff.Models",
-      "projectPath": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\Lazyoff.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\LazyOff.Models.csproj",
+      "projectName": "LazyOff.Models",
+      "projectPath": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\LazyOff.Models.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\obj\\",
+      "outputPath": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
