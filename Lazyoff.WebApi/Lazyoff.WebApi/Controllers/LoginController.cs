@@ -52,10 +52,19 @@ namespace Lazyoff.WebApi.Controllers
                     signingCredentials: creds
                 );
 
-                loggedUser.AuthenticationToken = new JwtSecurityTokenHandler().WriteToken(token);
+
 
                 // Retorna Ok com o token
-                return Ok(loggedUser);
+                return Ok(new UserOutputDTO()
+                {
+                    Name = loggedUser.Name,
+                    Email = loggedUser.Email,
+                    Image = loggedUser.Image,
+                    Coins = (int)loggedUser.Coins,
+                    Trophies = (int)loggedUser.Trophies,
+                    Level = (int)loggedUser.Level,
+                    AuthenticationToken = new JwtSecurityTokenHandler().WriteToken(token)
+                }); ;
             }
             catch (Exception e)
             {
