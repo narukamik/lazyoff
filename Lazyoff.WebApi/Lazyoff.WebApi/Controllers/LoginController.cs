@@ -52,8 +52,6 @@ namespace Lazyoff.WebApi.Controllers
                     signingCredentials: creds
                 );
 
-
-
                 // Retorna Ok com o token
                 return Ok(new UserOutputDTO()
                 {

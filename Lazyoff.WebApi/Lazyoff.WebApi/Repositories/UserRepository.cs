@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Lazyoff.WebApi.Repositories
 {
-    public class UserRepository 
+    public class UserRepository
     {
         private lazyoffContext ctx { get; set; }
 
@@ -31,39 +31,14 @@ namespace Lazyoff.WebApi.Repositories
             ctx.SaveChanges();
         }
 
-        public UserOutputDTO GetById(UserInputDTO user)
+        public User GetById(UserInputDTO user)
         {
-            var srcUser = ctx.User.FirstOrDefault(x => x.Id == user.Id);
-
-            return new UserOutputDTO
-            {
-                Id = srcUser.Id,
-                Name = srcUser.Name,
-                Email = srcUser.Email,
-                Image = srcUser.Image,
-                Coins = (int)srcUser.Coins,
-                Trophies = (int)srcUser.Trophies,
-                Level = (int)srcUser.Level
-            };
+            return ctx.User.FirstOrDefault(x => x.Id == user.Id);
         }
 
-        public UserOutputDTO GetByEmailAndPassword(string email, string password)
+        public User GetByEmailAndPassword(string email, string password)
         {
-            var user = ctx.User.FirstOrDefault(x => x.Email == email && x.Password == Helpers.To256(password));
-
-            if (user == null)
-                return null;
-
-            return new UserOutputDTO
-            {
-                Id = user.Id,
-                Name = user.Name,
-                Email = user.Email,
-                Image = user.Image,
-                Level = (int)user.Level,
-                Coins = (int)user.Coins,
-                Trophies = (int)user.Trophies
-            };
+            return ctx.User.FirstOrDefault(x => x.Email == email && x.Password == Helpers.To256(password));
         }
     }
 }
