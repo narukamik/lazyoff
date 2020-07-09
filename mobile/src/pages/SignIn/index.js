@@ -20,6 +20,7 @@ const SignIn = ({ navigation }) => {
       });
     }
   };
+
   return (
     <Container>
       <ButtonBack navigation={navigation} />
@@ -74,7 +75,7 @@ const SignIn = ({ navigation }) => {
           }}
           onChangeText={setPassword}
         />
-        <Submit>
+        <Submit onPress={ login() }>
           <WhiteText>Continuar</WhiteText>
         </Submit>
       </Area>

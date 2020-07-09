@@ -15,7 +15,7 @@ const SignUp = ({ navigation }) => {
 
   const signUp = async () => {
     if (senha === confirmarSenha) {
-      await api.post('localhost:5000/api/user', {
+      await api.post('/user', {
         nome,
         email,
         password: senha,
