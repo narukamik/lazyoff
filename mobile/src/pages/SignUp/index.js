@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { Input } from 'react-native-elements';
 import Container from '~/components/Container';
@@ -7,13 +7,22 @@ import ButtonBack from '~/components/ButtonBack';
 
 import { Area, Divider, Submit, WhiteText, Title } from './styles';
 
-const SignUp = (user) = api.post('localhost:5000/api/user', {
-  name : user.name,
-  email : user.email,
-  password : user.password
-});
-
 const SignUp = ({ navigation }) => {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState('');
+
+  const signUp = async () => {
+    if (senha === confirmarSenha) {
+      await api.post('localhost:5000/api/user', {
+        nome,
+        email,
+        password: senha,
+      });
+    }
+  };
+
   return (
     <Container>
       <ButtonBack navigation={navigation} />
@@ -44,6 +53,10 @@ const SignUp = ({ navigation }) => {
           rightIconContainerStyle={{
             paddingRight: 15,
           }}
+          onChangeText={(props) => {
+            console.log(props);
+            setNome(props);
+          }}
         />
         <Input
           label="Email"
@@ -70,6 +83,7 @@ const SignUp = ({ navigation }) => {
           rightIconContainerStyle={{
             paddingRight: 15,
           }}
+          onChangeText={setEmail}
         />
         <Input
           label="Senha"
@@ -97,6 +111,7 @@ const SignUp = ({ navigation }) => {
           rightIconContainerStyle={{
             paddingRight: 15,
           }}
+          onChangeText={setSenha}
         />
         <Input
           label="Confirmar senha"
@@ -124,9 +139,10 @@ const SignUp = ({ navigation }) => {
           rightIconContainerStyle={{
             paddingRight: 15,
           }}
+          onChangeText={setConfirmarSenha}
         />
         <Divider />
-        <Submit>
+        <Submit onPress={() => signUp}>
           <WhiteText>Continuar</WhiteText>
         </Submit>
       </Area>

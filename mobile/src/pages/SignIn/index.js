@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Feather } from '@expo/vector-icons';
+import { Input } from 'react-native-elements';
+import { basename } from 'path';
 import Container from '~/components/Container';
 import colors from '~/config/ColorConfig';
 import ButtonBack from '~/components/ButtonBack';
-import  api from '~/services/api';
-import { Feather } from '@expo/vector-icons';
-import { Input } from 'react-native-elements';
-import { Area, Divider, Submit, WhiteText, Title } from './styles';
-import { basename } from 'path';
-
-const Login = (user) = api.post('localhost:5000/api/login', {
-  email : user.email,
-  password : user.password
-});
+import api from '~/services/api';
+import { Area, Submit, WhiteText, Title } from './styles';
 
 const SignIn = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const login = async () => {
+    if (email !== '' && password !== '') {
+      await api.post('localhost:5000/api/login', {
+        email,
+        password,
+      });
+    }
+  };
   return (
     <Container>
       <ButtonBack navigation={navigation} />
@@ -41,6 +47,7 @@ const SignIn = ({ navigation }) => {
             marginLeft: 15,
             color: 'grey',
           }}
+          onChangeText={setEmail}
         />
         <Input
           label="Senha"
@@ -65,8 +72,8 @@ const SignIn = ({ navigation }) => {
             marginLeft: 15,
             color: `${colors.primary}`,
           }}
+          onChangeText={setPassword}
         />
-        <Divider />
         <Submit>
           <WhiteText>Continuar</WhiteText>
         </Submit>

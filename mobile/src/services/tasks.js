@@ -2,10 +2,10 @@ import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('database.db');
 
-  db.exec([{ sql: 'PRAGMA foreign_keys = ON;', args: [] }], false, () =>
-    // eslint-disable-next-line no-console
-    console.log('Foreign keys turned on')
-  );
+db.exec([{ sql: 'PRAGMA foreign_keys = ON;', args: [] }], false, () =>
+  // eslint-disable-next-line no-console
+  console.log('Foreign keys turned on')
+);
 
 export class TaskService {
   static addData(param) {
@@ -15,12 +15,7 @@ export class TaskService {
           tx.executeSql(
             `INSERT INTO task (titulo, time, endDateTime, categoria_id) 
              VALUES (?)`,
-            [
-              param.titulo,
-              param.time,
-              param.endDateTime,
-              param.categoria_id
-            ],
+            [param.titulo, param.time, param.endDateTime, param.categoria_id],
             (_, { insertId, rows }) => {
               console.log(`id insert: ${insertId}`);
               resolve(insertId);
@@ -91,7 +86,7 @@ export class TaskService {
 
   static updateById(params) {
     this.getById(); // gets by id, compare, then update
-    
+
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {

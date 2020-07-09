@@ -41,14 +41,11 @@ export const PasswordInput = styled.TextInput`
 
 export const Submit = styled.TouchableOpacity`
   border-radius: 5px;
+  margin-top: 3%;
   padding: 2.5% 35%;
   background-color: ${colors.primary};
 `;
 
 export const WhiteText = styled.Text`
   color: white;
-`;
-
-export const Divider = styled.View`
-  height: 3%;
 `;
