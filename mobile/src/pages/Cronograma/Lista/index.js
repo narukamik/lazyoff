@@ -35,7 +35,7 @@ const getAllTasks = () => {
     };
 };
 
-getAllTasks(); // precisa rodar toda vez que a página abrir
+getAllTasks(); // precisa rodar toda vez que a página abrir (useState/setState?)
 
 console.log(state.data)
 

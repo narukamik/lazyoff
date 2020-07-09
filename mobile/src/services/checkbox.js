@@ -60,8 +60,8 @@ export class TaskService {
 
   static getAll() {
     let sql = `SELECT t.nome, t.active, t.startDateTime, t.endDateTime
-  FROM subtask as t
-  INNER JOIN category as c`;
+               FROM subtask as t
+               INNER JOIN category as c`;
 
     return new Promise((resolve, reject) =>
       db.transaction(
