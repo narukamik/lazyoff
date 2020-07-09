@@ -36,7 +36,7 @@ export default function Index() {
 
     `create table if not exists task (
             id integer primary key autoincrement,
-            title text,
+            nome text,
             startDateTime text,
             endDateTime text,
             category_id int,

@@ -37,11 +37,11 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `select t.name, t.status, t.startDateTime, t.endDateTime, c.name
-                           from task as t
-                           inner join category as c
-                           on t.category_id = category.id
-                           where id= ?`,
+            `select t.id, t.name, t.status, t.startDateTime, t.endDateTime, c.name
+                           FROM task as t
+                           INNER JOIN category as c
+                           ON t.category_id = category.id
+                           WHERE id= ?`,
             [id],
             (_, { rows }) => {
               resolve(rows);

@@ -85,7 +85,7 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `update subtask set ? = ? where id = ?;`,
+            `UPDATE subtask SET ? = ? WHERE id = ?;`,
             [param.param, param.value, param.id],
             () => {}
           ),
@@ -104,7 +104,7 @@ export class TaskService {
     db.transaction(
       (tx) => {
         tx.executeSql(
-          `delete from subtask where id = ?;`,
+          `DELETE FROM subtask WHERE id = ?;`,
           [id],
           (_, { rows }) => {}
         ),
