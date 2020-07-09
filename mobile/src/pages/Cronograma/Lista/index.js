@@ -1,6 +1,7 @@
 import React from 'react';
 import { Animated, Alert } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
+import { TaskService } from '~/services/tasks';
 import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
 import CronHeader from '~/components/CronHeader';
@@ -17,7 +18,30 @@ import {
   TextEnd,
 } from './styles';
 
-import infos from '~/assets/infos';
+let state = {
+  data: [],
+  value: null,
+  onChangeText: null,
+  dataId: null,
+  dataInsert: null,
+};
+
+const getAllTasks = () => {
+  TaskService.getAll().then((response) => {
+    state.data = response._array;
+  }),
+    (error) => {
+      console.log(error);
+    };
+};
+
+getAllTasks(); // precisa rodar toda vez que a página abrir (useState/setState?)
+
+console.log(state.data)
+
+const infos = state.data.map((item) => {
+  return item
+});
 
 const Lista = ({ navigation }) => {
   // init animation functions
@@ -109,7 +133,7 @@ const Lista = ({ navigation }) => {
           >
             <VerticalLine />
             <ScrollArea
-              data={infos.tasks}
+              data={infos}
               keyExtractor={(item) => String(item.id)}
               renderItem={({ item }) => (
                 <Task navigation={navigation} task={item} showTime />

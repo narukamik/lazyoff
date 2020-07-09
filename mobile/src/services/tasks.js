@@ -1,20 +1,25 @@
 import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('database.db');
+
+  db.exec([{ sql: 'PRAGMA foreign_keys = ON;', args: [] }], false, () =>
+    // eslint-disable-next-line no-console
+    console.log('Foreign keys turned on')
+  );
+
 export class TaskService {
   static addData(param) {
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `insert into task (name, startDateTime, endDateTime, status, categoria_id) 
-                values (?)`,
+            `INSERT INTO task (titulo, time, endDateTime, categoria_id) 
+             VALUES (?)`,
             [
-              param.name,
-              param.startDateTime,
+              param.titulo,
+              param.time,
               param.endDateTime,
-              param.status,
-              params.categoria_id,
+              param.categoria_id
             ],
             (_, { insertId, rows }) => {
               console.log(`id insert: ${insertId}`);
@@ -37,11 +42,11 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `select t.name, t.status, t.startDateTime, t.endDateTime, c.name
-                           from task as t
-                           inner join category as c
-                           on t.category_id = category.id
-                           where id= ?`,
+            `select t.id, t.titulo, t.status, t.time, t.endDateTime, c.titulo
+                           FROM task as t
+                           INNER JOIN category as c
+                           ON t.category_id = category.id
+                           WHERE id= ?`,
             [id],
             (_, { rows }) => {
               resolve(rows);
@@ -59,14 +64,10 @@ export class TaskService {
   }
 
   static getAll() {
-<<<<<<< HEAD
-    const sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name
-=======
-  let sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name
->>>>>>> 3388827a12204e7d31595f7e3b51bb5208afb9c9
-  FROM task as t
-  INNER JOIN category as c
-  ON t.category_id = category.id`;
+    const sql = `SELECT t.titulo, t.time, t.endDateTime, c.titulo
+                 FROM task as t
+                 INNER JOIN category as c
+                 ON t.category_id = c.id`;
 
     return new Promise((resolve, reject) =>
       db.transaction(
@@ -90,7 +91,7 @@ export class TaskService {
 
   static updateById(params) {
     this.getById(); // gets by id, compare, then update
-
+    
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {

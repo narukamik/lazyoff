@@ -1,17 +1,23 @@
 import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('database.db');
-export class TaskService {
+
+  db.exec([{ sql: 'PRAGMA foreign_keys = ON;', args: [] }], false, () =>
+    // eslint-disable-next-line no-console
+    console.log('Foreign keys turned on')
+  );
+
+export class TaskService{
   static addData(param) {
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `insert into task (name, startDateTime, endDateTime, active) 
-                values (?)`,
+            `INSERT INTO subtask (titulo, time, endDateTime, active) 
+             VALUEs (?)`,
             [
-              param.name,
-              param.startDateTime,
+              param.titulo,
+              param.time,
               param.endDateTime,
               param.active,
             ],
@@ -36,9 +42,9 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `SELECT t.name, t.status, t.startDateTime, t.endDateTime
-                           FROM subtask as t
-                           WHERE id= ?`,
+            `SELECT t.titulo, t.status, t.time, t.endDateTime, t.color
+             FROM subtask as t
+             WHERE id= ?`,
             [id],
             (_, { rows }) => {
               resolve(rows);
@@ -56,9 +62,9 @@ export class TaskService {
   }
 
   static getAll() {
-    let sql = `SELECT t.nome, t.active, t.startDateTime, t.endDateTime
-  FROM subtask as t
-  INNER JOIN category as c`;
+    let sql = `SELECT t.nome, t.active, t.time, t.endDateTime
+               FROM subtask as t
+               INNER JOIN category as c`;
 
     return new Promise((resolve, reject) =>
       db.transaction(
@@ -85,7 +91,7 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `update subtask set ? = ? where id = ?;`,
+            `UPDATE subtask SET ? = ? WHERE id = ?;`,
             [param.param, param.value, param.id],
             () => {}
           ),
@@ -104,7 +110,7 @@ export class TaskService {
     db.transaction(
       (tx) => {
         tx.executeSql(
-          `delete from subtask where id = ?;`,
+          `DELETE FROM subtask WHERE id = ?;`,
           [id],
           (_, { rows }) => {}
         ),

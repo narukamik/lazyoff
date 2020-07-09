@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z4umQYCTtaY7M7wl3m+9l/bM0xiGaJaxVeWVHat8rbKZmIFsp2OReTGfDKRqgABoupG/eDYqht6qTSmX3eLVaQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\LazyOff.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

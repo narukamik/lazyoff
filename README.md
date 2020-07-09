@@ -7,7 +7,9 @@ Tecnologias usadas:
 - Node
 - React Native 
 - Expo
-- Expo Async Storage
+- Expo SQLite
+- C#
+- PostgreSQL
 
 ## Links
 - [Link do XD](https://xd.adobe.com/view/0beeabbb-e22d-4582-8f58-93d84ca50b36-5ebd/)

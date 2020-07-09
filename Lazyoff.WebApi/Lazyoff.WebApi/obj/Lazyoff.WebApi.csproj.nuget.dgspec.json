@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.WebApi\\Lazyoff.WebApi.csproj": {}
+    "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\Lazyoff.WebApi\\Lazyoff.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\Lazyoff.Models.csproj": {
+    "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\LazyOff.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\Lazyoff.Models.csproj",
-        "projectName": "Lazyoff.Models",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\Lazyoff.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\LazyOff.Models.csproj",
+        "projectName": "LazyOff.Models",
+        "projectPath": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\LazyOff.Models.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.WebApi\\Lazyoff.WebApi.csproj": {
+    "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\Lazyoff.WebApi\\Lazyoff.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.WebApi\\Lazyoff.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\Lazyoff.WebApi\\Lazyoff.WebApi.csproj",
         "projectName": "Lazyoff.WebApi",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.WebApi\\Lazyoff.WebApi.csproj",
+        "projectPath": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\Lazyoff.WebApi\\Lazyoff.WebApi.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.WebApi\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\Lazyoff.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -94,8 +94,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\Lazyoff.Models.csproj": {
-                "projectPath": "C:\\Users\\Dell\\source\\repos\\Lazyoff.WebApi\\Lazyoff.DTO\\Lazyoff.Models.csproj"
+              "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\LazyOff.Models.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Documents\\Repos\\lazyoff\\Lazyoff.WebApi\\LazyOff.Models\\LazyOff.Models.csproj"
               }
             }
           }
@@ -114,6 +114,18 @@
               "version": "[3.1.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.5, )"
             },

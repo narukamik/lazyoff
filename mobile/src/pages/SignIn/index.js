@@ -1,10 +1,17 @@
 import React from 'react';
-import { Input } from 'react-native-elements';
-import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
 import colors from '~/config/ColorConfig';
-import { Area, Divider, Submit, WhiteText, Title } from './styles';
 import ButtonBack from '~/components/ButtonBack';
+import  api from '~/services/api';
+import { Feather } from '@expo/vector-icons';
+import { Input } from 'react-native-elements';
+import { Area, Divider, Submit, WhiteText, Title } from './styles';
+import { basename } from 'path';
+
+const Login = (user) = api.post('localhost:5000/api/login', {
+  email : user.email,
+  password : user.password
+});
 
 const SignIn = ({ navigation }) => {
   return (

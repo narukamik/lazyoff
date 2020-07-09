@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('database.db');
-=======
-<<<<<<< HEAD
 import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('database.db');
@@ -13,8 +10,8 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `insert into task (name, startDateTime, endDateTime, active) 
-                values (?)`,
+            `INSERT INTO task (name, startDateTime, endDateTime, active) 
+             VALUES (?)`,
             [
               param.name,
               param.startDateTime,
@@ -42,9 +39,9 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `select t.name, t.active, t.startDateTime, t.endDateTime
-                           from subtask as t
-                           where id= ?`,
+            `SELECT t.name, t.active, t.startDateTime, t.endDateTime
+                           FROM subtask as t
+                           WHERE id= ?`,
             [id],
             (_, { rows }) => {
               resolve(rows);
@@ -63,8 +60,8 @@ export class TaskService {
 
   static getAll() {
     let sql = `SELECT t.nome, t.active, t.startDateTime, t.endDateTime
-  FROM subtask as t
-  INNER JOIN category as c`;
+               FROM subtask as t
+               INNER JOIN category as c`;
 
     return new Promise((resolve, reject) =>
       db.transaction(
@@ -124,6 +121,3 @@ export class TaskService {
     );
   }
 }
-=======
->>>>>>> db46140b2024aca178725a8f536be97e70dc9b7a
->>>>>>> 3a7e05a26bdc6ea6cfdd628353512a45309d4efa

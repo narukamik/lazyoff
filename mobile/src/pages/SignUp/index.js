@@ -7,6 +7,12 @@ import ButtonBack from '~/components/ButtonBack';
 
 import { Area, Divider, Submit, WhiteText, Title } from './styles';
 
+const SignUp = (user) = api.post('localhost:5000/api/user', {
+  name : user.name,
+  email : user.email,
+  password : user.password
+});
+
 const SignUp = ({ navigation }) => {
   return (
     <Container>

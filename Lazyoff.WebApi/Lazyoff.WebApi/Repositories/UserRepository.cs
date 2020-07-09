@@ -1,22 +1,44 @@
 ﻿using Lazyoff.Models.DTO;
+using Lazyoff.WebApi.Database;
+using Lazyoff.WebApi.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Lazyoff.WebApi.Repositories
 {
-    public class UserRepository 
+    public class UserRepository
     {
-        public void Create(UserInputDTO user)
+        private lazyoffContext ctx { get; set; }
+
+        public UserRepository()
         {
-            //dbo.User.Add(user);
-            //dbo.SaveChanges();
+            ctx = new lazyoffContext();
+        }
+        public void Create(UserInputDTO u)
+        {
+            var user = new User
+            {
+                Name = u.Name,
+                Email = u.Email,
+                Password = u.Password,
+                Image = u.Image,
+                Coins = 0,
+                Level = 1
+            };
+
+            ctx.User.Add(user);
+            ctx.SaveChanges();
         }
 
-        public UserOutputDTO GetById(UserInputDTO user)
+        public User GetById(UserInputDTO user)
         {
-            // dbo.User.FirstOrDefault(x => x.User.Id == user.Id);
-            return new UserOutputDTO();
+            return ctx.User.FirstOrDefault(x => x.Id == user.Id);
+        }
+
+        public User GetByEmailAndPassword(string email, string password)
+        {
+            return ctx.User.FirstOrDefault(x => x.Email == email && x.Password == Helpers.To256(password));
         }
     }
 }

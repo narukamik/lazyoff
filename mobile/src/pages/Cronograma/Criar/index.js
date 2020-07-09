@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Container from '~/components/Container';
+import { TaskService } from '~/services/tasks'
 import {
   Area,
   AreaText,
@@ -12,11 +13,10 @@ import {
   PickerSelect,
   ButtonReturn,
   TextTimePicker,
-  TouchDateTime
+  TouchDateTime,
 } from './styles';
 
 const Criar = ({ navigation }) => {
-
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
@@ -29,7 +29,7 @@ const Criar = ({ navigation }) => {
     console.log(selectedDate);
   };
 
-  const showMode = currentMode => {
+  const showMode = (currentMode) => {
     setShow(true);
     setMode(currentMode);
   };
@@ -42,6 +42,13 @@ const Criar = ({ navigation }) => {
   const showTimepicker = () => {
     showMode('time');
     setDisplay('spinner');
+  };
+
+  const InsertTask = (item) => {
+    const insertId = TaskService.addData(item);
+    if (insertId == null || insertId == undefined) {
+      alert('Não foi possivel inserir o novo animal');
+    }
   };
 
   return (
@@ -64,7 +71,7 @@ const Criar = ({ navigation }) => {
               </PickerSelect>
             </TouchDateTime>
 
-            <TouchDateTime >
+            <TouchDateTime>
               <PickerSelect>
                 <Feather name="tag" size={20} color="#6d5dcf" />
                 <TextTimePicker>Categoria</TextTimePicker>
