@@ -13,15 +13,15 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-size: 20px;
   color: #333;
-  text-align:justify;
+  text-align: justify;
   padding-left: 50px;
   padding-right: 50px;
   margin-bottom: 70px;
 `;
 
-export const Text = styled.Text`
-    color: purple; 
-    font-weight: bold;
+export const Strong = styled.Text`
+  color: #784a78;
+  font-weight: bold;
 `;
 
 export const ButtonReturn = styled.TouchableOpacity`

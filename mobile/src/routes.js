@@ -15,6 +15,7 @@ import Lista from './pages/Cronograma/Lista';
 import Detalhes from './pages/Cronograma/Detalhes';
 import Criar from './pages/Cronograma/Criar';
 import Apagar from './pages/Cronograma/Apagar';
+import Pesquisa from './pages/Cronograma/Pesquisa';
 
 import ListaCategoria from './pages/Categoria/Lista';
 import CriarCategoria from './pages/Categoria/Criar';
@@ -68,6 +69,7 @@ function CronStackScreen() {
       <Stack.Screen name="Detalhes" component={Detalhes} />
       <Stack.Screen name="Criar" component={Criar} />
       <Stack.Screen name="Apagar" component={Apagar} />
+      <Stack.Screen name="Pesquisa" component={Pesquisa} />
     </Stack.Navigator>
   );
 }
@@ -143,7 +145,7 @@ export default () => (
           }}
         />
         <Tab.Screen
-          name="Lista"
+          name="Cronograma"
           component={CronStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (

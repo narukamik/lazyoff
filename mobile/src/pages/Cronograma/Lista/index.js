@@ -81,7 +81,7 @@ const Lista = ({ navigation }) => {
             }}
           >
             <ButtonNovo onPress={() => navigation.navigate('Criar')}>
-              <TextNovo>Adicionar Task</TextNovo>
+              <TextNovo>Adicionar Tarefa</TextNovo>
             </ButtonNovo>
           </ActionButtonArea>
           <Area
@@ -112,7 +112,7 @@ const Lista = ({ navigation }) => {
               data={infos.tasks}
               keyExtractor={(item) => String(item.id)}
               renderItem={({ item }) => (
-                <Task navigation={navigation} task={item} />
+                <Task navigation={navigation} task={item} showTime />
               )}
             />
             <CheckEndArea>

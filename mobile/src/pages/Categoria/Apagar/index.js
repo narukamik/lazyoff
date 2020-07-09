@@ -1,10 +1,10 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
-import {Text} from 'react-native';
 import {
   Container,
   ButtonReturn,
   Title,
+  Strong,
   Icon,
   RemoveButton,
   CancelButton,
@@ -17,8 +17,10 @@ const Apagar = ({ navigation }) => {
         <Feather name="chevron-left" size={30} color="#333" />
       </ButtonReturn>
       <Icon name="info" size={30} color="black" />
-      <Title>Tem certeza que deseja apagar a categoria <Text style={{color: "#784a78", fontWeight: "bold"}}>Faculdade</Text>
-      ? Esta ação não poderá ser desfeita.</Title>
+      <Title>
+        Tem certeza que deseja apagar a categoria <Strong>Faculdade</Strong>?
+        Esta ação não poderá ser desfeita.
+      </Title>
       <RemoveButton>Apagar Faculdade</RemoveButton>
       <CancelButton>Não Apagar</CancelButton>
     </Container>

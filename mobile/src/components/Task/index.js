@@ -26,8 +26,11 @@ import {
   ButtonDelete,
 } from './styles';
 
-const Task = ({ navigation, task, ...rest }) => {
-  const [color, setColor] = useState(colors.bgLinearButton);
+const Task = ({ navigation, task, showTime, ...rest }) => {
+  const [color, setColor] = useState([
+    colors.bgLinearButton[0],
+    task.categoria.color,
+  ]);
 
   // init animation functions
   let offset = 0;
@@ -100,10 +103,14 @@ const Task = ({ navigation, task, ...rest }) => {
         height: fadeAnim,
       }}
     >
-      <CheckArea>
-        <Feather name="circle" size={20} color="#6d5dcf" />
-      </CheckArea>
-      <Time>{task.time}</Time>
+      {showTime && showTime === true && (
+        <>
+          <CheckArea>
+            <Feather name="circle" size={20} color="#6d5dcf" />
+          </CheckArea>
+          <Time>{task.time}</Time>
+        </>
+      )}
       <PanGestureHandler
         onGestureEvent={animetedEvent}
         onHandlerStateChange={onHandlerStateChange}
@@ -127,7 +134,7 @@ const Task = ({ navigation, task, ...rest }) => {
               <Square />
               <TextInfos>
                 <Title>{task.titulo}</Title>
-                <Categoria>{task.categoria}</Categoria>
+                <Categoria>{task.categoria.titulo}</Categoria>
               </TextInfos>
             </TaskArea>
           </TaskTouch>
