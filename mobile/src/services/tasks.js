@@ -7,14 +7,14 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `insert into task (name, startDateTime, endDateTime, status, categoria_id) 
-                values (?)`,
+            `INSERT INTO task (name, startDateTime, endDateTime, status, categoria_id) 
+             VALUES (?)`,
             [
               param.name,
               param.startDateTime,
               param.endDateTime,
               param.status,
-              params.categoria_id,
+              param.categoria_id,
             ],
             (_, { insertId, rows }) => {
               console.log(`id insert: ${insertId}`);
@@ -59,14 +59,10 @@ export class TaskService {
   }
 
   static getAll() {
-<<<<<<< HEAD
-    const sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name
-=======
-  let sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name
->>>>>>> 3388827a12204e7d31595f7e3b51bb5208afb9c9
-  FROM task as t
-  INNER JOIN category as c
-  ON t.category_id = category.id`;
+    const sql = `SELECT t.nome, t.status, t.startDateTime, t.endDateTime, c.name, c.colorhex
+                 FROM task as t
+                 INNER JOIN category as c
+                 ON t.category_id = category.id`;
 
     return new Promise((resolve, reject) =>
       db.transaction(
@@ -90,7 +86,7 @@ export class TaskService {
 
   static updateById(params) {
     this.getById(); // gets by id, compare, then update
-
+    
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {

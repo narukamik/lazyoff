@@ -7,8 +7,8 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `insert into task (name, startDateTime, endDateTime, active) 
-                values (?)`,
+            `INSERt iNTO subtask (name, startDateTime, endDateTime, active) 
+             VALUEs (?)`,
             [
               param.name,
               param.startDateTime,
@@ -37,8 +37,8 @@ export class TaskService {
         (tx) => {
           tx.executeSql(
             `SELECT t.name, t.status, t.startDateTime, t.endDateTime
-                           FROM subtask as t
-                           WHERE id= ?`,
+             FROM subtask as t
+             WHERE id= ?`,
             [id],
             (_, { rows }) => {
               resolve(rows);
@@ -57,8 +57,8 @@ export class TaskService {
 
   static getAll() {
     let sql = `SELECT t.nome, t.active, t.startDateTime, t.endDateTime
-  FROM subtask as t
-  INNER JOIN category as c`;
+               FROM subtask as t
+               INNER JOIN category as c`;
 
     return new Promise((resolve, reject) =>
       db.transaction(
