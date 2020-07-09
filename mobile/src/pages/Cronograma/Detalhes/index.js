@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 // TODO ALTERAR PARA TELA DE POMODORO
 import colors from '~/config/ColorConfig';
-
+import { Task } from '~/models/';
 import infos from '~/assets/infos';
 import Container from '~/components/Container';
 import TaskHeader from '~/components/TaskHeader';

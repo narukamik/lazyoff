@@ -14,30 +14,26 @@ export default function Index() {
   );
 
   const sql = [
-    `DROP TABLE IF EXISTS user;`,
-    `DROP TABLE IF EXISTS task;`,
-    `DROP TABLE IF EXISTS subtask;`,
-    `DROP TABLE IF EXISTS category;`,
-    `DROP TABLE IF EXISTS checklist;`,
-    `DROP TABLE IF EXISTS checkbox;`,
-
     `create table if not exists user (
       nome text,
       picture text,
       email text,
+      coins integer,
+      trophies integer,
+      level integer,
       token text
     );`,
 
     `create table if not exists category (
             id integer primary key autoincrement,
-            nome text
-            colorhex text
+            titulo text,
+            color text
             );`,
 
     `create table if not exists task (
             id integer primary key autoincrement,
-            nome text,
-            startDateTime text,
+            titulo text,
+            time text,
             endDateTime text,
             category_id int,
             father_task_id int,
@@ -48,21 +44,21 @@ export default function Index() {
     `create table if not exists subtask (
       id integer primary key autoincrement,
       father_id int,
-      nome text,
-      startDateTime text,
+      titulo text,
+      time text,
       endDateTime text,
       foreign key (father_id) references task (id)
     );`,
 
     `create table if not exists checklist (
         id integer primary key autoincrement,
-        nome text,
+        titulo text,
         done boolean
     );`,
 
     `create table if not exists checkbox (
       id integer primary key autoincrement,
-      nome text,
+      titulo text,
       done boolean,
       checklist_id int,
       foreign key (checklist_id) references checklist (id)
