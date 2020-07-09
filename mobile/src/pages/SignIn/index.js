@@ -14,12 +14,14 @@ const SignIn = ({ navigation }) => {
 
   const login = async () => {
     if (email !== '' && password !== '') {
-      await api.post('localhost:5000/api/login', {
+      const response = await api.post('login', {
         email,
         password,
       });
+      console.log(response);
     }
   };
+
   return (
     <Container>
       <ButtonBack navigation={navigation} />
@@ -74,7 +76,7 @@ const SignIn = ({ navigation }) => {
           }}
           onChangeText={setPassword}
         />
-        <Submit>
+        <Submit onPress={() => login}>
           <WhiteText>Continuar</WhiteText>
         </Submit>
       </Area>

@@ -15,11 +15,12 @@ const SignUp = ({ navigation }) => {
 
   const signUp = async () => {
     if (senha === confirmarSenha) {
-      await api.post('localhost:5000/api/user', {
+      const response = await api.post('/user', {
         nome,
         email,
         password: senha,
       });
+      console.log(response);
     }
   };
 
@@ -53,10 +54,7 @@ const SignUp = ({ navigation }) => {
           rightIconContainerStyle={{
             paddingRight: 15,
           }}
-          onChangeText={(props) => {
-            console.log(props);
-            setNome(props);
-          }}
+          onChangeText={(props) => setNome(props)}
         />
         <Input
           label="Email"
