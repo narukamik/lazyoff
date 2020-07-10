@@ -1,5 +1,12 @@
 # LazyOff
 
+## Sobre a estrutura
+
+- O aplicativo em React Native está na pasta em /mobile/ e o guia para o uso deste está no README.md do caminho.
+
+- O cadastro e o login sao feitos através de uma API em C# que está localizada em /LazyOff.WebApi/. Você vai precisar do Visual Studio para fazer o build da solução.
+Dentro dessa pasta tem uma coleção do Postman feita para viabilizar os testes do software. O banco está hospedado em um banco de dados PostgreSQL do RDS da AWS, então não precisa se preocupar com isso, é só usar.
+
 ## Projeto 
 App mobile feito com a intenção de auxiliar a organização de tarefas e a integração com o cotidiano durante o trabalho em home office. As funcionalidades visam tornar o dia mais produtivo, reforçar o foco nas prioridades e, também, facilitar a conciliação com os afazeres domésticos de forma não-invasiva, em um app de aparência amigável e de fácil uso. Propomos, também, sugerir formas de entretenimento capazes de preencher as pausas do trabalho e o tempo livre.
 
