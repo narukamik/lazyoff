@@ -37,11 +37,11 @@ export class TaskService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `select t.id, t.titulo, t.status, t.time, t.endDateTime, c.titulo
+            `select t.id, t.titulo, t.status, t.date, t.time, t.endTime, c.titulo as category, c.color
                            FROM task as t
                            INNER JOIN category as c
                            ON t.category_id = category.id
-                           WHERE id= ?`,
+                           WHERE id = ?`,
             [id],
             (_, { rows }) => {
               resolve(rows);
@@ -59,7 +59,7 @@ export class TaskService {
   }
 
   static getAll() {
-    const sql = `SELECT t.id, t.titulo, t.time, t.endDateTime, c.titulo as category, c.color
+    const sql = `SELECT t.id, t.titulo, t.date, t.time, t.endTime, c.titulo as category, c.color
                  FROM task as t
                  INNER JOIN category as c
                  ON t.category_id = c.id`;
@@ -110,7 +110,7 @@ export class TaskService {
     db.transaction(
       (tx) => {
         tx.executeSql(
-          `delete from ${table} where id = ?;`,
+          `delete from task where id = ?;`,
           [id],
           (_, { rows }) => {}
         ),

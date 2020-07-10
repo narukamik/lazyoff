@@ -19,32 +19,7 @@ import {
   TextEnd,
 } from './styles';
 
-const [data, setData] = useState([]);
 
-const isFocused = useIsFocused(); 
-
-const getAllTasks = () => {
-  TaskService.getAll().then((response) => {
-    setData(response._array);
-  }),
-    (error) => {
-      console.log(error);
-    };
-};
-
-useEffect(() => {
-  getAllTasks(); 
-}, [])
-
-useEffect((isFocused) => {
-  getAllTasks(); 
-}, [isFocused])
-
-console.log(state.data)
-
-const infos = state.data.map((item) => {
-  return item
-});
 
 const Lista = ({ navigation }) => {
   // init animation functions
@@ -68,7 +43,7 @@ const Lista = ({ navigation }) => {
         translateY.setOffset(0);
         offset = 0;
       }
-
+      
       Animated.timing(translateY, {
         toValue: opened ? 50 : 0,
         duration: 200,
@@ -80,7 +55,27 @@ const Lista = ({ navigation }) => {
       });
     }
   }
-
+  
+  const [data, setData] = useState([]);
+  
+  const isFocused = useIsFocused(); 
+  
+  const getAllTasks = () => {
+    TaskService.getAll().then((response) => {
+      setData(response._array);
+    }),
+      (error) => {
+        console.log(error);
+      };
+  };
+  
+  useEffect(() => {
+    getAllTasks(); 
+  }, [])
+  
+  useEffect((isFocused) => {
+    getAllTasks(); 
+  }, [isFocused])
   return (
     <Container>
       <CronHeader
@@ -136,7 +131,7 @@ const Lista = ({ navigation }) => {
           >
             <VerticalLine />
             <ScrollArea
-              data={infos}
+              data={data}
               keyExtractor={(item) => String(item.id)}
               renderItem={({ item }) => (
                 <Task navigation={navigation} task={item} showTime />

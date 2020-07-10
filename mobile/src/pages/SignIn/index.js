@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { Input } from 'react-native-elements';
+
 import Container from '~/components/Container';
 import colors from '~/config/ColorConfig';
 import ButtonBack from '~/components/ButtonBack';
@@ -75,7 +76,7 @@ const SignIn = ({ navigation }) => {
           }}
           onChangeText={setPassword}
         />
-        <Submit onPress={() => login()}>
+        <Submit onPress={() => login}>
           <WhiteText>Continuar</WhiteText>
         </Submit>
       </Area>

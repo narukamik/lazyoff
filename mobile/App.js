@@ -14,6 +14,10 @@ export default function Index() {
   );
 
   const sql = [
+    `drop table if exists task`,
+
+    `drop table if exists category`,
+
     `create table if not exists user (
       nome text,
       picture text,
@@ -64,10 +68,10 @@ export default function Index() {
     );`,
 
     `insert into category(titulo, color)
-      values('Trabalho', '#F0')`
+      values('Trabalho', '#F0F')`,
                            
     `insert into task(titulo, date, time, endTime, category_id)
-       values ('Fazer upload', '14/07/20', 13:00, 14:00, 1)`,
+       values ('Fazer upload', '14/07/20', '13:00', '14:00', 1)`
   ];
 
   db.transaction(

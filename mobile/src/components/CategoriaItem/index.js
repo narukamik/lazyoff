@@ -71,11 +71,11 @@ const CategoriaItem = ({ categoria, navigation }) => {
           }),
         }}
       >
-        <ButtonEdit onPress={() => navigation.navigate('Criar')}>
+        <ButtonEdit onPress={() => navigation.navigate('Criar', categoria)}>
           <EditText>Editar</EditText>
           <Feather name="edit-2" size={20} color="#FFF" />
         </ButtonEdit>
-        <ButtonDelete onPress={() => navigation.navigate('Apagar')}>
+        <ButtonDelete onPress={() => navigation.navigate('Apagar', categoria)}>
           <EditText>Apagar</EditText>
           <Feather name="trash-2" size={20} color="#FFF" />
         </ButtonDelete>

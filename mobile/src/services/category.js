@@ -2,27 +2,25 @@ import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('database.db');
 
-  db.exec([{ sql: 'PRAGMA foreign_keys = ON;', args: [] }], false, () =>
-    // eslint-disable-next-line no-console
-    console.log('Foreign keys turned on')
-  );
+db.exec([{ sql: 'PRAGMA foreign_keys = ON;', args: [] }], false, () =>
+  // eslint-disable-next-line no-console
+  console.log('Foreign keys turned on')
+);
 
-export class TaskService{
+export class CategoryService {
   static addData(param) {
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `INSERT INTO subtask (titulo, time, endDateTime, active) 
-             VALUEs (?)`,
+            `INSERT INTO category (titulo, color) 
+             VALUES (?)`,
             [
-              param.titulo,
-              param.time,
-              param.endDateTime,
-              param.active,
+             param.titulo,
+             param.color
             ],
             (_, { insertId, rows }) => {
-              console.log('id insert: ' + insertId);
+              console.log(`id insert: ${insertId}`);
               resolve(insertId);
             }
           ),
@@ -42,9 +40,9 @@ export class TaskService{
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `SELECT t.id, t.titulo, t.status, t.time, t.endDateTime, t.color
-             FROM subtask as t
-             WHERE id= ?`,
+            `SELECT c.titulo, c.color, (SELECT COUNT(*) FROM task WHERE category_id = c.id) as qtd
+             FROM category as c
+             WHERE id = ?`,
             [id],
             (_, { rows }) => {
               resolve(rows);
@@ -62,14 +60,13 @@ export class TaskService{
   }
 
   static getAll() {
-    let sql = `SELECT t.id, t.titulo, t.active, t.time, t.endDateTime
-               FROM subtask as t
-               INNER JOIN category as c`;
+    const sql = `SELECT c.id , c.titulo, c.color, (SELECT COUNT(*) FROM task WHERE category_id = c.id) as qtd
+                 FROM category as c`
 
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
-          console.log('get all tasks : ' + sql);
+          console.log(`get all tasks : ${sql}`);
           return (
             tx.executeSql(sql, [], (_, { rows }) => {
               resolve(rows);
@@ -87,11 +84,13 @@ export class TaskService{
   }
 
   static updateById(params) {
+    this.getById(); // gets by id, compare, then update
+
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `UPDATE subtask SET ? = ? WHERE id = ?;`,
+            `update category set ? = ? where id = ?;`,
             [param.param, param.value, param.id],
             () => {}
           ),
@@ -110,7 +109,7 @@ export class TaskService{
     db.transaction(
       (tx) => {
         tx.executeSql(
-          `DELETE FROM subtask WHERE id = ?;`,
+          `delete from category where id = ?;`,
           [id],
           (_, { rows }) => {}
         ),

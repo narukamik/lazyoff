@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Animated, Alert } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
-import { TaskService } from '~/services/tasks';
+import { useIsFocused } from '@react-navigation/native';
+import { CategoryService } from '~/services/category';
 import Container from '~/components/Container';
 import CronHeader from '~/components/CronHeader';
 import CategoriaItem from '~/components/CategoriaItem';
@@ -13,10 +14,6 @@ import {
   Area,
   ScrollArea,
 } from './styles';
-
-import infos from '~/assets/infos';
-
-const { categoria } = infos;
 
 const Lista = ({ navigation }) => {
   // init animation functions
@@ -52,6 +49,30 @@ const Lista = ({ navigation }) => {
       });
     }
   }
+
+  const [data, setData] = useState([]);  
+
+  const getAllCategories = () => {
+    CategoryService.getAll().then((response) => {
+      setData(response._array);
+    }),
+      (error) => {
+        console.log(error);
+      };
+  };
+
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    getAllCategories();
+  }, []);
+
+  useEffect(
+    (isFocused) => {
+      getAllCategories();
+    },
+    [isFocused]
+  );
 
   return (
     <Container>
@@ -102,7 +123,7 @@ const Lista = ({ navigation }) => {
             }}
           >
             <ScrollArea
-              data={categoria}
+              data={data}
               keyExtractor={(item) => String(item.titulo)}
               renderItem={({ item }) => (
                 <CategoriaItem categoria={item} navigation={navigation} />
