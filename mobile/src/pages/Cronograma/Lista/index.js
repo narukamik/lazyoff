@@ -74,7 +74,9 @@ const Lista = ({ navigation }) => {
   }, [])
   
   useEffect((isFocused) => {
-    getAllTasks(); 
+    if(isFocused){
+      getAllTasks(); 
+    }
   }, [isFocused])
   
   return (
