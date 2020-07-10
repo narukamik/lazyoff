@@ -10,7 +10,10 @@ import {
   CancelButton,
 } from './styles';
 
-const Apagar = ({ navigation, category }) => {
+const Apagar = ({ route, navigation }) => {
+  
+  const { categoria } = route.params;
+
   return (
     <Container>
       <ButtonReturn onPress={() => navigation.goBack()}>
@@ -18,10 +21,10 @@ const Apagar = ({ navigation, category }) => {
       </ButtonReturn>
       <Icon name="info" size={30} color="black" />
       <Title>
-        Tem certeza que deseja apagar a categoria <Strong>`${category.titulo}`</Strong>?
+        Tem certeza que deseja apagar a categoria <Strong>`${categoria.titulo}`</Strong>?
         Esta ação não poderá ser desfeita.
       </Title>
-      <RemoveButton>Apagar `${category.titulo}`</RemoveButton>
+      <RemoveButton>Apagar `${categoria.titulo}`</RemoveButton>
       <CancelButton>Não Apagar</CancelButton>
     </Container>
   );

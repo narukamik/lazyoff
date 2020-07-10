@@ -31,7 +31,7 @@ const Criar = ({ navigation }) => {
   return (
     <Container>
       <ButtonBack navigation={navigation} color="#FFF" />
-      <CronHeader page="De um nome a sua" titulo="nova categoria" />
+      <CronHeader page="Dê um nome à sua" titulo="nova categoria" />
       {/* <HeaderTop>
         <Title style={{ marginLeft: 35, marginTop: 20 }}>
           De um nome a sua

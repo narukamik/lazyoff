@@ -27,10 +27,7 @@ import {
 } from './styles';
 
 const Task = ({ navigation, task, showTime, ...rest }) => {
-  const [color, setColor] = useState([
-    colors.bgLinearButton[0],
-    task.color,
-  ]);
+  const [color, setColor] = useState([colors.bgLinearButton[0], task.color]);
 
   // init animation functions
   let offset = 0;

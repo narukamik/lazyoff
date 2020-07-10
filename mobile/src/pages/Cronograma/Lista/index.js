@@ -76,6 +76,7 @@ const Lista = ({ navigation }) => {
   useEffect((isFocused) => {
     getAllTasks(); 
   }, [isFocused])
+  
   return (
     <Container>
       <CronHeader
