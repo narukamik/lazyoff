@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 const Apagar = ({ route, navigation }) => {
-  const { id } = route.params;
+  const { task } = route.params;
   return (
     <Container>
       <ButtonReturn onPress={() => navigation.goBack()}>
@@ -21,7 +21,7 @@ const Apagar = ({ route, navigation }) => {
       <Icon name="info" size={100} color="black" />
       <RemoveButton
         onPress={() => {
-          TaskService.deleteById(id);
+          TaskService.deleteById(task.id);
           navigation.pop();
         }}
       >
