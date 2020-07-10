@@ -15,11 +15,7 @@ const SignUp = ({ navigation }) => {
 
   const signUp = async () => {
     if (senha === confirmarSenha) {
-<<<<<<< HEAD
-      await api.post('/user', {
-=======
       const response = await api.post('/user', {
->>>>>>> ee12a35f8747694aaa166726930add1fe269c53e
         nome,
         email,
         password: senha,
