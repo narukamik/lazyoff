@@ -14,18 +14,15 @@ export class CategoryService {
         (tx) => {
           tx.executeSql(
             `INSERT INTO category (titulo, color) 
-             VALUES (?)`,
-            [
-             param.titulo,
-             param.color
-            ],
+             VALUES (?,?)`,
+            [param.titulo, param.color],
             (_, { insertId, rows }) => {
               console.log(`id insert: ${insertId}`);
               resolve(insertId);
             }
           ),
             (sqlError) => {
-              console.log(sqlError);
+              console.log('insertCatError', sqlError);
             };
         },
         (txError) => {
@@ -61,7 +58,7 @@ export class CategoryService {
 
   static getAll() {
     const sql = `SELECT c.id , c.titulo, c.color, (SELECT COUNT(*) FROM task WHERE category_id = c.id) as qtd
-                 FROM category as c`
+                 FROM category as c`;
 
     return new Promise((resolve, reject) =>
       db.transaction(
@@ -84,14 +81,14 @@ export class CategoryService {
   }
 
   static updateById(params) {
-    this.getById(); // gets by id, compare, then update
+    // this.getById(); // gets by id, compare, then update
 
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `update category set ? = ? where id = ?;`,
-            [param.param, param.value, param.id],
+            `update category set titulo = ?, color = ? where id = ?;`,
+            [params.titulo, params.color, params.id],
             () => {}
           ),
             (sqlError) => {
@@ -111,7 +108,9 @@ export class CategoryService {
         tx.executeSql(
           `delete from category where id = ?;`,
           [id],
-          (_, { rows }) => {}
+          (_, { rows }) => {
+            console.log('deleteCat', rows, _);
+          }
         ),
           (sqlError) => {
             console.log(sqlError);

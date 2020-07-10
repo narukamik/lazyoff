@@ -3,7 +3,6 @@ import { Image } from 'react-native';
 import { CategoryService } from '~/services/category';
 import Container from '~/components/Container';
 import ButtonBack from '~/components/ButtonBack';
-import CronHeader from '~/components/CronHeader';
 
 import {
   Area,
@@ -21,8 +20,8 @@ import {
   ScrollArea,
   BolinhaTouch,
   Bolinha,
-  ButtonCria,
-  CriaText,
+  AreaButtonCria,
+  ButtonCriar,
 } from './styles';
 import infos from '~/assets/infos';
 
@@ -32,21 +31,36 @@ const Criar = ({ navigation, route }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [color, setColor] = useState('');
   const [titulo, setTitulo] = useState('');
+  const [id, setId] = useState(0);
+  const [textButton, setTextButton] = useState('Cadastrar');
 
   const { categoria } = route.params;
 
   useEffect(() => {
-    setTitulo(categoria.titulo);
-    if (categoria.type && categoria.type !== 'button') {
+    console.log('catuseEffect', categoria);
+    if (!categoria.type && categoria.type !== 'button') {
+      setTitulo(categoria.titulo);
       setColor(categoria.color);
+      setId(categoria.id);
+      setTextButton('Atualizar');
     }
   }, []);
 
-  function handleCategoria() {
+  async function handleCategoria() {
     if (titulo !== '' && titulo !== 'Nova Categoria' && color !== '') {
-      if (categoria.id && categoria.id > 0) {
+      if (id > 0) {
+        console.log('updateCat', titulo, color);
+        const response = await CategoryService.updateById({
+          titulo,
+          color,
+          id,
+        });
+        console.log('createResponse', response);
+        navigation.goBack();
       } else {
-        CategoryService.addData({ titulo, color });
+        const response = await CategoryService.addData({ titulo, color });
+        console.log('createResponse', response);
+        navigation.goBack();
       }
     }
   }
@@ -54,19 +68,18 @@ const Criar = ({ navigation, route }) => {
   return (
     <Container>
       <ButtonBack navigation={navigation} color="#FFF" />
-      <CronHeader page="Dê um nome à sua" titulo="nova categoria" />
-      {/* <HeaderTop>
-        <Title style={{ marginLeft: 35, marginTop: 20 }}>
-          De um nome a sua
+      <HeaderTop>
+        <Title>De um nome a sua</Title>
+        <Title style={{ marginLeft: 30, marginTop: 1 }}>
+          {`Categoria "${titulo}"`}
         </Title>
-        <Title style={{ marginLeft: 35, marginTop: 1 }}>nova categoria</Title>
-      </HeaderTop> */}
+      </HeaderTop>
 
       <Area>
         <InputArea>
           <Input
             placeholder="Nova Categoria"
-            value={titulo !== 'Nova Categoria' && titulo}
+            value={titulo}
             returnKeyType="send"
             onChangeText={setTitulo}
           />
@@ -85,7 +98,13 @@ const Criar = ({ navigation, route }) => {
             )}
           </OpenModal>
         </InputArea>
-
+        {titulo !== '' && color !== '' && (
+          <AreaButtonCria>
+            <ButtonCriar onPress={() => handleCategoria()}>
+              {textButton}
+            </ButtonCriar>
+          </AreaButtonCria>
+        )}
         <ModalBg visible={modalVisible}>
           <ModalContainer>
             <ModalTouch onPress={() => setModalVisible(false)}>

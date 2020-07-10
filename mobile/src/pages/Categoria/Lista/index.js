@@ -56,7 +56,7 @@ const Lista = ({ navigation }) => {
   const getAllCategories = () => {
     CategoryService.getAll()
       .then((response) => {
-        setData([response._array, initialData]);
+        setData([...response._array, initialData]);
       })
       .catch((error) => {
         console.log(error);
@@ -69,14 +69,9 @@ const Lista = ({ navigation }) => {
     getAllCategories();
   }, []);
 
-  useEffect(
-    (isFocused) => {
-      if (isFocused) {
-        getAllCategories();
-      }
-    },
-    [isFocused]
-  );
+  useEffect(() => {
+    getAllCategories();
+  }, [isFocused]);
 
   return (
     <Container>

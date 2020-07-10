@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import Button from '~/components/Button';
 
 export const Area = styled.View`
   position: relative;
@@ -108,3 +109,13 @@ export const Emlinha = styled.View`
   margin-top: 20px;
   flex-direction: row;
 `;
+
+export const AreaButtonCria = styled.View`
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  left: 0;
+  align-items: center;
+`;
+
+export const ButtonCriar = styled(Button)``;

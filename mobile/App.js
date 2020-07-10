@@ -31,17 +31,18 @@ export default function Index() {
       id integer primary key autoincrement,
       titulo text,
       color text
-    );`,
+     );`,
+
     `create table if not exists task (
       id integer primary key autoincrement,
       titulo text,
+      date text,
       time text,
-      endDateTime text,
+      endTime text,
       category_id int,
-      father_task_id int,
       foreign key (category_id) references category (id)
-      foreign key (father_task_id) references task (id)
-    );`,
+     );`,
+
     `create table if not exists subtask (
       id integer primary key autoincrement,
       father_id int,

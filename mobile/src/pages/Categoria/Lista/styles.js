@@ -43,10 +43,3 @@ export const ScrollArea = styled.FlatList.attrs({
   position: relative;
   width: 100%;
 `;
-
-export const AreaButtonCria = styled.View`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-`;

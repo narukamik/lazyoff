@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Animated } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
@@ -14,6 +14,13 @@ import {
 } from './styles';
 
 const CategoriaItem = ({ categoria, navigation }) => {
+  const [titulo, setTitulo] = useState('');
+  const [color, setColor] = useState('');
+  useEffect(() => {
+    console.log('loadCat', categoria);
+    setTitulo(categoria.titulo);
+    setColor(categoria.color);
+  }, []);
   let fadeAnimAux = true;
 
   const fadeAnim = new Animated.Value(20);
