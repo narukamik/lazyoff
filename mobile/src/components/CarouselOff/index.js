@@ -20,7 +20,7 @@ export default class SliderOff extends React.Component{
             this.props.data.map((item, index) => (
               <TouchableOpacity key={index}>
                 <View style={style.image}>
-                  <Image source={{uri: 'https://i.pinimg.com/originals/65/bc/2e/65bc2e85d1f322c5afe6980d9db79ac7.png'}} style={style.sticker} />
+                  <Image source={require('../../assets/store/sticker.png')} style={style.sticker} />
                   <Text style={[style.textSticker, style.sticker]}>{item.discount}</Text>
                   <Image source={{uri: item.card}} style={style.imageTiny} />
                 </View>               
