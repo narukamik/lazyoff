@@ -14,26 +14,36 @@ import {
   ButtonReturn,
   TextTimePicker,
   TouchDateTime,
+  Submit, 
+  WhiteText,
 } from './styles';
+
+import { format } from 'date-fns';
 
 const Criar = ({ navigation }) => {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
   const [display, setDisplay] = useState('default');
-  const [dia, setDia] = useState('Dia');
+  const [dia, setDia] = useState('Dia'); 
   const [hora, setHora] = useState('Hora');
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
     setDate(currentDate);
-    const dados = {
-      dia: currentDate.toLocaleDateString(),
-      hora: currentDate.toLocaleTimeString()
-    }
-    setDia(dados.dia);
-    setHora(dados.hora);
+
+    const formattedDate = format(
+      currentDate, 
+      "dd/MM"
+    );
+    setDia(formattedDate);
+
+    const formattedTime = format(
+      currentDate, 
+      "HH:mm"
+    );
+    setHora(formattedTime);
   };
 
   const showMode = (currentMode) => {
@@ -102,7 +112,11 @@ const Criar = ({ navigation }) => {
               onChange={onChange}
             />
           )}
+          
         </Box>
+        <Submit>
+            <WhiteText>Continuar</WhiteText>
+          </Submit>
       </Area>
     </Container>
   );
