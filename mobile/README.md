@@ -1,5 +1,3 @@
-## Guia de instalação
-
 # Requisitos: 
 
 1. node/npm,
