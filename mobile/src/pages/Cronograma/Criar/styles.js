@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import colors from '~/config/ColorConfig';
 
 export const Area = styled.View`
   height: 100%;
@@ -68,4 +69,20 @@ export const TextTimePicker = styled.Text`
 `;
 
 export const TouchDateTime = styled.TouchableWithoutFeedback`
+`;
+
+export const Submit = styled.TouchableOpacity`
+  border-radius: 5px;
+  height: 45px;
+  width: 90%;
+  align-self: center;
+  background-color: ${colors.primary};
+  position: absolute;
+  bottom: 35px;
+  justify-content: center;
+`;
+
+export const WhiteText = styled.Text`
+  color: white;
+  text-align: center;
 `;
