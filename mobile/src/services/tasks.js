@@ -58,6 +58,7 @@ export class TaskService {
     );
   }
 
+  
   static getAll() {
     const sql = `SELECT t.id, t.titulo, t.date, t.time, t.endTime, c.titulo as category, c.color
                  FROM task as t

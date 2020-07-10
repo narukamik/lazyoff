@@ -57,7 +57,6 @@ namespace Lazyoff.WebApi.Controllers
                 {
                     Name = loggedUser.Name,
                     Email = loggedUser.Email,
-                    Image = loggedUser.Image,
                     Coins = (int)loggedUser.Coins,
                     Trophies = (int)loggedUser.Trophies,
                     Level = (int)loggedUser.Level,

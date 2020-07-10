@@ -1,5 +1,4 @@
 ﻿using Lazyoff.Models.DTO;
-using Lazyoff.WebApi.Database;
 using Lazyoff.WebApi.Domain;
 using System;
 using System.Collections.Generic;
@@ -15,30 +14,29 @@ namespace Lazyoff.WebApi.Repositories
         {
             ctx = new lazyoffContext();
         }
-        public void Create(UserInputDTO u)
+        public void Create(CadastroDTO u)
         {
-            var user = new User
+            var user = new Users
             {
                 Name = u.Name,
                 Email = u.Email,
-                Password = u.Password,
-                Image = u.Image,
+                Password = Helpers.To256(u.Password),
                 Coins = 0,
                 Level = 1
             };
 
-            ctx.User.Add(user);
+            ctx.Users.Add(user);
             ctx.SaveChanges();
         }
 
-        public User GetById(UserInputDTO user)
+        public Users GetById(int id)
         {
-            return ctx.User.FirstOrDefault(x => x.Id == user.Id);
+            return ctx.Users.FirstOrDefault(x => x.Id == id);
         }
 
-        public User GetByEmailAndPassword(string email, string password)
+        public Users GetByEmailAndPassword(string email, string password)
         {
-            return ctx.User.FirstOrDefault(x => x.Email == email && x.Password == Helpers.To256(password));
+            return ctx.Users.FirstOrDefault(x => x.Email == email && x.Password == Helpers.To256(password));
         }
     }
 }

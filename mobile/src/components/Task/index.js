@@ -195,7 +195,7 @@ const Task = ({ navigation, task, showTime, ...rest }) => {
             </ButtonEdit>
             <ButtonDelete
               onPress={() => {
-                navigation.navigate('Apagar', { task });
+                navigation.navigate('Apagar', task );
               }}
             >
               <EditText>Apagar</EditText>

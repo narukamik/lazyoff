@@ -22,7 +22,7 @@ const Apagar = ({ route, navigation }) => {
       <RemoveButton
         onPress={() => {
           TaskService.deleteById(task.id);
-          navigation.pop();
+          navigation.goBack();
         }}
       >
         Apagar lista

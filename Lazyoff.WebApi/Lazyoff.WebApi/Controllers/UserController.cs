@@ -21,7 +21,7 @@ namespace Lazyoff.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Insert(UserInputDTO user)
+        public IActionResult Insert(CadastroDTO user)
         {
             try
             {

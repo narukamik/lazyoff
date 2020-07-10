@@ -28,7 +28,7 @@ const Apagar = ({ route, navigation }) => {
       <RemoveButton
         onPress={() => {
           CategoryService.deleteById(categoria.id);
-          navigation.pop();
+          navigation.goBack();
         }}
       >
         Apagar "{categoria.titulo}"
