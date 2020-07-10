@@ -4,7 +4,6 @@
 > aumento de produtividade durante estudo,
 > trabalho, ou sabe-se lá o que você quiser fazer. 
 
-Lazy? Off.
 
 # Sobre a estrutura
 
