@@ -12,6 +12,8 @@ import {
   WhiteText,
   SignIn,
   SignUp,
+  Logo,
+  LogoArea
 } from './styles';
 
 const Perfil = ({ navigation }) => {
@@ -26,8 +28,12 @@ const Perfil = ({ navigation }) => {
       <ButtonReturn onPress={() => navigation.goBack()}>
         <Feather name="chevron-left" size={30} color={colors.primary} />
       </ButtonReturn>
+      <LogoArea>
+        <Background source={require('../../assets/bg-logo.png')} />
+        <Logo source={require('../../assets/maxLogo.png')} />
+      </LogoArea>
+      
       <Area>
-        <Background source={logo} />
         <SignIn onPress={() => handleNavigation('SignIn')}>
           <WhiteText>Sign In</WhiteText>
         </SignIn>

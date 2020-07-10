@@ -12,6 +12,7 @@ export const Title = styled.Text`
   font-size: 25px;
   color: ${colors.primary};
   margin-bottom: 15%;
+  margin-top: 20%;
 `;
 
 export const InputRow = styled.View`
@@ -41,6 +42,7 @@ export const Submit = styled.TouchableOpacity`
   border-radius: 5px;
   padding: 2.5% 35%;
   background-color: ${colors.primary};
+  margin-bottom: 20%;
 `;
 
 export const WhiteText = styled.Text`
@@ -50,3 +52,5 @@ export const WhiteText = styled.Text`
 export const Divider = styled.View`
   height: 3%;
 `;
+
+export const Scroll = styled.ScrollView``;
