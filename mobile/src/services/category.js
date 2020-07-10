@@ -40,7 +40,7 @@ export class CategoryService {
       db.transaction(
         (tx) => {
           tx.executeSql(
-            `SELECT c.titulo, c.color, (SELECT COUNT(*) FROM task WHERE category_id = c.id) as qtd
+            `SELECT c.titulo, c.color, (SELECT COUNT(*) FROM task as t INNER JOIN category as c WHERE t.category_id = c.id) as qtd
              FROM category as c
              WHERE id = ?`,
             [id],

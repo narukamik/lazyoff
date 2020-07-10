@@ -1,6 +1,6 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
-import { TaskService } from '~/services/tasks'
+import { TaskService } from '~/services/tasks';
 import {
   Container,
   ButtonReturn,
@@ -10,7 +10,7 @@ import {
   CancelButton,
 } from './styles';
 
-const Apagar = ({route, navigation }) => {
+const Apagar = ({ route, navigation }) => {
   const { id } = route.params;
   return (
     <Container>
@@ -19,14 +19,21 @@ const Apagar = ({route, navigation }) => {
       </ButtonReturn>
       <Title>Deseja realmente apagar a task?</Title>
       <Icon name="info" size={100} color="black" />
-      <RemoveButton 
+      <RemoveButton
         onPress={() => {
           TaskService.deleteById(id);
           navigation.pop();
-          }}>
-       Apagar lista
+        }}
+      >
+        Apagar lista
       </RemoveButton>
-      <CancelButton>Cancelar</CancelButton>
+      <CancelButton
+        onPress={() => {
+          navigation.pop();
+        }}
+      >
+        Cancelar
+      </CancelButton>
     </Container>
   );
 };

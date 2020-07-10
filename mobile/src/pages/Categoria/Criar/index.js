@@ -25,8 +25,10 @@ import infos from '~/assets/infos';
 
 const { dotColors } = infos;
 
-const Criar = ({ navigation }) => {
+const Criar = ({ navigation, route }) => {
   const [modalVisible, setModalVisible] = useState(false);
+
+  const { categoria } = route.params;
 
   return (
     <Container>
@@ -41,8 +43,7 @@ const Criar = ({ navigation }) => {
 
       <Area>
         <InputArea>
-          <Input placeholder="Trabalho" />
-
+          <Input placeholder={ categoria.titulo } />
           <OpenModal
             onPress={() => {
               setModalVisible(true);

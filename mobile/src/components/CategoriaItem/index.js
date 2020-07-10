@@ -37,7 +37,7 @@ const CategoriaItem = ({ categoria, navigation }) => {
   };
 
   return categoria.type && categoria.type === 'button' ? (
-    <Button key={categoria.titulo} onPress={() => navigation.navigate('Criar')}>
+    <Button key={categoria.titulo} onPress={() => navigation.navigate('Criar', { categoria })}>
       <Feather name="plus-circle" size={20} color="#454252" />
       <CheckText color="#454252">Nova categoria</CheckText>
     </Button>
