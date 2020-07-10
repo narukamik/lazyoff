@@ -3,6 +3,7 @@ import { Image } from 'react-native';
 import { CategoryService } from '~/services/category';
 import Container from '~/components/Container';
 import ButtonBack from '~/components/ButtonBack';
+import ColorModal from '~/components/ColorModal';
 
 import {
   Area,
@@ -11,17 +12,9 @@ import {
   InputArea,
   Input,
   OpenModal,
-  ModalBg,
-  ModalTouch,
-  ModalTouchAux,
-  ModalContainer,
-  ModalArea,
-  CloseModal,
-  ScrollArea,
-  BolinhaTouch,
-  Bolinha,
   AreaButtonCria,
   ButtonCriar,
+  Bolinha,
 } from './styles';
 import infos from '~/assets/infos';
 
@@ -37,29 +30,27 @@ const Criar = ({ navigation, route }) => {
   const { categoria } = route.params;
 
   useEffect(() => {
-    console.log('catuseEffect', categoria);
     if (!categoria.type && categoria.type !== 'button') {
       setTitulo(categoria.titulo);
       setColor(categoria.color);
       setId(categoria.id);
       setTextButton('Atualizar');
     }
+    // console.log('catUseEffect', categoria, titulo, color, id);
   }, []);
 
   async function handleCategoria() {
-    if (titulo !== '' && titulo !== 'Nova Categoria' && color !== '') {
+    if (titulo !== '' && color !== '') {
       if (id > 0) {
-        console.log('updateCat', titulo, color);
-        const response = await CategoryService.updateById({
+        await CategoryService.updateById({
           titulo,
           color,
           id,
         });
-        console.log('createResponse', response);
+        // console.log('createResponse', response);
         navigation.goBack();
       } else {
-        const response = await CategoryService.addData({ titulo, color });
-        console.log('createResponse', response);
+        await CategoryService.addData({ titulo, color });
         navigation.goBack();
       }
     }
@@ -105,34 +96,12 @@ const Criar = ({ navigation, route }) => {
             </ButtonCriar>
           </AreaButtonCria>
         )}
-        <ModalBg visible={modalVisible}>
-          <ModalContainer>
-            <ModalTouch onPress={() => setModalVisible(false)}>
-              <ModalTouchAux />
-            </ModalTouch>
-            <ModalArea>
-              <CloseModal onPress={() => setModalVisible(false)}>
-                <Image source={require('~/assets/categorias/pintarNO.png')} />
-              </CloseModal>
-
-              <ScrollArea
-                data={dotColors}
-                keyExtractor={(item) => String(item.color)}
-                renderItem={({ item }) => (
-                  <BolinhaTouch
-                    onPress={() => {
-                      setColor(item.color);
-                      setModalVisible(false);
-                      handleCategoria();
-                    }}
-                  >
-                    <Bolinha key={item.color} color={item.color} />
-                  </BolinhaTouch>
-                )}
-              />
-            </ModalArea>
-          </ModalContainer>
-        </ModalBg>
+        <ColorModal
+          setColor={setColor}
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+          handleCategoria={handleCategoria}
+        />
       </Area>
     </Container>
   );

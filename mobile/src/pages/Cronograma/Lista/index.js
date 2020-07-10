@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Animated, Alert } from 'react-native';
+import { Animated } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
-import { useIsFocused } from '@react-navigation/native'
-import { TaskService } from '~/services/tasks';
+import { useIsFocused } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
+import { TaskService } from '~/services/tasks';
 import Container from '~/components/Container';
 import CronHeader from '~/components/CronHeader';
 import Task from '~/components/Task';
@@ -18,8 +18,6 @@ import {
   CheckEndArea,
   TextEnd,
 } from './styles';
-
-
 
 const Lista = ({ navigation }) => {
   // init animation functions
@@ -43,7 +41,7 @@ const Lista = ({ navigation }) => {
         translateY.setOffset(0);
         offset = 0;
       }
-      
+
       Animated.timing(translateY, {
         toValue: opened ? 50 : 0,
         duration: 200,
@@ -55,28 +53,29 @@ const Lista = ({ navigation }) => {
       });
     }
   }
-  
+
   const [data, setData] = useState([]);
-  
-  const isFocused = useIsFocused(); 
-  
+
+  const isFocused = useIsFocused();
+
   const getAllTasks = () => {
-    TaskService.getAll().then((response) => {
-      setData(response._array);
-    }),
-      (error) => {
+    TaskService.getAll()
+      .then((response) => {
+        setData(response._array);
+      })
+      .catch((error) => {
         console.log(error);
-      };
+      });
   };
-  
+
   useEffect(() => {
-    getAllTasks(); 
-  }, [])
-  
-  useEffect((isFocused) => {
-    getAllTasks(); 
-  }, [isFocused])
-  
+    getAllTasks();
+  }, []);
+
+  useEffect(() => {
+    isFocused && getAllTasks();
+  }, [isFocused]);
+
   return (
     <Container>
       <CronHeader

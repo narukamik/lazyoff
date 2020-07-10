@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Animated } from 'react-native';
 import colors from '~/config/ColorConfig';
 
 export const Area = styled.View`
@@ -41,13 +42,15 @@ export const Input = styled.TextInput`
   padding-right: 6px;
 `;
 
-export const PickerArea = styled.View`
+export const PickerArea = styled(Animated.View)`
   flex-direction: row;
   width: 100%;
   justify-content: center;
 `;
 
-export const PickerSelect = styled.View`
+export const TouchDateTime = styled.TouchableWithoutFeedback``;
+
+export const PickerSelect = styled(Animated.View)`
   margin: 5px;
   height: 32px;
   width: 100px;
@@ -60,15 +63,14 @@ export const PickerSelect = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 4px 0px;
 `;
 
 export const TextTimePicker = styled.Text`
-  font-size: 16px;
+  font-size: 14px;
   color: #6d5dcf;
   margin-left: 5px;
-`;
-
-export const TouchDateTime = styled.TouchableWithoutFeedback`
 `;
 
 export const Submit = styled.TouchableOpacity`
@@ -85,4 +87,27 @@ export const Submit = styled.TouchableOpacity`
 export const WhiteText = styled.Text`
   color: white;
   text-align: center;
+`;
+
+export const CategoriaSelectArea = styled(Animated.View)`
+  margin-top: 10px;
+  width: 100%;
+  padding: 0 10px;
+`;
+
+export const CategoriaSelect = styled.FlatList`
+  width: 100%;
+`;
+
+export const CategoriaButton = styled.TouchableOpacity`
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+`;
+
+export const CategoriaBolinha = styled.View`
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
 `;

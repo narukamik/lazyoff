@@ -158,8 +158,8 @@ export default () => (
             ),
           }}
         />
-        <Tab.Screen
-          name="Search"
+        {/* <Tab.Screen
+          name="Lista"
           component={ListStackScreen}
           options={{
             tabBarIcon: ({ focused, color, size }) => (
@@ -171,7 +171,7 @@ export default () => (
               />
             ),
           }}
-        />
+        /> */}
       </Tab.Navigator>
     </NavigationContainer>
   </SafeAreaProvider>

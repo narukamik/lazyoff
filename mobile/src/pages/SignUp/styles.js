@@ -6,13 +6,13 @@ export const Area = styled.View`
   align-items: center;
   justify-content: center;
   background-color: white;
+  padding-top: 30%;
 `;
 
 export const Title = styled.Text`
   font-size: 25px;
   color: ${colors.primary};
   margin-bottom: 15%;
-  margin-top: 20%;
 `;
 
 export const InputRow = styled.View`

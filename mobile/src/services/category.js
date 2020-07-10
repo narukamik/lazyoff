@@ -82,14 +82,17 @@ export class CategoryService {
 
   static updateById(params) {
     // this.getById(); // gets by id, compare, then update
-
+    // console.log('catUpdate', params);
     return new Promise((resolve, reject) =>
       db.transaction(
         (tx) => {
           tx.executeSql(
             `update category set titulo = ?, color = ? where id = ?;`,
             [params.titulo, params.color, params.id],
-            () => {}
+            (_, { rows }) => {
+              // console.log('aqui', _, 'aqui2', rows);
+              resolve(true);
+            }
           ),
             (sqlError) => {
               console.log(sqlError);
