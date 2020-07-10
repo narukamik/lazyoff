@@ -29,7 +29,7 @@ import {
 const Task = ({ navigation, task, showTime, ...rest }) => {
   const [color, setColor] = useState([
     colors.bgLinearButton[0],
-    task.categoria.color,
+    task.color,
   ]);
 
   // init animation functions
@@ -134,7 +134,7 @@ const Task = ({ navigation, task, showTime, ...rest }) => {
               <Square />
               <TextInfos>
                 <Title>{task.titulo}</Title>
-                <Categoria>{task.categoria.titulo}</Categoria>
+                <Categoria>{task.category}</Categoria>
               </TextInfos>
             </TaskArea>
           </TaskTouch>

@@ -59,7 +59,7 @@ export class TaskService {
   }
 
   static getAll() {
-    const sql = `SELECT t.titulo, t.time, t.endDateTime, c.titulo
+    const sql = `SELECT t.id, t.titulo, t.time, t.endDateTime, c.titulo as category, c.color
                  FROM task as t
                  INNER JOIN category as c
                  ON t.category_id = c.id`;

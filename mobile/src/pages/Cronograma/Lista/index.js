@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Animated, Alert } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
+import { useIsFocused } from '@react-navigation/native'
 import { TaskService } from '~/services/tasks';
 import { Feather } from '@expo/vector-icons';
 import Container from '~/components/Container';
@@ -18,24 +19,26 @@ import {
   TextEnd,
 } from './styles';
 
-let state = {
-  data: [],
-  value: null,
-  onChangeText: null,
-  dataId: null,
-  dataInsert: null,
-};
+const [data, setData] = useState([]);
+
+const isFocused = useIsFocused(); 
 
 const getAllTasks = () => {
   TaskService.getAll().then((response) => {
-    state.data = response._array;
+    setData(response._array);
   }),
     (error) => {
       console.log(error);
     };
 };
 
-getAllTasks(); // precisa rodar toda vez que a página abrir (useState/setState?)
+useEffect(() => {
+  getAllTasks(); 
+}, [])
+
+useEffect((isFocused) => {
+  getAllTasks(); 
+}, [isFocused])
 
 console.log(state.data)
 

@@ -25,21 +25,20 @@ export default function Index() {
     );`,
 
     `create table if not exists category (
-            id integer primary key autoincrement,
-            titulo text,
-            color text
-            );`,
+      id integer primary key autoincrement,
+      titulo text,
+      color text
+     );`,
 
     `create table if not exists task (
-            id integer primary key autoincrement,
-            titulo text,
-            time text,
-            endDateTime text,
-            category_id int,
-            father_task_id int,
-            foreign key (category_id) references category (id)
-            foreign key (father_task_id) references task (id)
-            );`,
+      id integer primary key autoincrement,
+      titulo text,
+      date text,
+      time text,
+      endTime text,
+      category_id int,
+      foreign key (category_id) references category (id)
+     );`,
 
     `create table if not exists subtask (
       id integer primary key autoincrement,
@@ -51,9 +50,9 @@ export default function Index() {
     );`,
 
     `create table if not exists checklist (
-        id integer primary key autoincrement,
-        titulo text,
-        done boolean
+      id integer primary key autoincrement,
+      titulo text,
+      done boolean
     );`,
 
     `create table if not exists checkbox (
@@ -63,6 +62,12 @@ export default function Index() {
       checklist_id int,
       foreign key (checklist_id) references checklist (id)
     );`,
+
+    `insert into category(titulo, color)
+      values('Trabalho', '#F0')`
+                           
+    `insert into task(titulo, date, time, endTime, category_id)
+       values ('Fazer upload', '14/07/20', 13:00, 14:00, 1)`,
   ];
 
   db.transaction(
