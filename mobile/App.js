@@ -23,24 +23,21 @@ export default function Index() {
       level integer,
       token text
     );`,
-
     `create table if not exists category (
-            id integer primary key autoincrement,
-            titulo text,
-            color text
-            );`,
-
+      id integer primary key autoincrement,
+      titulo text,
+      color text
+    );`,
     `create table if not exists task (
-            id integer primary key autoincrement,
-            titulo text,
-            time text,
-            endDateTime text,
-            category_id int,
-            father_task_id int,
-            foreign key (category_id) references category (id)
-            foreign key (father_task_id) references task (id)
-            );`,
-
+      id integer primary key autoincrement,
+      titulo text,
+      time text,
+      endDateTime text,
+      category_id int,
+      father_task_id int,
+      foreign key (category_id) references category (id)
+      foreign key (father_task_id) references task (id)
+    );`,
     `create table if not exists subtask (
       id integer primary key autoincrement,
       father_id int,
@@ -49,13 +46,11 @@ export default function Index() {
       endDateTime text,
       foreign key (father_id) references task (id)
     );`,
-
     `create table if not exists checklist (
-        id integer primary key autoincrement,
-        titulo text,
-        done boolean
+      id integer primary key autoincrement,
+      titulo text,
+      done boolean
     );`,
-
     `create table if not exists checkbox (
       id integer primary key autoincrement,
       titulo text,
