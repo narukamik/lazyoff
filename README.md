@@ -1,4 +1,3 @@
-# LazyOff
 
 > Lazyoff é um app de tasks pensado para 
 > aumento de produtividade durante estudo,
