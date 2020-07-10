@@ -76,11 +76,7 @@ const SignIn = ({ navigation }) => {
           }}
           onChangeText={setPassword}
         />
-<<<<<<< HEAD
         <Submit onPress={ login() }>
-=======
-        <Submit onPress={() => login}>
->>>>>>> ee12a35f8747694aaa166726930add1fe269c53e
           <WhiteText>Continuar</WhiteText>
         </Submit>
       </Area>

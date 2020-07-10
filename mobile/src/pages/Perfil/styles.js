@@ -18,7 +18,8 @@ export const ButtonReturn = styled.TouchableOpacity`
 
 export const Background = styled.ImageBackground`
   width: 100%;
-  height: 15%;
+  height: 100%;
+  resize-mode: cover;
 `;
 
 export const InputDiv = styled.View``;
@@ -46,4 +47,18 @@ export const SignIn = styled.TouchableOpacity`
 
 export const WhiteText = styled.Text`
   color: white;
+`;
+
+export const Logo = styled.Image`
+  width: 90%;
+  height: 70%;
+  resize-mode: center;
+  position: absolute;
+  align-self: center;
+`;
+
+export const LogoArea = styled.View`
+  background-color: black;
+  height: 70%;
+  justify-content: center;
 `;
