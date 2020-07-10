@@ -31,20 +31,6 @@ export default function Index() {
       id integer primary key autoincrement,
       titulo text,
       color text
-<<<<<<< HEAD
-     );`,
-
-    `create table if not exists task (
-      id integer primary key autoincrement,
-      titulo text,
-      date text,
-      time text,
-      endTime text,
-      category_id int,
-      foreign key (category_id) references category (id)
-     );`,
-
-=======
     );`,
     `create table if not exists task (
       id integer primary key autoincrement,
@@ -56,7 +42,6 @@ export default function Index() {
       foreign key (category_id) references category (id)
       foreign key (father_task_id) references task (id)
     );`,
->>>>>>> 5993f63100c3e3c6914e90d348d9557b078ec7a0
     `create table if not exists subtask (
       id integer primary key autoincrement,
       father_id int,

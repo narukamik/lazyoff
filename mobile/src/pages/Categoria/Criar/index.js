@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { View, Modal, Image, TouchableOpacity, Alert } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Image } from 'react-native';
+import { CategoryService } from '~/services/category';
 import Container from '~/components/Container';
 import ButtonBack from '~/components/ButtonBack';
 import CronHeader from '~/components/CronHeader';
@@ -20,6 +21,8 @@ import {
   ScrollArea,
   BolinhaTouch,
   Bolinha,
+  ButtonCria,
+  CriaText,
 } from './styles';
 import infos from '~/assets/infos';
 
@@ -27,8 +30,26 @@ const { dotColors } = infos;
 
 const Criar = ({ navigation, route }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [color, setColor] = useState('');
+  const [titulo, setTitulo] = useState('');
 
   const { categoria } = route.params;
+
+  useEffect(() => {
+    setTitulo(categoria.titulo);
+    if (categoria.type && categoria.type !== 'button') {
+      setColor(categoria.color);
+    }
+  }, []);
+
+  function handleCategoria() {
+    if (titulo !== '' && titulo !== 'Nova Categoria' && color !== '') {
+      if (categoria.id && categoria.id > 0) {
+      } else {
+        CategoryService.addData({ titulo, color });
+      }
+    }
+  }
 
   return (
     <Container>
@@ -43,16 +64,25 @@ const Criar = ({ navigation, route }) => {
 
       <Area>
         <InputArea>
-          <Input placeholder={ categoria.titulo } />
+          <Input
+            placeholder="Nova Categoria"
+            value={titulo !== 'Nova Categoria' && titulo}
+            returnKeyType="send"
+            onChangeText={setTitulo}
+          />
           <OpenModal
             onPress={() => {
               setModalVisible(true);
             }}
           >
-            <Image
-              style={{ width: 25 }}
-              source={require('~/assets/categorias/pintar.png')}
-            />
+            {color === '' ? (
+              <Image
+                style={{ width: 25 }}
+                source={require('~/assets/categorias/pintar.png')}
+              />
+            ) : (
+              <Bolinha color={color} />
+            )}
           </OpenModal>
         </InputArea>
 
@@ -70,7 +100,13 @@ const Criar = ({ navigation, route }) => {
                 data={dotColors}
                 keyExtractor={(item) => String(item.color)}
                 renderItem={({ item }) => (
-                  <BolinhaTouch>
+                  <BolinhaTouch
+                    onPress={() => {
+                      setColor(item.color);
+                      setModalVisible(false);
+                      handleCategoria();
+                    }}
+                  >
                     <Bolinha key={item.color} color={item.color} />
                   </BolinhaTouch>
                 )}

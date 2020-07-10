@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Animated, Alert } from 'react-native';
+import { Animated } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
 import { useIsFocused } from '@react-navigation/native';
 import { CategoryService } from '~/services/category';
@@ -15,6 +15,7 @@ import {
   ScrollArea,
 } from './styles';
 
+const initialData = { id: 0, titulo: 'Nova Categoria', type: 'button' };
 const Lista = ({ navigation }) => {
   // init animation functions
   let offset = 0;
@@ -50,15 +51,16 @@ const Lista = ({ navigation }) => {
     }
   }
 
-  const [data, setData] = useState([]);  
+  const [data, setData] = useState([initialData]);
 
   const getAllCategories = () => {
-    CategoryService.getAll().then((response) => {
-      setData(response._array);
-    }),
-      (error) => {
+    CategoryService.getAll()
+      .then((response) => {
+        setData([response._array, initialData]);
+      })
+      .catch((error) => {
         console.log(error);
-      };
+      });
   };
 
   const isFocused = useIsFocused();
@@ -69,7 +71,7 @@ const Lista = ({ navigation }) => {
 
   useEffect(
     (isFocused) => {
-      if(isFocused){
+      if (isFocused) {
         getAllCategories();
       }
     },

@@ -37,7 +37,10 @@ const CategoriaItem = ({ categoria, navigation }) => {
   };
 
   return categoria.type && categoria.type === 'button' ? (
-    <Button key={categoria.titulo} onPress={() => navigation.navigate('Criar', { categoria })}>
+    <Button
+      key={categoria.titulo}
+      onPress={() => navigation.navigate('Criar', { categoria })}
+    >
       <Feather name="plus-circle" size={20} color="#454252" />
       <CheckText color="#454252">Nova categoria</CheckText>
     </Button>
@@ -71,11 +74,13 @@ const CategoriaItem = ({ categoria, navigation }) => {
           }),
         }}
       >
-        <ButtonEdit onPress={() => navigation.navigate('Criar', {categoria})}>
+        <ButtonEdit onPress={() => navigation.navigate('Criar', { categoria })}>
           <EditText>Editar</EditText>
           <Feather name="edit-2" size={20} color="#FFF" />
         </ButtonEdit>
-        <ButtonDelete onPress={() => navigation.navigate('Apagar', {categoria})}>
+        <ButtonDelete
+          onPress={() => navigation.navigate('Apagar', { categoria })}
+        >
           <EditText>Apagar</EditText>
           <Feather name="trash-2" size={20} color="#FFF" />
         </ButtonDelete>
