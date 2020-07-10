@@ -112,7 +112,6 @@ const Criar = ({ navigation }) => {
               onChange={onChange}
             />
           )}
-          
         </Box>
         <Submit>
             <WhiteText>Continuar</WhiteText>

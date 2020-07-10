@@ -4,6 +4,7 @@ import { Input } from 'react-native-elements';
 import Container from '~/components/Container';
 import colors from '~/config/ColorConfig';
 import ButtonBack from '~/components/ButtonBack';
+import api from '~/services/api'
 
 import { Area, Divider, Submit, WhiteText, Title, Scroll } from './styles';
 
@@ -15,10 +16,10 @@ const SignUp = ({ navigation }) => {
 
   const signUp = async () => {
     if (senha === confirmarSenha) {
-      const response = await api.post('/user', {
-        nome,
+      const response = await api.post('user', {
+        name : nome,
         email,
-        password: senha,
+        password : senha,
       });
       console.log(response);
     }
