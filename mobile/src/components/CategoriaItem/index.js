@@ -17,7 +17,6 @@ const CategoriaItem = ({ categoria, navigation }) => {
   const [titulo, setTitulo] = useState('');
   const [color, setColor] = useState('');
   useEffect(() => {
-    console.log('loadCat', categoria);
     setTitulo(categoria.titulo);
     setColor(categoria.color);
   }, []);
