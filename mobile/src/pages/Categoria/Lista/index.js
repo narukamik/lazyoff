@@ -69,7 +69,9 @@ const Lista = ({ navigation }) => {
 
   useEffect(
     (isFocused) => {
-      getAllCategories();
+      if(isFocused){
+        getAllCategories();
+      }
     },
     [isFocused]
   );

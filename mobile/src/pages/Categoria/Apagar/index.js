@@ -9,6 +9,7 @@ import {
   RemoveButton,
   CancelButton,
 } from './styles';
+import { CategoryService } from '~/services/category';
 
 const Apagar = ({ route, navigation }) => {
   
@@ -21,11 +22,21 @@ const Apagar = ({ route, navigation }) => {
       </ButtonReturn>
       <Icon name="info" size={30} color="black" />
       <Title>
-        Tem certeza que deseja apagar a categoria <Strong>`${categoria.titulo}`</Strong>?
+        Tem certeza que deseja apagar a categoria <Strong> "{categoria.titulo}"</Strong>?
         Esta ação não poderá ser desfeita.
       </Title>
-      <RemoveButton>Apagar `${categoria.titulo}`</RemoveButton>
-      <CancelButton>Não Apagar</CancelButton>
+      <RemoveButton onPress={() => {
+        CategoryService.deleteById(categoria.id);
+        navigation.pop();
+      }}
+      >
+        Apagar "{categoria.titulo}"
+      </RemoveButton>
+      <CancelButton onPress={() => {
+        navigation.pop();
+      }}>
+        Não Apagar
+    </CancelButton>
     </Container>
   );
 };
