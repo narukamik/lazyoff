@@ -21,12 +21,19 @@ const Criar = ({ navigation }) => {
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
   const [display, setDisplay] = useState('default');
+  const [dia, setDia] = useState('Dia');
+  const [hora, setHora] = useState('Hora');
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
     setDate(currentDate);
-    console.log(selectedDate);
+    const dados = {
+      dia: currentDate.toLocaleDateString(),
+      hora: currentDate.toLocaleTimeString()
+    }
+    setDia(dados.dia);
+    setHora(dados.hora);
   };
 
   const showMode = (currentMode) => {
@@ -67,7 +74,7 @@ const Criar = ({ navigation }) => {
             <TouchDateTime onPress={showDatepicker}>
               <PickerSelect>
                 <Feather name="calendar" size={20} color="#6d5dcf" />
-                <TextTimePicker>Dia</TextTimePicker>
+                <TextTimePicker>{dia}</TextTimePicker>
               </PickerSelect>
             </TouchDateTime>
 
@@ -81,7 +88,7 @@ const Criar = ({ navigation }) => {
             <TouchDateTime onPress={showTimepicker}>
               <PickerSelect>
                 <Feather name="clock" size={20} color="#6d5dcf" />
-                <TextTimePicker>Hora</TextTimePicker>
+                <TextTimePicker>{hora}</TextTimePicker>
               </PickerSelect>
             </TouchDateTime>
           </PickerArea>
