@@ -34,8 +34,8 @@ Lazyoff funciona com várias tecnologias supermaneiras!
  Esse é o nosso time. Garanto que somos legais:
   - Allejandro
     - [GitHub](https://github.com/Allejandropg)
-  - Danilo
-    - [GitHub](https://github.com/daniloj-root)
+  - Akuma
+    - [GitHub](https://github.com/akumadante)
   - Julio
     - [GitHub](https://github.com/j-bittenbinder)
   - Luiz
